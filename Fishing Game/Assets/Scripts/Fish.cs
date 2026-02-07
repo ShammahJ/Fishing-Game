@@ -22,8 +22,9 @@ public class Fish : MonoBehaviour
 
     public float GetValue()
     {
-        return _value;
+        return UpgradeManager.Instance.ModifyFishValue(_value);
     }
+
     void Start()
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
@@ -55,7 +56,7 @@ public class Fish : MonoBehaviour
         }
         
         if (math.abs(transform.position.x) > ScreenBorder) {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 }

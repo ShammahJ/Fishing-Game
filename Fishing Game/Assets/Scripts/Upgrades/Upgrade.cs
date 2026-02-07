@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using UnityEditor.Build.Content;
 using UnityEngine;
 
 public abstract class Upgrade : ScriptableObject
@@ -6,23 +8,27 @@ public abstract class Upgrade : ScriptableObject
     public string id;
     public string upgradeName;
     public float cost;
+    public int rarity;
 
     [TextArea]
     public string description;
     public Sprite icon;
 
-    //Called when the upgrade is picked up / activated
-
-    //When coding starts put down the player as a parameter, like (Player player) {
-    public virtual void OnEquip()
+    //Different virtual methods for different upgrade types, upgrades will only used the virtual methods they care about
+    //Value pipelines
+    public virtual float ModifyFishValue(float currentValue, ActiveUpgrade runtime)
     {
-        // blah
+        return currentValue;
     }
 
-    //Called when the upgrade is removed / deactivated
-    //When you sell the upgrade, do not destroy the scriptable object and instead remove the ref
-    public virtual void OnUnequip()
-    {
-        // blah
-    }
+        //Game events
+        public virtual void OnUpgradeAdded(ActiveUpgrade runtime) { }
+        public virtual void OnUpgradeRemoved(ActiveUpgrade runtime) { }
+
+        public virtual void OnFishSpawned(Fish fish, ActiveUpgrade runtime) { }
+        public virtual void OnFishCaught(Fish fish, ActiveUpgrade runtime) { }
+
+        //World modifiers
+        //later
+
 }

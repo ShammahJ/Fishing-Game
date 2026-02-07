@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 835a116e967d8e44b88f538077b7b342, type: 3}
   m_Name: PolishedHook
   m_EditorClassIdentifier: Assembly-CSharp::PolishedHook
-  id: 
-  upgradeName: 
-  description: 
-  icon: {fileID: 0}
+  id: polished_hook
+  upgradeName: Polished Hook
+  cost: 45
+  rarity: 0
+  description: Adds an enormous $8 to the value of the all fish you catch.
+  icon: {fileID: -49532090776259237, guid: 21f3a23337ee57c4dbd977bd99554d7e, type: 3}
+  moneyBonus: 8

@@ -6,13 +6,8 @@ public class PolishedHook : Upgrade
     [Header("Upgrade Values")]
     public float moneyBonus;
 
-    public override void OnEquip()
+    public override float ModifyFishValue(float currentValue, ActiveUpgrade runtime)
     {
-
-    }
-
-    public override void OnUnequip()
-    {
-
+        return currentValue + moneyBonus;
     }
 }
