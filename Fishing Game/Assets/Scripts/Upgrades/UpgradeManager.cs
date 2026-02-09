@@ -60,4 +60,13 @@ public class UpgradeManager : MonoBehaviour
 
         return value;
     }
+
+    public void NotifyFishCaught(Fish fish)
+    {
+        foreach (ActiveUpgrade upgrade in activeUpgrades)
+        {
+            upgrade.definition.OnFishCaught(fish, upgrade);
+        }
+    }
+
 }

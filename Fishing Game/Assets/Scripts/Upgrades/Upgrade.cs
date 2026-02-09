@@ -4,11 +4,19 @@ using UnityEngine;
 
 public abstract class Upgrade : ScriptableObject
 {
+    public enum UpgradeRarity
+    {
+        Common,
+        Rare,
+        Epic,
+        Legendary
+    }
+
     [Header("Upgrade Info")]
     public string id;
     public string upgradeName;
     public float cost;
-    public int rarity;
+    public UpgradeRarity rarity;
 
     [TextArea]
     public string description;
