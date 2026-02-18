@@ -1,28 +1,24 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class HookCollision : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    private int _fishCount;
+    private List<Fish> _fishes = new List<Fish>();
     private float _collectedValue;
-    public ArrayList CollectFish()
+    public List<Fish> CollectFish()
     {
-        ArrayList arr = new ArrayList();
-        arr.Add(_fishCount);
-        arr.Add(_collectedValue);
-        _fishCount = 0;
-        _collectedValue = 0;
-        return arr;
-
+        return _fishes;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.gameObject.CompareTag("Fish")) {return;}
         Fish collectedFish = collision.gameObject.GetComponent<Fish>();
-        _collectedValue += collectedFish.GetValue();
-        _fishCount += 1;
-        Destroy(collision.gameObject);
+        _fishes.Add(collectedFish);
+        collectedFish.Hook();
+        // Destroy(collision.gameObject);
     }
 }

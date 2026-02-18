@@ -148,3 +148,4 @@ MonoBehaviour:
   maxValue: 25
   minHeight: -4.5
   maxHeight: 2
+  hitbox: {fileID: 1016700921153464679}

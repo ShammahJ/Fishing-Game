@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using Unity.Mathematics;
 using Unity.VisualScripting;
@@ -85,10 +86,16 @@ public class Hook : MonoBehaviour
 
     void CollectFish()
     {
-        ArrayList collectionData = _hookCollision.CollectFish();
-        int fishCount = (int)collectionData[0];
-        float value = (float)collectionData[1]; 
-            
+        
+        List<Fish> fishCollected = _hookCollision.CollectFish();
+        float value = 0;
+        float fishCount = fishCollected.Count;
+        
+        foreach (var fish in fishCollected) {
+            value += fish.GetValue();
+            Destroy(fish.gameObject);
+        }
+        
         float totalValue = value * (fishCountMultiplier * (fishCount + 1f));
 
         totalScore += totalValue;
