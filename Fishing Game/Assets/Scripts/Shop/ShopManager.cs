@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using static Upgrade;
 
 public class ShopManager : MonoBehaviour
@@ -9,6 +10,7 @@ public class ShopManager : MonoBehaviour
 
     [Header("Current Shop")]
     public List<Upgrade> currentShopUpgrades = new List<Upgrade>();
+    public Image[] shopSlots = new Image[4];
 
     const float COMMON_CHANCE = 53.3f;
     const float RARE_CHANCE = 26.6f;
@@ -17,21 +19,24 @@ public class ShopManager : MonoBehaviour
 
     private void Start()
     {
-        GetComponent<ShopManager>().RollShop();
-
+        RollShop();
     }
 
     public void RollShop()
     {
         currentShopUpgrades.Clear();
+        ClearShopVisuals();
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < shopSlots.Length; i++)
         {
             UpgradeRarity rarity = RollRarity();
             Upgrade upgrade = GetRandomUpgradeOfRarity(rarity);
 
             if (upgrade != null)
+            {
                 currentShopUpgrades.Add(upgrade);
+                SetShopVisual(upgrade, i);
+            }
         }
 
         DebugShop();
@@ -61,11 +66,35 @@ public class ShopManager : MonoBehaviour
     {
         List<Upgrade> pool = allUpgrades.FindAll(x => x.rarity == rarity);
 
-        //for now if nothing exists of that rarity just retry as Common
+        //default case is the common rarity, doubt this will ever see us tho
         if (pool.Count == 0)
             pool = allUpgrades.FindAll(x => x.rarity == UpgradeRarity.Common);
 
         return pool[Random.Range(0, pool.Count)];
+    }
+
+    void SetShopVisual(Upgrade upgrade, int slotIndex)
+    {
+        if (slotIndex >= 0 && slotIndex < shopSlots.Length)
+        {
+            Image slotImage = shopSlots[slotIndex];
+            if (slotImage != null)
+            {
+                slotImage.sprite = upgrade.icon;
+                slotImage.preserveAspect = true;
+            }
+        }
+    }
+
+    void ClearShopVisuals()
+    {
+        foreach (Image slot in shopSlots)
+        {
+            if (slot != null)
+            {
+                slot.sprite = null;
+            }
+        }
     }
 
     void DebugShop()
