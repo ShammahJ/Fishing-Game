@@ -87,7 +87,7 @@ public class Hook : MonoBehaviour
     void CollectFish()
     {
         
-        List<Fish> fishCollected = _hookCollision.CollectFish();
+        List<Fish> fishCollected = _hookCollision.fishes;
         float value = 0;
         float fishCount = fishCollected.Count;
         
@@ -95,6 +95,7 @@ public class Hook : MonoBehaviour
             value += fish.GetValue();
             Destroy(fish.gameObject);
         }
+        fishCollected.Clear();
         
         float totalValue = value * (fishCountMultiplier * (fishCount + 1f));
 

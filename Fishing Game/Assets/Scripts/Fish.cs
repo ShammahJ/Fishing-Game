@@ -17,7 +17,7 @@ public class Fish : MonoBehaviour
     
     private float _value;
     private float _speed;
-    private bool isHooked = false;
+    public bool isHooked = false;
     private bool _isFacingRight = true;
     private const float ScreenBorder = 11f;
     private const float ScaleValueMultiplier = 0.05f;//How big the fish is based on its value
