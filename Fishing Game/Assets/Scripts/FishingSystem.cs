@@ -2,7 +2,20 @@ using UnityEngine;
 
 public class FishingSystem : MonoBehaviour
 {
-    public Fish[] possibleCatches;
+    public FishIdentity[] possibleCatches;
+
+    // Codes I reused from class
+
+    // Max number of fishes to spawn
+    public int _desiredFishes = 5;
+
+    // Speed of fishes spawning
+    public float _spawnRate = 2.0f;
+
+    // Time since last spawn
+    private float _timeSinceLastSpawn = 0.0f;
+    // Can spawn
+    private bool _canSpawn = true;
 
     private void Start()
     {
@@ -10,27 +23,27 @@ public class FishingSystem : MonoBehaviour
     }
     public void Fish()
     {
-        Fish result = GetRandomCatch();
+        FishIdentity result = GetRandomCatch();
         Debug.Log(GetRandomCatch().objectName);
     }
 
     
-    Fish GetRandomCatch()
+    FishIdentity GetRandomCatch()
     {
         // Sets the current weight to 0, 
         float totalWeight = 0;
 
         // Checks each fish'es weight and adds it to the total weight
-        foreach (Fish currentFish in possibleCatches)
+        foreach (FishIdentity currentFish in possibleCatches)
         {
             totalWeight += 1f / currentFish.weight;
         }
 
         float randomWeight = Random.Range(0, totalWeight);
-        Fish selectedFish = null;
+        FishIdentity selectedFish = null;
         float cumulativeWeight = 0;
 
-        foreach (Fish currentFish in possibleCatches)
+        foreach (FishIdentity currentFish in possibleCatches)
         {
             /// /summary
             /// 1 out of weight chance

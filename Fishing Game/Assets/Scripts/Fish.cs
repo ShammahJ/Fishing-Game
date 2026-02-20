@@ -1,9 +1,12 @@
 using UnityEngine;
 
-[System.Serializable]
-public class Fish
+
+public class Fish : MonoBehaviour
 {
-    public string objectName;
-    public int weight;
-    public bool isNothing;
+    // Fish rigidbody
+    Rigidbody2D rb;
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 }
