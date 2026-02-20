@@ -41,7 +41,7 @@ public class FishingSystem : MonoBehaviour
             if (randomWeight <= cumulativeWeight)
             {
                 selectedFish = currentFish;
-                Debug.Log("Code Ran");
+                // Debug.Log("Code Ran");
                 break;
             }
         }
