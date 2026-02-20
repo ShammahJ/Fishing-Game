@@ -13,9 +13,11 @@ public class Fish : MonoBehaviour
     [SerializeField] private float maxValue;
     [SerializeField] private float minHeight;
     [SerializeField] private float maxHeight;
+    [SerializeField] private Collider2D hitbox;
     
     private float _value;
     private float _speed;
+    public bool isHooked = false;
     private bool _isFacingRight = true;
     private const float ScreenBorder = 11f;
     private const float ScaleValueMultiplier = 0.05f;//How big the fish is based on its value
@@ -25,6 +27,13 @@ public class Fish : MonoBehaviour
         return UpgradeManager.Instance.ModifyFishValue(_value);
     }
 
+    //On the fish getting hooked
+    public void Hook()
+    {
+        print("Hooked Fish");
+        hitbox.enabled = false;
+        isHooked = true;
+    }
     void Start()
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
@@ -49,6 +58,7 @@ public class Fish : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isHooked) return;
         if (_isFacingRight) {
             transform.Translate( _speed * Time.deltaTime * Vector3.right);
         } else {
