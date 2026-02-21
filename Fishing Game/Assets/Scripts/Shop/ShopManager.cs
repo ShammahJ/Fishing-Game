@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using static Upgrade;
@@ -12,6 +13,11 @@ public class ShopManager : MonoBehaviour
     public List<Upgrade> currentShopUpgrades = new List<Upgrade>();
     public Image[] shopSlots = new Image[4];
 
+    [Header("Tooltip")]
+    public TextMeshProUGUI tooltipNameText;
+    public TextMeshProUGUI tooltipDescriptionText;
+    public GameObject tooltipPanel;
+
     const float COMMON_CHANCE = 53.3f;
     const float RARE_CHANCE = 26.6f;
     const float EPIC_CHANCE = 13.3f;
@@ -20,6 +26,7 @@ public class ShopManager : MonoBehaviour
     private void Start()
     {
         RollShop();
+        HideTooltip();
     }
 
     public void RollShop()
@@ -36,6 +43,7 @@ public class ShopManager : MonoBehaviour
             {
                 currentShopUpgrades.Add(upgrade);
                 SetShopVisual(upgrade, i);
+                AddTooltipToSlot(upgrade, i);
             }
         }
 
@@ -94,6 +102,48 @@ public class ShopManager : MonoBehaviour
             {
                 slot.sprite = null;
             }
+        }
+    }
+
+    void AddTooltipToSlot(Upgrade upgrade, int slotIndex)
+    {
+        if (slotIndex >= 0 && slotIndex < shopSlots.Length)
+        {
+            Image slotImage = shopSlots[slotIndex];
+            if (slotImage != null)
+            {
+                slotImage.raycastTarget = true;
+                ShopSlotHover tooltip = slotImage.gameObject.GetComponent<ShopSlotHover>();
+                if (tooltip == null)
+                    tooltip = slotImage.gameObject.AddComponent<ShopSlotHover>();
+
+                tooltip.Initialize(upgrade, this);
+            }
+        }
+    }
+
+    public void ShowTooltip(Upgrade upgrade)
+    {
+        if (tooltipNameText != null)
+            tooltipNameText.text = upgrade.upgradeName;
+
+        if (tooltipDescriptionText != null)
+            tooltipDescriptionText.text = upgrade.description;
+
+        if (tooltipPanel != null)
+            tooltipPanel.SetActive(true);
+    }
+
+    public void HideTooltip()
+    {
+        if (tooltipPanel != null)
+            tooltipPanel.SetActive(false);
+        else
+        {
+            if (tooltipNameText != null)
+                tooltipNameText.text = "";
+            if (tooltipDescriptionText != null)
+                tooltipDescriptionText.text = "";
         }
     }
 

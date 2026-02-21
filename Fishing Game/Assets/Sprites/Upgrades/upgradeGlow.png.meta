@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2ae8034b13f0a69499de6c2ac87b3077
+guid: 479ab894b596a3d4e82d95dd70630867
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1426486914805705407
-    second: Hook_0
+      213: 6888065779245627099
+    second: upgradeGlow_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hook_0
+      name: upgradeGlow_0
       rect:
         serializedVersion: 2
-        x: 30
-        y: 4
-        width: 39
-        height: 82
+        x: 0
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 145534675b9143ce0800000000000000
-      internalID: -1426486914805705407
+      spriteID: bd6b579e453579f50800000000000000
+      internalID: 6888065779245627099
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Hook_0: -1426486914805705407
+      upgradeGlow_0: 6888065779245627099
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
