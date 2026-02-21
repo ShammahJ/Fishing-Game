@@ -3,12 +3,15 @@ using UnityEngine;
 public class FishMove : MonoBehaviour
 {
     public float speed = 3f;
-    private bool moveRight;
+    public bool moveRight;
 
-    public void Initialize(bool fromLeft, FishIdentity fishData)
+    private FishingSystem _gameSystem;
+
+    public void Initialize(bool fromLeft, FishIdentity fishData, FishingSystem system)
     {
         moveRight = fromLeft;
-
+        _gameSystem = system;
+        Debug.Log("This code ran");
         if (!fromLeft)
         {
             // Flip sprite if spawning from right
@@ -25,5 +28,11 @@ public class FishMove : MonoBehaviour
         // If not, move left
         float direction = moveRight ? 1f : -1f;
         transform.Translate(Vector2.right * direction * speed * Time.deltaTime);
+
+        if (Mathf.Abs(transform.position.x) > 12.5f)
+        {
+            _gameSystem.KillFish();
+            Destroy(gameObject);
+        }
     }
 }

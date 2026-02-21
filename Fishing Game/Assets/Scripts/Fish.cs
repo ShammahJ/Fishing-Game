@@ -4,9 +4,9 @@ using UnityEngine;
 public class Fish : MonoBehaviour
 {
     // Fish rigidbody
-    Rigidbody2D rb;
+    Rigidbody2D _rb;
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
     }
 }
