@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -981583600211390375, guid: 99bdab57cc8669148b630e168cdcec05, type: 3}
-  m_Color: {r: 1, g: 0.9320468, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -151,5 +151,6 @@ MonoBehaviour:
   hitbox: {fileID: 1016700921153464679}
   minStrength: 0.05
   maxStrength: 1
+  isRandomColor: 1
   strength: 0
   isHooked: 0

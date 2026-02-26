@@ -17,6 +17,7 @@ public class Fish : MonoBehaviour
     [SerializeField] private Collider2D hitbox;
     [SerializeField] private float minStrength;
     [SerializeField] private float maxStrength;
+    [SerializeField] private bool isRandomColor;
     private float _value;
     private float _speed;
     public float strength;
@@ -39,8 +40,12 @@ public class Fish : MonoBehaviour
     void Start()
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (isRandomColor) {
+            spriteRenderer.color = Color.HSVToRGB(Random.Range(0f, 1f), 1, 1);
+        }
+            
         
-        spriteRenderer.color = Random.ColorHSV();
         _speed = Random.Range(minSpeed, maxSpeed);
         _value = Random.Range(minValue, maxValue);
         strength = Random.Range(minStrength, maxStrength);

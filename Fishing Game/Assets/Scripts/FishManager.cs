@@ -1,10 +1,10 @@
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
 public class FishManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    [SerializeField] private GameObject fishPrefab;
+    [SerializeField] private List<GameObject> fishPrefabs;
     [SerializeField] [Range(0.05f,25f)] private float fishPerSecond = 1f;
     // private GameObject[] fishes;
     private float _fishTimer = 0;
@@ -17,6 +17,8 @@ public class FishManager : MonoBehaviour
     void SpawnFish()
     {
         // GameObject fish = Instantiate(fishPrefab);
+        int index = Random.Range(0, fishPrefabs.Count);
+        GameObject fishPrefab = fishPrefabs[index];
         Instantiate(fishPrefab);
     }
 
