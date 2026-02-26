@@ -156,10 +156,10 @@ public class Hook : MonoBehaviour
         }
 
         if (_strugglingRight) {
-            struggle = Random.Range(_currentStrength * 0.2f, _currentStrength);
+            struggle = Random.Range(_currentStrength * 0.75f, _currentStrength);
         }
         else {
-            struggle = Random.Range(-_currentStrength * 0.2f, -_currentStrength); 
+            struggle = Random.Range(-_currentStrength * 0.75f, -_currentStrength); 
         }
         
         // float mouseDelta = Input.mousePositionDelta.x * mouseSensitivity;    
