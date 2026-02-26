@@ -149,8 +149,8 @@ MonoBehaviour:
   minHeight: -4.5
   maxHeight: 2
   hitbox: {fileID: 1016700921153464679}
-  minStrength: 0.05
-  maxStrength: 1
+  minStrength: 2
+  maxStrength: 3
   isRandomColor: 1
   strength: 0
   isHooked: 0

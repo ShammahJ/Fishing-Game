@@ -2863,6 +2863,7 @@ MonoBehaviour:
     m_Flags: 0
   totalScoreText: {fileID: 271066947}
   newScoreText: {fileID: 182753875}
+  chanceToSwitchStruggleDirection: 0.1
   fishes: []
 --- !u!4 &1834013609
 Transform:

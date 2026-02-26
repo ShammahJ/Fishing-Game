@@ -18,9 +18,7 @@ public class SineBubble : MonoBehaviour {
     void Update()
     {
         _tick += Time.deltaTime;
-        print(_tick);
         Vector2 offset = new Vector2(Mathf.Sin(_tick * sineSpeed.x) * sineAmount.x, Mathf.Sin(_tick * sineSpeed.y) * sineAmount.y);
-        print(offset);
         transform.position = _startPosition + offset;
         // transform.rotation = _startRotation;
     }
