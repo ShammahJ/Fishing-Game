@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class Hook : MonoBehaviour
 {
@@ -30,7 +31,9 @@ public class Hook : MonoBehaviour
     private bool _active = false;
     private float _currentX;
     private float totalScore;
-  
+    public List<Fish> fishes = new List<Fish>();
+
+    private float _currentStrength;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     private void OnEnable()
@@ -46,11 +49,12 @@ public class Hook : MonoBehaviour
     void Awake()
     {
         _hookCollision = GetComponent<HookCollision>();
+        
     }
     void Start()
     {
         _height = MaxHeight;
-        
+        _hookCollision.onHook.AddListener(OnHook);
     }
 
 
@@ -84,18 +88,23 @@ public class Hook : MonoBehaviour
         
     }
 
+    void OnHook(Fish fish)
+    {
+        fishes.Add(fish);
+        _currentStrength += fish.strength;
+    }
+
     void CollectFish()
     {
-        
-        List<Fish> fishCollected = _hookCollision.fishes;
         float value = 0;
-        float fishCount = fishCollected.Count;
+        float fishCount = fishes.Count;
         
-        foreach (var fish in fishCollected) {
+        foreach (var fish in fishes) {
             value += fish.GetValue();
             Destroy(fish.gameObject);
         }
-        fishCollected.Clear();
+        fishes.Clear();
+        _currentStrength = 0;
         
         float totalValue = value * (fishCountMultiplier * (fishCount + 1f));
 
@@ -125,6 +134,7 @@ public class Hook : MonoBehaviour
     {
         DescendHook();
         float mouseXPos = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
+        float struggle = Random.Range(-_currentStrength, _currentStrength); 
         
         if (_active) {
             mouseXPos = Mathf.Clamp(mouseXPos, -MaxWidth, MaxWidth);
@@ -133,7 +143,7 @@ public class Hook : MonoBehaviour
             mouseXPos = Mathf.Clamp(mouseXPos, -DeadZone, DeadZone);
         }
       
-        _currentX = math.lerp(_currentX, mouseXPos, Time.deltaTime * mouseSpeed);
+        _currentX = math.lerp(_currentX, mouseXPos + struggle, Time.deltaTime * mouseSpeed);
         transform.position = new Vector3(_currentX, _height, transform.position.z);
     }
 }

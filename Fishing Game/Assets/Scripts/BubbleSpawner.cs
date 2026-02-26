@@ -5,17 +5,12 @@ public class BubbleSpawner : MonoBehaviour
 {
     public Transform _spawnParent;
     public List<GameObject> _bubbleTypes = new List<GameObject>();
-    public List<Transform> _spawnPoints = new List<Transform>();
+    // public List<Transform> _spawnPoints = new List<Transform>();
     public int _desiredBubbles = 20;
     public float _spawnRate = 0.2f;
     private float _timeSinceLastSpawn = 0.0f;
     private bool _canSpawn = true;
-    public static int _totalBubbles = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    public static int TotalBubbles = 0;
 
     // Update is called once per frame
     private void Update()
@@ -37,7 +32,7 @@ public class BubbleSpawner : MonoBehaviour
     }
     private void SpawnDesiredBubbles()
     {
-        if (_totalBubbles < _desiredBubbles)
+        if (TotalBubbles < _desiredBubbles)
         {
             if (_canSpawn)
             {
@@ -49,8 +44,9 @@ public class BubbleSpawner : MonoBehaviour
     private void SpawnRandomBubbles()
     {
         int bubbleType = Random.Range(0, _bubbleTypes.Count);
-        int spawnPoint = Random.Range(0, _spawnPoints.Count);
-        Instantiate(_bubbleTypes[bubbleType], _spawnPoints[spawnPoint].position, _spawnPoints[spawnPoint].rotation, _spawnParent);
-        _totalBubbles++;
+        Vector2 spawnLocation = new Vector2(Random.Range(-9f, 9f),-5f);
+        
+        Instantiate(_bubbleTypes[bubbleType], spawnLocation,Quaternion.identity, _spawnParent);
+        TotalBubbles++;
     }
 }

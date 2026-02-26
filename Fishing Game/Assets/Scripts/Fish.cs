@@ -1,6 +1,7 @@
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class Fish : MonoBehaviour
@@ -14,9 +15,11 @@ public class Fish : MonoBehaviour
     [SerializeField] private float minHeight;
     [SerializeField] private float maxHeight;
     [SerializeField] private Collider2D hitbox;
-    
+    [SerializeField] private float minStrength;
+    [SerializeField] private float maxStrength;
     private float _value;
     private float _speed;
+    public float strength;
     public bool isHooked = false;
     private bool _isFacingRight = true;
     private const float ScreenBorder = 11f;
@@ -30,7 +33,6 @@ public class Fish : MonoBehaviour
     //On the fish getting hooked
     public void Hook()
     {
-        print("Hooked Fish");
         hitbox.enabled = false;
         isHooked = true;
     }
@@ -41,6 +43,7 @@ public class Fish : MonoBehaviour
         spriteRenderer.color = Random.ColorHSV();
         _speed = Random.Range(minSpeed, maxSpeed);
         _value = Random.Range(minValue, maxValue);
+        strength = Random.Range(minStrength, maxStrength);
         
         transform.localScale = new Vector3(2 + _value * ScaleValueMultiplier, 1 + _value * ScaleValueMultiplier, 1 + _value * ScaleValueMultiplier);
 
