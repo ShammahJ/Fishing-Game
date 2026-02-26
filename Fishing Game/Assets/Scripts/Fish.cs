@@ -45,7 +45,7 @@ public class Fish : MonoBehaviour
         _value = Random.Range(minValue, maxValue);
         strength = Random.Range(minStrength, maxStrength);
         
-        transform.localScale = new Vector3(2 + _value * ScaleValueMultiplier, 1 + _value * ScaleValueMultiplier, 1 + _value * ScaleValueMultiplier);
+        transform.localScale = new Vector3(1 + _value * ScaleValueMultiplier, 1 + _value * ScaleValueMultiplier, 1 + _value * ScaleValueMultiplier);
 
         if (Random.Range(0, 2) == 1) {
             _isFacingRight = true;
@@ -53,6 +53,7 @@ public class Fish : MonoBehaviour
         }
         else {
             _isFacingRight = false;
+            spriteRenderer.flipX = true;
             transform.position = new Vector3(ScreenBorder,Random.Range(minHeight, maxHeight),0);
         }
       
