@@ -34,7 +34,7 @@ public class FishingSystem : MonoBehaviour
     }
     public void Fish()
     {
-        FishIdentity result = GetRandomCatch();
+        FishIdentity result = GetRandomFish();
 
         if (result == null || result.isNothing)
             return;
@@ -45,7 +45,7 @@ public class FishingSystem : MonoBehaviour
     }
 
     // Decides what fish to spawn
-    FishIdentity GetRandomCatch()
+    FishIdentity GetRandomFish()
     {
         // Sets the current weight to 0, 
         float totalWeight = 0;
@@ -113,15 +113,12 @@ public class FishingSystem : MonoBehaviour
             _spawnFromLeft = false;
 
 
-            GameObject fishObj = Instantiate(result.fishPrefab, _spawnPoint.position, Quaternion.identity);
+        GameObject fishObj = Instantiate(result.fishPrefab, _spawnPoint.position, Quaternion.identity);
 
 
         FishMove mover = fishObj.GetComponent<FishMove>();
         mover.speed = result.baseSpeed;
         mover.Initialize(_spawnFromLeft, result, this);
-
-        
-
         
     }
 

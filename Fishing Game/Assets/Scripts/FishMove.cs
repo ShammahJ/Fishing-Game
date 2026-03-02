@@ -19,8 +19,6 @@ public class FishMove : MonoBehaviour
         }
     }
     
-
-    
     void Update()
     {
         // Spawns moving to the right by default
