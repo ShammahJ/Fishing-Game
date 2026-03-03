@@ -29,8 +29,13 @@ public abstract class Upgrade : ScriptableObject
         return currentValue;
     }
 
-        //Game events
-        public virtual void OnUpgradeAdded(ActiveUpgrade runtime) { }
+    public virtual float ModifyFishValue(float currentValue, ActiveUpgrade runtime, Fish fish)
+    {
+        return currentValue;
+    }
+
+    //Game events
+    public virtual void OnUpgradeAdded(ActiveUpgrade runtime) { }
         public virtual void OnUpgradeRemoved(ActiveUpgrade runtime) { }
 
         public virtual void OnFishSpawned(Fish fish, ActiveUpgrade runtime) { }

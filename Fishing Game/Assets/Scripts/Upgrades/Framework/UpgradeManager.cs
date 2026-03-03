@@ -49,6 +49,18 @@ public class UpgradeManager : MonoBehaviour
             activeUpgrades.Remove(existing);
     }
 
+    public float ModifyFishValue(float baseValue, Fish fish)
+    {
+        float value = baseValue;
+
+        foreach (ActiveUpgrade upgrade in activeUpgrades)
+        {
+            value = upgrade.definition.ModifyFishValue(value, upgrade, fish);
+        }
+
+        return value;
+    }
+
     public float ModifyFishValue(float baseValue)
     {
         float value = baseValue;

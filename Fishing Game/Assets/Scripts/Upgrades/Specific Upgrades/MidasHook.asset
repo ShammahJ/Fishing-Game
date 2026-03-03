@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1735a51865e6854c97b6bbbb49aee74, type: 3}
+  m_Name: MidasHook
+  m_EditorClassIdentifier: Assembly-CSharp::MidasHook
+  id: midas_hook
+  upgradeName: Midas Hook
+  cost: 45
+  rarity: 0
+  description: Multiplies the value of the first fish on your hook by 1.35x
+  icon: {fileID: 0}
+  moneyBonus: 1.35

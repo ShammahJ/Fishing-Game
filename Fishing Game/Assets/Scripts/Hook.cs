@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 
 public class Hook : MonoBehaviour
 {
+    public static Hook Instance;
    
     [SerializeField] private float mouseSpeed = 15;//How fast the hook follows the mouse(X axis)
     [SerializeField] private float speed = 15;//How fast the hook descends(Y axis)
@@ -48,7 +49,15 @@ public class Hook : MonoBehaviour
     void Awake()
     {
         _hookCollision = GetComponent<HookCollision>();
-        
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+
+        _hookCollision = GetComponent<HookCollision>();
     }
     void Start()
     {
@@ -100,12 +109,13 @@ public class Hook : MonoBehaviour
         
         foreach (var fish in fishes) {
             value += fish.GetValue();
+            Debug.Log(fish.GetValue());
             Destroy(fish.gameObject);
         }
         fishes.Clear();
         _currentStrength = 0;
         
-        float totalValue = value * (fishCountMultiplier * (fishCount + 1f));
+        float totalValue = value * ((fishCountMultiplier * (fishCount + 1f)) + 1);
 
         _totalScore += totalValue;
         totalScoreText.text = "Score: " + _totalScore.ToString("F");
