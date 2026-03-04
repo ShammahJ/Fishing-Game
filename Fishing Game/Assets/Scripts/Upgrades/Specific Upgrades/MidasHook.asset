@@ -17,5 +17,5 @@ MonoBehaviour:
   cost: 45
   rarity: 0
   description: Multiplies the value of the first fish on your hook by 1.35x
-  icon: {fileID: 0}
+  icon: {fileID: 799617379505474164, guid: fbac92978bacd324faba3157d4978e59, type: 3}
   moneyBonus: 1.35

@@ -16,6 +16,7 @@ public class ShopManager : MonoBehaviour
     [Header("Tooltip")]
     public TextMeshProUGUI tooltipNameText;
     public TextMeshProUGUI tooltipDescriptionText;
+    public TextMeshProUGUI tooltipCostText;
     public GameObject tooltipPanel;
 
     const float COMMON_CHANCE = 53.3f;
@@ -129,6 +130,9 @@ public class ShopManager : MonoBehaviour
 
         if (tooltipDescriptionText != null)
             tooltipDescriptionText.text = upgrade.description;
+
+        if (tooltipCostText != null)
+            tooltipCostText.text = "$" + upgrade.cost.ToString();
 
         if (tooltipPanel != null)
             tooltipPanel.SetActive(true);

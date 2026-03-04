@@ -18,5 +18,5 @@ MonoBehaviour:
   rarity: 2
   description: 'If there is only one fish on your hook when you reel it in, triple
     its value. '
-  icon: {fileID: 0}
+  icon: {fileID: 3999373730589114145, guid: ba3039682d0c8db48a388f0a10aa2aef, type: 3}
   valMult: 3
