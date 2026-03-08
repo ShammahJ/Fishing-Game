@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FishMove : MonoBehaviour
 {
-    public float speed = 3f;
+    public float speed;
     public bool moveRight;
 
     private FishingSystem _gameSystem;
@@ -27,7 +27,16 @@ public class FishMove : MonoBehaviour
         float direction = moveRight ? 1f : -1f;
         transform.Translate(Vector2.right * direction * speed * Time.deltaTime);
 
-        if (Mathf.Abs(transform.position.x) > 12.5f)
+        //if (Mathf.Abs(transform.position.x) > 12.5f)
+        //{
+        //    _gameSystem.KillFish();
+        //    Destroy(gameObject);
+        //}
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Boundary"))
         {
             _gameSystem.KillFish();
             Destroy(gameObject);

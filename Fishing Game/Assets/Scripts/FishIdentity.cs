@@ -22,7 +22,8 @@ public class FishIdentity
     public int baseValue;
 
     [Header("Stats")]
-    public float baseSpeed;
+    public float minSpeed;
+    public float maxSpeed;
     public float baseStrength;
     // If we decide to factor in physical weight of the fish to the value
     //public float baseSize;

@@ -117,7 +117,7 @@ public class FishingSystem : MonoBehaviour
 
 
         FishMove mover = fishObj.GetComponent<FishMove>();
-        mover.speed = result.baseSpeed;
+        mover.speed = Random.Range(result.minSpeed, result.maxSpeed);
         mover.Initialize(_spawnFromLeft, result, this);
         
     }
