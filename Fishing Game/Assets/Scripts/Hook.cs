@@ -2,11 +2,16 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 
 public class Hook : MonoBehaviour
 {
+    
+    public UnityEvent<float> onCollect;
+    public UnityEvent onBreak;
+    
     public static Hook Instance;
    
     [SerializeField] private float mouseSpeed = 15;//How fast the hook follows the mouse(X axis)
@@ -23,7 +28,7 @@ public class Hook : MonoBehaviour
     
     private const float MaxHeight = 4.5f; //applies on both the surface and the bottom of the screen
     private const float MaxDepth = -4.5f;
-    private const float MaxWidth = 9.5f;
+    private const float MaxWidth = 9f;
     private const float DeadZone = 7f;
     private float _height;
     private bool _descending = true;
@@ -34,7 +39,6 @@ public class Hook : MonoBehaviour
 
     private float _currentStrength;
     private bool _strugglingRight;
-    
 
     private void OnEnable()
     {
@@ -86,7 +90,7 @@ public class Hook : MonoBehaviour
 
     void Update()
     {
-        if (castAction.IsPressed()) {
+        if (castAction.WasPressedThisFrame()) {
             CastLine();
         }
     }
@@ -109,7 +113,7 @@ public class Hook : MonoBehaviour
         
         foreach (var fish in fishes) {
             value += fish.GetValue();
-            Debug.Log(fish.GetValue());
+            // Debug.Log(fish.GetValue());
             Destroy(fish.gameObject);
         }
         fishes.Clear();
@@ -120,6 +124,7 @@ public class Hook : MonoBehaviour
         _totalScore += totalValue;
         totalScoreText.text = "Score: " + _totalScore.ToString("F");
         newScoreText.text = fishCount + " Fish collected, " + totalValue.ToString("F") + " total value!";
+        onCollect.Invoke(totalValue);
     }
 
     void BreakHook()
@@ -135,6 +140,7 @@ public class Hook : MonoBehaviour
         transform.position = new Vector3(_currentX, _height, transform.position.z);
         // totalScoreText.text = "Score: " + totalScore.ToString("F");
         newScoreText.text = "Your line broke!";
+        onBreak.Invoke();
     }
     
     void DescendHook()
