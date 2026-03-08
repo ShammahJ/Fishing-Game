@@ -28,7 +28,7 @@ public class Hook : MonoBehaviour
     
     private const float MaxHeight = 4.5f; //applies on both the surface and the bottom of the screen
     private const float MaxDepth = -4.5f;
-    private const float MaxWidth = 9.5f;
+    private const float MaxWidth = 9f;
     private const float DeadZone = 7f;
     private float _height;
     private bool _descending = true;
@@ -90,7 +90,7 @@ public class Hook : MonoBehaviour
 
     void Update()
     {
-        if (castAction.IsPressed()) {
+        if (castAction.WasPressedThisFrame()) {
             CastLine();
         }
     }

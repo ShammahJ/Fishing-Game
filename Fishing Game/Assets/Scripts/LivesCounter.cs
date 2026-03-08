@@ -4,21 +4,12 @@ using UnityEngine;
 
 public class LivesCounter : MonoBehaviour
 {
-    [SerializeField] GameManager _gameManager;
+    [SerializeField] FishManager _fishManager;
     [SerializeField] GameObject livesPrefab;
-    private void Awake()
-    {
-        _gameManager.livesChanged.AddListener(OnLivesChange);
-        OnLivesChange(3);
-    }
 
-    private void OnLivesChange(int lives)
+    public void OnLivesChange(int lives)
     {
         Transform[] children = GetComponentsInChildren<Transform>();
-        foreach (Transform child in children) {
-            print(child);
-        }
-
         int currentLives = children.Length - 1;
         if (lives > currentLives) {
             for (int i = currentLives; i < lives; i++) {
