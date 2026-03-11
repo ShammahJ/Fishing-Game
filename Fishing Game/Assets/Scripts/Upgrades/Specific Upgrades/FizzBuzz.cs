@@ -5,32 +5,46 @@ using UnityEngine;
 public class FizzBuzz : Upgrade
 {
     [Header("Upgrade Values")]
-    public float moneyBonus;
-    public float valMult;
+    public float moneyBonus = 50f;
+    public float valMult = 3f;
 
-    private int index = 0;
+    //we're using a class inside a scriptable object isn't that scary
+    [System.Serializable]
+    private class FizzBuzzData
+    {
+        public int index = 0;
+    }
 
     public override float ModifyFishValue(float currentValue, ActiveUpgrade runtime, Fish fish)
     {
-        if (index % 3 == 0)
+        //get or create the runtime data
+        FizzBuzzData data = runtime.data as FizzBuzzData;
+        if (data == null)
         {
-            if (index % 5 == 0)
-            {
-                index++;
-                return (currentValue + moneyBonus) * valMult;
-            }else
-            {
-                index++;
-                return currentValue + moneyBonus;
-            }
-        } else if (index % 5 == 0)
+            data = new FizzBuzzData();
+            runtime.data = data;
+        }
+
+        int currentIndex = data.index;
+        data.index++;
+
+        bool isFizz = (currentIndex % 3 == 0);
+        bool isBuzz = (currentIndex % 5 == 0);
+
+        if (isFizz && isBuzz)
         {
-            index++;
+            return (currentValue + moneyBonus) * valMult;
+        }
+        else if (isFizz)
+        {
+            return currentValue + moneyBonus;
+        }
+        else if (isBuzz)
+        {
             return currentValue * valMult;
         }
         else
         {
-            index++;
             return currentValue;
         }
     }

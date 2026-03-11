@@ -2363,8 +2363,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ecfacb0a11463a4a8f4cffa257c483f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeTester
-  upgrade: {fileID: 11400000, guid: 23f619469f5a4a04295782019dd0ed03, type: 2}
-  upgrade2: {fileID: 11400000, guid: a20640d8959baa34c8ecc7c16c4d1e8c, type: 2}
+  upgrade: {fileID: 11400000, guid: c980b95713611af43a0ea786b82baa25, type: 2}
+  upgrade2: {fileID: 11400000, guid: 164af8a4ed9062d44ad747041b8a9081, type: 2}
 --- !u!4 &1025445038
 Transform:
   m_ObjectHideFlags: 0

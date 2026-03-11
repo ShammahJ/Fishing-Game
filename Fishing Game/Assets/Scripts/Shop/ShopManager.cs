@@ -136,6 +136,12 @@ public class ShopManager : MonoBehaviour
 
         if (tooltipPanel != null)
             tooltipPanel.SetActive(true);
+
+        if (tooltipPanel != null)
+        {
+            tooltipPanel.SetActive(true);
+            //LayoutRebuilder.ForceRebuildLayoutImmediate(tooltipPanel.GetComponent<RectTransform>());
+        }
     }
 
     public void HideTooltip()

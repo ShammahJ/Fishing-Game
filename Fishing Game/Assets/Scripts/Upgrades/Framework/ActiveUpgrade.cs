@@ -2,12 +2,14 @@
 public class ActiveUpgrade
 {
     public Upgrade definition;
-    public int stacks = 1;
+    public int stacks;
+    public object data;
 
-    public ActiveUpgrade(Upgrade upgrade)
+    public ActiveUpgrade(Upgrade definition)
     {
-        definition = upgrade;
-        stacks = 1;
+        this.definition = definition;
+        this.stacks = 1;
+        this.data = null;
     }
 }
 

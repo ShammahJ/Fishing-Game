@@ -16,8 +16,9 @@ MonoBehaviour:
   upgradeName: The Chosen Few
   cost: 95
   rarity: 1
-  description: If there are 4 or less fish on your hook when you reel it back in,
-    this upgrade gains 0.1x mult value that applies every time you collect fish.
-    Resets when you fish more than 4 fish on a single hook.
+  description: If there are 4 or less fish on your hook when you reel them in, this
+    upgrade gains 0.1x mult value that applies every time you collect fish. Resets
+    when you fish more than 4 fish on a single hook.
   icon: {fileID: 0}
-  valMult: 1
+  bonusPerCatch: 0.1
+  defaultMultiplier: 1

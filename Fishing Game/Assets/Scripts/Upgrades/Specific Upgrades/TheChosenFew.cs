@@ -1,25 +1,45 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "TheChosenFew", menuName = "Upgrades/The Chosen Few")]
 public class TheChosenFew : Upgrade
 {
     [Header("Upgrade Values")]
-    public float valMult;
+    public float bonusPerCatch = 0.1f;
+    public float defaultMultiplier = 1f;
 
     public override float ModifyFishValue(float currentValue, ActiveUpgrade runtime, Fish fish)
     {
-        Increment();
-        return currentValue * valMult;
+        float currentMult = GetMultiplier(runtime);
+        return currentValue * currentMult;
     }
 
-    private void Increment()
+    public override void OnHookRetrieved(List<Fish> caughtFish, ActiveUpgrade runtime)
     {
-        if (Hook.Instance.fishes.Count <= 4)
+        float currentMult = GetMultiplier(runtime);
+
+        if (caughtFish.Count <= 4)
         {
-            valMult += 0.1f;
-        } else
-        {
-            valMult = 1f;
+            float newMult = currentMult + bonusPerCatch;
+            SetMultiplier(runtime, newMult);
         }
+        else
+        {
+            SetMultiplier(runtime, defaultMultiplier);
+        }
+    }
+
+    private float GetMultiplier(ActiveUpgrade runtime)
+    {
+        if (runtime.data == null)
+        {
+            runtime.data = defaultMultiplier;
+        }
+        return (float)runtime.data;
+    }
+
+    private void SetMultiplier(ActiveUpgrade runtime, float value)
+    {
+        runtime.data = value;
     }
 }
