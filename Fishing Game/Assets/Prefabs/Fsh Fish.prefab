@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4002905212700566401}
   - component: {fileID: 5819673467207141636}
   - component: {fileID: 7430568440951506537}
-  - component: {fileID: 2286584893540500418}
   - component: {fileID: 1925385343991385396}
   m_Layer: 3
   m_Name: Fsh Fish
@@ -168,20 +167,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 2
---- !u!114 &2286584893540500418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8234842185368791532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9295788015cc64645aff7a0bb78ccd89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FishBase
-  speed: 0
-  moveRight: 0
 --- !u!114 &1925385343991385396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,7 +183,5 @@ MonoBehaviour:
   moveRight: 0
   minAmplitude: 1
   maxAmplitude: 4
-  amplitude: 1
   minFrequency: 2
   maxFrequency: 6
-  frequency: 2

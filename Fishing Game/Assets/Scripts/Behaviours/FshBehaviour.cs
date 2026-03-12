@@ -4,19 +4,26 @@ public class FshBehaviour : FishBase
 {
     public float minAmplitude;
     public float maxAmplitude;
-    public float amplitude;
+    private float amplitude;
 
     public float minFrequency;
     public float maxFrequency;
-    public float frequency;
+    private float frequency;
 
-    public override void Initialize(bool fromLeft, FishIdentity fishData, FishingSystem system)
+    //public override void Initialize(bool fromLeft, FishIdentity fishData, FishingSystem system)
+    //{
+    //    base.Initialize(fromLeft, fishData, system);
+
+    //    amplitude = Random.Range(minAmplitude, maxAmplitude);
+    //    frequency = Random.Range(minFrequency, maxFrequency);
+    //}
+    private void Start()
     {
-        base.Initialize(fromLeft, fishData, system);
-
         amplitude = Random.Range(minAmplitude, maxAmplitude);
         frequency = Random.Range(minFrequency, maxFrequency);
+
     }
+
     protected override void FishMove()
     {
         float direction = moveRight ? 1f : -1f;
@@ -24,5 +31,7 @@ public class FshBehaviour : FishBase
         float yOffset = Mathf.Sin(Time.time * frequency) * amplitude;
 
         transform.Translate(new Vector2(direction * speed * Time.deltaTime, yOffset * Time.deltaTime));
+
+        Debug.Log("No eyes' special movement is being called");
     }
 }

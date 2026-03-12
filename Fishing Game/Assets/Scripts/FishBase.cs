@@ -26,6 +26,7 @@ public class FishBase : MonoBehaviour
     {
         FishMove();
         SpecialBehaviour();
+        // Debug.Log("Base update is running");
     }
 
     protected virtual void SpecialBehaviour()
@@ -42,11 +43,6 @@ public class FishBase : MonoBehaviour
         float direction = moveRight ? 1f : -1f;
         transform.Translate(Vector2.right * direction * speed * Time.deltaTime);
 
-        //if (Mathf.Abs(transform.position.x) > 12.5f)
-        //{
-        //    _gameSystem.KillFish();
-        //    Destroy(gameObject);
-        //}
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

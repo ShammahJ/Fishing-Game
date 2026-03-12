@@ -5,34 +5,31 @@ public class FishhsiFBehaviour : FishBase
     public float minTurnTime = 2f;
     public float maxTurnTime = 5f;
 
-    private float _timer;
+    private float timer;
+    private int turns = 0;
+    private float turnLimit;
 
     void Start()
     {
         ResetTimer();
+        turnLimit = Random.Range(3, 6);
     }
 
     protected override void SpecialBehaviour()
     {
-        _timer -= Time.deltaTime;
-
-        if (_timer <= 0)
+        Debug.Log("Special Condition being called");
+        
+        timer -= Time.deltaTime;
+        if (timer <= 0 && turns != turnLimit)
         {
-            FishMove();
+            moveRight = !moveRight;
+            ResetTimer();
+            turns++;
         }
     }
 
     void ResetTimer()
     {
-        _timer = Random.Range(minTurnTime, maxTurnTime);
-    }
-    protected override void FishMove()
-    {
-        moveRight = !moveRight;
-        float direction = moveRight ? 1f : -1f;
-        transform.Translate(Vector2.right * direction * speed * Time.deltaTime);
-        // This Code Ran
-
-        ResetTimer();
+        timer = Random.Range(minTurnTime, maxTurnTime);
     }
 }
