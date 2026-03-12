@@ -15,7 +15,7 @@ public class FishingSystem : MonoBehaviour
     public int _currentFishCount = 0;
 
     // Max number of fishes to spawn
-    public int _desiredFishes = 5;
+    public int _desiredFishes;
 
     // Speed of fishes spawning
     public float _spawnRate = 2.0f;

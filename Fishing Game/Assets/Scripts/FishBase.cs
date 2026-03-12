@@ -15,7 +15,10 @@ public class FishBase : MonoBehaviour
         if (!fromLeft)
         {
             // Flip sprite if spawning from right
-            transform.localScale = new Vector3(-1, 1, 1);
+            // Flip the existing prefab scale
+            Vector3 scale = transform.localScale;
+            scale.x *= -1;
+            transform.localScale = scale;
         }
     }
 
@@ -25,9 +28,10 @@ public class FishBase : MonoBehaviour
         SpecialBehaviour();
     }
 
-    public virtual void SpecialBehaviour()
+    protected virtual void SpecialBehaviour()
     {
         // Not abstract because not every fish has to have a special behaviour
+        // Any child can change this
     }
 
     protected virtual void FishMove()
