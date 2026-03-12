@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 581977128797688196}
   - component: {fileID: -4621097324176706843}
   - component: {fileID: -4865507400430958666}
-  - component: {fileID: 8512074012362002343}
+  - component: {fileID: -8546011496870190646}
   m_Layer: 3
   m_Name: Rare Fish
   m_TagString: Fish
@@ -167,7 +167,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 2
---- !u!114 &8512074012362002343
+--- !u!114 &-8546011496870190646
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,8 +176,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6221906877025051847}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f94f7a718d1d3874c95ea1f0f5206244, type: 3}
+  m_Script: {fileID: 11500000, guid: 9295788015cc64645aff7a0bb78ccd89, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FishMove
+  m_EditorClassIdentifier: Assembly-CSharp::FishBase
   speed: 0
   moveRight: 0

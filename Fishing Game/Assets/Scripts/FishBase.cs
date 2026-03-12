@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FishMove : MonoBehaviour
+public class FishBase : MonoBehaviour
 {
     public float speed;
     public bool moveRight;
@@ -11,15 +11,26 @@ public class FishMove : MonoBehaviour
     {
         moveRight = fromLeft;
         _gameSystem = system;
-        Debug.Log("This code ran");
+        // Debug.Log("This code ran");
         if (!fromLeft)
         {
             // Flip sprite if spawning from right
             transform.localScale = new Vector3(-1, 1, 1);
         }
     }
-    
+
     void Update()
+    {
+        FishMove();
+        SpecialBehaviour();
+    }
+
+    public virtual void SpecialBehaviour()
+    {
+        // Not abstract because not every fish has to have a special behaviour
+    }
+
+    protected virtual void FishMove()
     {
         // Spawns moving to the right by default
         // If the fish spawns default, move right

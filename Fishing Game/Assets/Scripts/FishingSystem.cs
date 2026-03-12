@@ -22,8 +22,6 @@ public class FishingSystem : MonoBehaviour
 
     // Time since last spawn
     private float _timeSinceLastSpawn = 0.0f;
-    // Can spawn
-    private bool _canSpawn = true;
 
     // Directuon of the fis
     private bool _spawnFromLeft;
@@ -116,9 +114,9 @@ public class FishingSystem : MonoBehaviour
         GameObject fishObj = Instantiate(result.fishPrefab, _spawnPoint.position, Quaternion.identity);
 
 
-        FishMove mover = fishObj.GetComponent<FishMove>();
-        mover.speed = Random.Range(result.minSpeed, result.maxSpeed);
-        mover.Initialize(_spawnFromLeft, result, this);
+        FishBase fbase = fishObj.GetComponent<FishBase>();
+        fbase.speed = Random.Range(result.minSpeed, result.maxSpeed);
+        fbase.Initialize(_spawnFromLeft, result, this);
         
     }
 

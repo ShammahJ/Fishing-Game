@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 583512550612837205}
   - component: {fileID: -45756262316163874}
   - component: {fileID: -6492324504318050142}
-  - component: {fileID: 4282307281819015618}
+  - component: {fileID: -2413536569840628722}
   m_Layer: 3
   m_Name: Common Fish
   m_TagString: Fish
@@ -167,7 +167,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 2
---- !u!114 &4282307281819015618
+--- !u!114 &-2413536569840628722
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,8 +176,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1064505559755155845}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f94f7a718d1d3874c95ea1f0f5206244, type: 3}
+  m_Script: {fileID: 11500000, guid: 9295788015cc64645aff7a0bb78ccd89, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FishMove
+  m_EditorClassIdentifier: Assembly-CSharp::FishBase
   speed: 0
   moveRight: 0
