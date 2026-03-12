@@ -17,7 +17,7 @@ public class FishhsiFBehaviour : FishBase
 
     protected override void SpecialBehaviour()
     {
-        Debug.Log("Special Condition being called");
+        //Debug.Log("Special Condition being called");
         
         timer -= Time.deltaTime;
         if (timer <= 0 && turns != turnLimit)

@@ -2,15 +2,25 @@ using UnityEngine;
 
 public class FishBase : MonoBehaviour
 {
+    public int size;
     public float speed;
     public bool moveRight;
 
     private FishingSystem _gameSystem;
 
-    public virtual void Initialize(bool fromLeft, FishIdentity fishData, FishingSystem system)
+    public void Initialize(bool fromLeft, FishIdentity fishData, FishingSystem system)
     {
         moveRight = fromLeft;
         _gameSystem = system;
+
+
+        Vector3 fishSize = transform.localScale;
+        fishSize.x = size;
+        fishSize.y = size;
+        fishSize.z = size;
+        transform.localScale = fishSize;
+
+
         // Debug.Log("This code ran");
         if (!fromLeft)
         {

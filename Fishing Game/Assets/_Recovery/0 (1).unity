@@ -748,7 +748,7 @@ Transform:
   m_GameObject: {fileID: 799207760}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30, y: 0, z: 0}
+  m_LocalPosition: {x: 40, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1302,7 +1302,7 @@ Transform:
   m_GameObject: {fileID: 1538662362}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15, y: 0, z: 0}
+  m_LocalPosition: {x: -20, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1741,6 +1741,8 @@ MonoBehaviour:
     maxSpeed: 5
     baseStrength: 0
     fishPrefab: {fileID: 1064505559755155845, guid: 3318ad018847d1d439f16dfd65d3d2b6, type: 3}
+    minSize: 1
+    maxSize: 1
     isNothing: 0
   - objectName: Rare Fish
     weight: 5
@@ -1750,6 +1752,8 @@ MonoBehaviour:
     maxSpeed: 3
     baseStrength: 0
     fishPrefab: {fileID: 6221906877025051847, guid: 78606caaa7f929648ae993b8b72a5272, type: 3}
+    minSize: 1
+    maxSize: 1
     isNothing: 0
   - objectName: Epic  Fish
     weight: 10
@@ -1759,6 +1763,8 @@ MonoBehaviour:
     maxSpeed: 4
     baseStrength: 0
     fishPrefab: {fileID: 5987177212462942690, guid: b7dd643be4d420447b72a519d627df0a, type: 3}
+    minSize: 1
+    maxSize: 1
     isNothing: 0
   - objectName: Legendary  Fish
     weight: 20
@@ -1768,6 +1774,8 @@ MonoBehaviour:
     maxSpeed: 5
     baseStrength: 0
     fishPrefab: {fileID: 2359681045269111058, guid: e206d45f081a50c45a472c0ffdb18d62, type: 3}
+    minSize: 1
+    maxSize: 1
     isNothing: 0
   - objectName: FishhsiF
     weight: 1
@@ -1777,6 +1785,8 @@ MonoBehaviour:
     maxSpeed: 4
     baseStrength: 0
     fishPrefab: {fileID: 8287314129032738611, guid: 831b5300997a93746ace4e334c63f791, type: 3}
+    minSize: 2
+    maxSize: 5
     isNothing: 0
   - objectName: Fsh
     weight: 5
@@ -1786,6 +1796,8 @@ MonoBehaviour:
     maxSpeed: 4
     baseStrength: 0
     fishPrefab: {fileID: 8234842185368791532, guid: c4de5d1cc3474e1498a71cb2ec7e8bce, type: 3}
+    minSize: 3
+    maxSize: 6
     isNothing: 0
   _currentFishCount: 0
   _desiredFishes: 20

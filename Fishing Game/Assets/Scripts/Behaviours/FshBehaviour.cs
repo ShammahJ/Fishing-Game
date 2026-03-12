@@ -10,18 +10,16 @@ public class FshBehaviour : FishBase
     public float maxFrequency;
     private float frequency;
 
-    //public override void Initialize(bool fromLeft, FishIdentity fishData, FishingSystem system)
-    //{
-    //    base.Initialize(fromLeft, fishData, system);
-
-    //    amplitude = Random.Range(minAmplitude, maxAmplitude);
-    //    frequency = Random.Range(minFrequency, maxFrequency);
-    //}
     private void Start()
     {
         amplitude = Random.Range(minAmplitude, maxAmplitude);
         frequency = Random.Range(minFrequency, maxFrequency);
 
+
+        Vector3 fishSize = transform.localScale;
+        fishSize.x = size;
+        fishSize.y = size;
+        fishSize.z = size;
     }
 
     protected override void FishMove()
@@ -31,7 +29,5 @@ public class FshBehaviour : FishBase
         float yOffset = Mathf.Sin(Time.time * frequency) * amplitude;
 
         transform.Translate(new Vector2(direction * speed * Time.deltaTime, yOffset * Time.deltaTime));
-
-        Debug.Log("No eyes' special movement is being called");
     }
 }

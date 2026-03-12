@@ -110,12 +110,15 @@ public class FishingSystem : MonoBehaviour
         if (_spawnPoint.position.x > 0)
             _spawnFromLeft = false;
 
-
+        // Make the fish
         GameObject fishObj = Instantiate(result.fishPrefab, _spawnPoint.position, Quaternion.identity);
 
-
+        // Adjust the speed of the fish
         FishBase fbase = fishObj.GetComponent<FishBase>();
         fbase.speed = Random.Range(result.minSpeed, result.maxSpeed);
+
+        // Adjust the size of the fish
+        fbase.size = Random.Range(result.minSize, result.maxSize);
         fbase.Initialize(_spawnFromLeft, result, this);
         
     }

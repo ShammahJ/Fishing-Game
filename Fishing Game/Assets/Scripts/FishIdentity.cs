@@ -34,6 +34,10 @@ public class FishIdentity
 
     [Header("Fish Prefab")]
     public GameObject fishPrefab;
+    [Header("Make the minimum at least 2 please.")]
+    public int minSize;
+    public int maxSize;
+
 
     public bool isNothing;
 }
