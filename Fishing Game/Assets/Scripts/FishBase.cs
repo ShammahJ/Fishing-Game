@@ -7,7 +7,7 @@ public class FishBase : MonoBehaviour
 
     private FishingSystem _gameSystem;
 
-    public void Initialize(bool fromLeft, FishIdentity fishData, FishingSystem system)
+    public virtual void Initialize(bool fromLeft, FishIdentity fishData, FishingSystem system)
     {
         moveRight = fromLeft;
         _gameSystem = system;
