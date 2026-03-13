@@ -7,6 +7,8 @@ using UnityEngine.Serialization;
 public class GameManager : MonoBehaviour {
 
     [SerializeField] private FishManager fishScene;
+    public UpgradeInventoryPanel inventoryPanel;
+    private float money;
 
     public static GameManager instance = null;
 
@@ -34,6 +36,14 @@ public class GameManager : MonoBehaviour {
         {
             SceneManager.LoadScene("Shop");
         }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Debug.Log(money);
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            inventoryPanel.TogglePanel();
+        }
     }
 
     void StartFishingGame()
@@ -46,5 +56,10 @@ public class GameManager : MonoBehaviour {
     {
         print("endFishingGame");
         fishScene.gameObject.SetActive(false);
+    }
+
+    public void CollectMoney(float value)
+    {
+        money += value;
     }
 }

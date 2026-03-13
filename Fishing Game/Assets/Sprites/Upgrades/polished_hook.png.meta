@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 21f3a23337ee57c4dbd977bd99554d7e
+guid: 8b0c4fb2dd553874c8833cc0f920aa2c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -49532090776259237
-    second: hook_0
+      213: 6309265439411434525
+    second: polished_hook_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hook_0
+      name: polished_hook_0
       rect:
         serializedVersion: 2
-        x: 30
-        y: 4
-        width: 39
-        height: 82
+        x: 19
+        y: 7
+        width: 26
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b557c4c63d6005ff0800000000000000
-      internalID: -49532090776259237
+      spriteID: d1474cd3d730f8750800000000000000
+      internalID: 6309265439411434525
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      hook_0: -49532090776259237
+      polished_hook_0: 6309265439411434525
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -112,7 +112,7 @@ public class Hook : MonoBehaviour
         float fishCount = fishes.Count;
 
         if (UpgradeManager.Instance != null)
-        {
+        { //notifies all upgrades with NotifyHookRetrieved() to activate
             UpgradeManager.Instance.NotifyHookRetrieved(fishes);
         }
 

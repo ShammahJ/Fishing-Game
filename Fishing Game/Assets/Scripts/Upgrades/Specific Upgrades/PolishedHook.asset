@@ -16,6 +16,6 @@ MonoBehaviour:
   upgradeName: Polished Hook
   cost: 45
   rarity: 0
-  description: Adds an enormous $8 to the value of the all fish you catch.
-  icon: {fileID: -49532090776259237, guid: 21f3a23337ee57c4dbd977bd99554d7e, type: 3}
-  moneyBonus: 8
+  description: Adds an enormous $1 to the value of the all fish you catch.
+  icon: {fileID: 6309265439411434525, guid: 8b0c4fb2dd553874c8833cc0f920aa2c, type: 3}
+  moneyBonus: 1

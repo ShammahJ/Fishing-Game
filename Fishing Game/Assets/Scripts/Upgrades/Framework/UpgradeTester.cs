@@ -7,12 +7,12 @@ public class UpgradeTester : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             UpgradeManager.Instance.AddUpgrade(upgrade);
             Debug.Log($"Added {upgrade.name}");
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             UpgradeManager.Instance.AddUpgrade(upgrade2);
             Debug.Log($"Added {upgrade2.name}");

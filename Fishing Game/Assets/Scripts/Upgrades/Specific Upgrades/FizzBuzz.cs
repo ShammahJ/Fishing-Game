@@ -8,28 +8,17 @@ public class FizzBuzz : Upgrade
     public float moneyBonus = 50f;
     public float valMult = 3f;
 
-    //we're using a class inside a scriptable object isn't that scary
-    [System.Serializable]
-    private class FizzBuzzData
-    {
-        public int index = 0;
-    }
-
     public override float ModifyFishValue(float currentValue, ActiveUpgrade runtime, Fish fish)
     {
         //get or create the runtime data
-        FizzBuzzData data = runtime.data as FizzBuzzData;
-        if (data == null)
-        {
-            data = new FizzBuzzData();
-            runtime.data = data;
-        }
+        if (runtime.data == null)
+            runtime.data = 0;
 
-        int currentIndex = data.index;
-        data.index++;
+        int index = (int)runtime.data;
+        runtime.data = index + 1;
 
-        bool isFizz = (currentIndex % 3 == 0);
-        bool isBuzz = (currentIndex % 5 == 0);
+        bool isFizz = (index % 3 == 0);
+        bool isBuzz = (index % 5 == 0);
 
         if (isFizz && isBuzz)
         {
