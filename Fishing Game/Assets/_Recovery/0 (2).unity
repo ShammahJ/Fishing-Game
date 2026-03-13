@@ -307,9 +307,6 @@ MonoBehaviour:
   sinePositionAmount: {x: 0, y: 0}
   sineRotationAmount: 5
   sineSpeed: {x: 0.25, y: 0}
-  _startPosition: {x: 0, y: 0}
-  _startRotation: {x: 0, y: 0, z: 0, w: 0}
-  _tick: 0
 --- !u!1 &271066945
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,18 +495,14 @@ MonoBehaviour:
   - {fileID: 3839990507532285524, guid: 47a2b10a2cf07cc46acd2840efb3accb, type: 3}
   - {fileID: 3839990507532285524, guid: cebeb1845a44b0b49b1425f526918ea1, type: 3}
   fishPerSecond: 2
-  _fishTimer: 0
   livesChanged:
     m_PersistentCalls:
       m_Calls:
       - {m_Target: {fileID: 1226631941}, m_TargetAssemblyTypeName: LivesCounter, Assembly-CSharp, m_MethodName: OnLivesChange, m_Mode: 0, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-    m_CallsDirty: 1
   outOfLives:
     m_PersistentCalls:
       m_Calls:
       - {m_Target: {fileID: 1036641040}, m_TargetAssemblyTypeName: , m_MethodName: , m_Mode: 0, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: , m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-    m_CallsDirty: 1
-  _lives: 0
 --- !u!1 &383559380
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,9 +642,6 @@ MonoBehaviour:
   sinePositionAmount: {x: 0, y: 0.25}
   sineRotationAmount: 0
   sineSpeed: {x: 0, y: 0.25}
-  _startPosition: {x: 0, y: 0}
-  _startRotation: {x: 0, y: 0, z: 0, w: 0}
-  _tick: 0
 --- !u!212 &417657860
 SpriteRenderer:
   serializedVersion: 2
@@ -838,9 +828,6 @@ MonoBehaviour:
   sinePositionAmount: {x: 0, y: 0.25}
   sineRotationAmount: 0
   sineSpeed: {x: 0, y: 0.25}
-  _startPosition: {x: 0, y: 0}
-  _startRotation: {x: 0, y: 0, z: 0, w: 0}
-  _tick: 0
 --- !u!212 &558471065
 SpriteRenderer:
   serializedVersion: 2
@@ -1039,9 +1026,6 @@ MonoBehaviour:
   sinePositionAmount: {x: 0, y: 0.25}
   sineRotationAmount: 0
   sineSpeed: {x: 0, y: 0.25}
-  _startPosition: {x: 0, y: 0}
-  _startRotation: {x: 0, y: 0, z: 0, w: 0}
-  _tick: 0
 --- !u!212 &568083883
 SpriteRenderer:
   serializedVersion: 2
@@ -1453,9 +1437,6 @@ MonoBehaviour:
   sinePositionAmount: {x: 0, y: 0.25}
   sineRotationAmount: 0
   sineSpeed: {x: 0, y: 0.25}
-  _startPosition: {x: 0, y: 0}
-  _startRotation: {x: 0, y: 0, z: 0, w: 0}
-  _tick: 0
 --- !u!212 &844492828
 SpriteRenderer:
   serializedVersion: 2
@@ -1699,9 +1680,6 @@ MonoBehaviour:
   sinePositionAmount: {x: 0, y: 0.25}
   sineRotationAmount: 0
   sineSpeed: {x: 0, y: 0.25}
-  _startPosition: {x: 0, y: 0}
-  _startRotation: {x: 0, y: 0, z: 0, w: 0}
-  _tick: 0
 --- !u!212 &899606460
 SpriteRenderer:
   serializedVersion: 2
@@ -1809,9 +1787,6 @@ MonoBehaviour:
   sinePositionAmount: {x: 0, y: 0.25}
   sineRotationAmount: 0
   sineSpeed: {x: 0, y: 0.25}
-  _startPosition: {x: 0, y: 0}
-  _startRotation: {x: 0, y: 0, z: 0, w: 0}
-  _tick: 0
 --- !u!212 &988324234
 SpriteRenderer:
   serializedVersion: 2
@@ -1919,9 +1894,6 @@ MonoBehaviour:
   sinePositionAmount: {x: 0, y: 0.25}
   sineRotationAmount: 0
   sineSpeed: {x: 0, y: 0.25}
-  _startPosition: {x: 0, y: 0}
-  _startRotation: {x: 0, y: 0, z: 0, w: 0}
-  _tick: 0
 --- !u!212 &1011991510
 SpriteRenderer:
   serializedVersion: 2
@@ -2029,9 +2001,6 @@ MonoBehaviour:
   sinePositionAmount: {x: 0, y: 0.25}
   sineRotationAmount: 0
   sineSpeed: {x: 0, y: 0.25}
-  _startPosition: {x: 0, y: 0}
-  _startRotation: {x: 0, y: 0, z: 0, w: 0}
-  _tick: 0
 --- !u!212 &1015119146
 SpriteRenderer:
   serializedVersion: 2
@@ -2482,9 +2451,6 @@ MonoBehaviour:
   sinePositionAmount: {x: 0, y: 0}
   sineRotationAmount: 5
   sineSpeed: {x: 0.25, y: 0}
-  _startPosition: {x: 0, y: 0}
-  _startRotation: {x: 0, y: 0, z: 0, w: 0}
-  _tick: 0
 --- !u!1 &1168688285
 GameObject:
   m_ObjectHideFlags: 0
@@ -2701,9 +2667,6 @@ MonoBehaviour:
   sinePositionAmount: {x: 0, y: 0.25}
   sineRotationAmount: 0
   sineSpeed: {x: 0, y: 0.25}
-  _startPosition: {x: 0, y: 0}
-  _startRotation: {x: 0, y: 0, z: 0, w: 0}
-  _tick: 0
 --- !u!212 &1280844696
 SpriteRenderer:
   serializedVersion: 2
@@ -2980,8 +2943,6 @@ MonoBehaviour:
   - {fileID: 5351577402856677649, guid: fe6cfb71b5ae975429e51bf7c2d0047c, type: 3}
   _desiredBubbles: 10
   _spawnRate: 2
-  _timeSinceLastSpawn: 0
-  _canSpawn: 1
 --- !u!4 &1479179815
 Transform:
   m_ObjectHideFlags: 0
@@ -3136,9 +3097,6 @@ MonoBehaviour:
   sinePositionAmount: {x: 0, y: 0}
   sineRotationAmount: 5
   sineSpeed: {x: 0.25, y: 0}
-  _startPosition: {x: 0, y: 0}
-  _startRotation: {x: 0, y: 0, z: 0, w: 0}
-  _tick: 0
 --- !u!1 &1834013605
 GameObject:
   m_ObjectHideFlags: 0
@@ -3271,11 +3229,9 @@ MonoBehaviour:
   onCollect:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   onBreak:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   mouseSpeed: 8
   speed: 5
   fishCountMultiplier: 0.05
@@ -3299,15 +3255,7 @@ MonoBehaviour:
   totalScoreText: {fileID: 271066947}
   newScoreText: {fileID: 182753875}
   chanceToSwitchStruggleDirection: 0.1
-  _hookCollision: {fileID: 0}
-  _height: 0
-  _descending: 1
-  _active: 0
-  _currentX: 0
-  _totalScore: 0
   fishes: []
-  _currentStrength: 0
-  _strugglingRight: 0
 --- !u!4 &1834013609
 Transform:
   m_ObjectHideFlags: 0
@@ -3369,8 +3317,6 @@ MonoBehaviour:
   onHook:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
-  _collectedValue: 0
 --- !u!50 &1834013612
 Rigidbody2D:
   serializedVersion: 5
@@ -3446,9 +3392,6 @@ MonoBehaviour:
   sinePositionAmount: {x: 0, y: 0}
   sineRotationAmount: 5
   sineSpeed: {x: 0.25, y: 0}
-  _startPosition: {x: 0, y: 0}
-  _startRotation: {x: 0, y: 0, z: 0, w: 0}
-  _tick: 0
 --- !u!1 &2064060823
 GameObject:
   m_ObjectHideFlags: 0
@@ -3497,9 +3440,6 @@ MonoBehaviour:
   sinePositionAmount: {x: 0, y: 0.25}
   sineRotationAmount: 0
   sineSpeed: {x: 0, y: 0.25}
-  _startPosition: {x: 0, y: 0}
-  _startRotation: {x: 0, y: 0, z: 0, w: 0}
-  _tick: 0
 --- !u!212 &2064060826
 SpriteRenderer:
   serializedVersion: 2
@@ -3607,9 +3547,6 @@ MonoBehaviour:
   sinePositionAmount: {x: 0, y: 0.25}
   sineRotationAmount: 0
   sineSpeed: {x: 0, y: 0.25}
-  _startPosition: {x: 0, y: 0}
-  _startRotation: {x: 0, y: 0, z: 0, w: 0}
-  _tick: 0
 --- !u!212 &2134083183
 SpriteRenderer:
   serializedVersion: 2

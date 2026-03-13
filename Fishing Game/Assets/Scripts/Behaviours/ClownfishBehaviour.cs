@@ -12,6 +12,7 @@ public class ClownfishBehaviour : FishBase
 
     private float timer;
     private bool paused;
+    private int honked;
     private AudioSource audioSource;
 
     // Save the original speed for when the fish moves again
@@ -28,7 +29,7 @@ public class ClownfishBehaviour : FishBase
     {
         timer -= Time.deltaTime;
 
-        if (timer <= 0)
+        if (timer <= 0 && honked < 2)
         {
             paused = !paused;
 
@@ -45,6 +46,7 @@ public class ClownfishBehaviour : FishBase
             }
 
             timer = Random.Range(minPauseTime, maxPauseTime);
+            honked++;
         }
     }
 }
