@@ -6,7 +6,7 @@ public class FishBase : MonoBehaviour
     public float speed;
     public bool moveRight;
 
-    private FishingSystem _gameSystem;
+    protected FishingSystem _gameSystem;
 
     public void Initialize(bool fromLeft, FishIdentity fishData, FishingSystem system)
     {
@@ -55,7 +55,7 @@ public class FishBase : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Boundary"))
         {

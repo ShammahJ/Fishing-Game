@@ -1799,6 +1799,17 @@ MonoBehaviour:
     minSize: 3
     maxSize: 6
     isNothing: 0
+  - objectName: Shark
+    weight: 10
+    rarity: 2
+    baseValue: 0
+    minSpeed: 1
+    maxSpeed: 2
+    baseStrength: 0
+    fishPrefab: {fileID: 1311152994520545813, guid: a6773b560b2003740aadd2ccafb138ba, type: 3}
+    minSize: 3
+    maxSize: 6
+    isNothing: 0
   _currentFishCount: 0
   _desiredFishes: 20
   _spawnRate: 1
