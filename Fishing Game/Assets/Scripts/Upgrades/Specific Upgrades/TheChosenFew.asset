@@ -19,6 +19,6 @@ MonoBehaviour:
   description: If there are 4 or less fish on your hook when you reel them in, this
     upgrade gains 0.1x mult value that applies every time you collect fish. Resets
     when you fish more than 4 fish on a single hook.
-  icon: {fileID: 0}
+  icon: {fileID: -948370196214325462, guid: f3ebe941c180d194382bc2f3ee9331f5, type: 3}
   bonusPerCatch: 0.1
   defaultMultiplier: 1

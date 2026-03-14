@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using UnityEngine.UI;
 
-public class ShopSlotHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class ShopSlotHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     [SerializeField] private float animationDuration = 0.2f;
     [SerializeField] private Image upgradeGlow;
@@ -52,6 +52,14 @@ public class ShopSlotHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         StartCoroutine(ScaleTo(glowRectTransform, 0f));
     }
 
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (assignedUpgrade != null && shopManager != null)
+        {
+            shopManager.PurchaseUpgrade(assignedUpgrade, this);
+        }
+    }
+
     private Color GetRarityColor(Upgrade.UpgradeRarity rarity)
     {
         switch (rarity)
@@ -86,5 +94,22 @@ public class ShopSlotHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         }
 
         rectTransform.sizeDelta = targetSizeDelta;
+    }
+
+    public void ClearSlot()
+    {
+        assignedUpgrade = null;
+
+        Image iconImage = GetComponent<Image>();
+        if (iconImage != null)
+        {
+            iconImage.sprite = null;
+        }
+
+        if (upgradeGlow != null)
+        {
+            StopAllCoroutines();
+            upgradeGlow.rectTransform.sizeDelta = new Vector2(0, 0);
+        }
     }
 }

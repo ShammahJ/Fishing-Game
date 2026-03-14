@@ -681,7 +681,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 926443112}
         m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
-        m_MethodName: RollShop
+        m_MethodName: RerollShop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1144,6 +1144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67056462db5bf5746895a441f7ec9406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopManager
+  rerollCost: 75
   allUpgrades:
   - {fileID: 11400000, guid: ed1695114b382fd41b845e19e3a74b79, type: 2}
   - {fileID: 11400000, guid: a20640d8959baa34c8ecc7c16c4d1e8c, type: 2}
@@ -1151,6 +1152,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e08ba6fca78126a41ae2ef17e1b6d647, type: 2}
   - {fileID: 11400000, guid: c980b95713611af43a0ea786b82baa25, type: 2}
   - {fileID: 11400000, guid: 164af8a4ed9062d44ad747041b8a9081, type: 2}
+  - {fileID: 11400000, guid: 4122105dc0f300b43b0735bb001c6b4c, type: 2}
   currentShopUpgrades: []
   shopSlots:
   - {fileID: 1372333277}
@@ -1235,7 +1237,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Reroll Shop
+  m_text: 'Reroll Shop $75
 
 '
   m_isRightToLeft: 0
@@ -1744,6 +1746,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1594308344}
   m_CullTransparentMesh: 1
+--- !u!1 &1623146259
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1623146261}
+  - component: {fileID: 1623146260}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1623146260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623146259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c24d574c8063f14fa69430abe91bd3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  fishScene: {fileID: 0}
+  inventoryPanel: {fileID: 0}
+--- !u!4 &1623146261
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623146259}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1116.3765, y: 431.6454, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1673550026
 GameObject:
   m_ObjectHideFlags: 0
@@ -2027,3 +2075,4 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 1673550027}
   - {fileID: 1504049100}
+  - {fileID: 1623146261}

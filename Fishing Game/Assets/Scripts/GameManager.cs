@@ -44,6 +44,10 @@ public class GameManager : MonoBehaviour {
         {
             inventoryPanel.TogglePanel();
         }
+        if (!Input.GetKeyDown(KeyCode.P))
+        {
+            money = 0f;
+        }
     }
 
     void StartFishingGame()
@@ -61,5 +65,15 @@ public class GameManager : MonoBehaviour {
     public void CollectMoney(float value)
     {
         money += value;
+    }
+
+    public void LoseMoney(float value)
+    {
+        money -= value;
+    }
+
+    public float GetMoney()
+    {
+        return money;
     }
 }
