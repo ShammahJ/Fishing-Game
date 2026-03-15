@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8dfa5376b062b498e7a352ce1c0b4e, type: 3}
+  m_Name: TrickleDownEconomics
+  m_EditorClassIdentifier: Assembly-CSharp::TrickleDownEconomics
+  id: trickle_down_economics
+  upgradeName: Trickle Down Economics
+  cost: 180
+  rarity: 2
+  description: Whenever you hook a group of fish up, the least-valued fish gets $40,
+    the second-least gets $30, and so on until the bonus is $0.
+  icon: {fileID: -1972385494681039818, guid: c22a8e3b6b2defc4ab382aa751ef75c2, type: 3}
+  baseBonusAmount: 40
+  bonusDecrement: 10

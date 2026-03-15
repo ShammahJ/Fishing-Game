@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a557c15153ec93f44abe113d4cd4a8dd, type: 3}
+  m_Name: TheChosenFew
+  m_EditorClassIdentifier: Assembly-CSharp::TheChosenFew
+  id: the_chosen_few
+  upgradeName: The Chosen Few
+  cost: 95
+  rarity: 1
+  description: If there are 4 or less fish on your hook when you reel them in, this
+    upgrade gains 0.1x mult value that applies every time you collect fish. Resets
+    when you fish more than 4 fish on a single hook.
+  icon: {fileID: -948370196214325462, guid: f3ebe941c180d194382bc2f3ee9331f5, type: 3}
+  bonusPerCatch: 0.1
+  defaultMultiplier: 1

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6513dce08c133734bb1bf346df253482, type: 3}
+  m_Name: RussianRoulette
+  m_EditorClassIdentifier: Assembly-CSharp::RussianRoulette
+  id: russian_roulette
+  upgradeName: Russian Roulette
+  cost: 45
+  rarity: 0
+  description: 5/6 chance to give all fishes $18 in value. 1/6 chance to set their
+    values to zero.
+  icon: {fileID: -6974741365807772243, guid: cca96851cfcc23c45a4e66a1067ab1c8, type: 3}
+  successBonus: 18
+  failChance: 0.16666667
+  failMultiplier: 0
