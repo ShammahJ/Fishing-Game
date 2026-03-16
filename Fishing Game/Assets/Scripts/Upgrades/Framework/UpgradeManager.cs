@@ -9,13 +9,16 @@ public class UpgradeManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance != null)
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (Instance != this)
         {
             Destroy(gameObject);
-            return;
         }
-
-        Instance = this;
+            Instance = this;
     }
 
     public void AddUpgrade(Upgrade upgrade)
@@ -78,6 +81,14 @@ public class UpgradeManager : MonoBehaviour
         foreach (ActiveUpgrade upgrade in activeUpgrades)
         {
             upgrade.definition.OnFishCaught(fish, upgrade);
+        }
+    }
+
+    public void NotifyHookRetrieved(List<Fish> caughtFish)
+    {
+        foreach (ActiveUpgrade upgrade in activeUpgrades)
+        {
+            upgrade.definition.OnHookRetrieved(caughtFish, upgrade);
         }
     }
 

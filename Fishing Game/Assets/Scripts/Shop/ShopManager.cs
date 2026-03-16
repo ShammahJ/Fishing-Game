@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -6,6 +7,9 @@ using static Upgrade;
 
 public class ShopManager : MonoBehaviour
 {
+    [Header("Shop Fields")]
+    public float rerollCost;
+
     [Header("Total Upgrades")]
     public List<Upgrade> allUpgrades = new List<Upgrade>();
 
@@ -49,6 +53,22 @@ public class ShopManager : MonoBehaviour
         }
 
         DebugShop();
+    }
+
+    public void RerollShop()
+    {
+        if (GameManager.instance != null)
+        {
+            if (GameManager.instance.GetMoney() >= rerollCost)
+            {
+                GameManager.instance.LoseMoney(rerollCost);
+                RollShop();
+            }
+            else
+            {
+                StartCoroutine(PurchaseMessage(false, null));
+            }
+        }
     }
 
     private UpgradeRarity RollRarity()
@@ -136,6 +156,12 @@ public class ShopManager : MonoBehaviour
 
         if (tooltipPanel != null)
             tooltipPanel.SetActive(true);
+
+        if (tooltipPanel != null)
+        {
+            tooltipPanel.SetActive(true);
+            //LayoutRebuilder.ForceRebuildLayoutImmediate(tooltipPanel.GetComponent<RectTransform>());
+        }
     }
 
     public void HideTooltip()
@@ -150,6 +176,61 @@ public class ShopManager : MonoBehaviour
                 tooltipDescriptionText.text = "";
         }
     }
+
+    public void PurchaseUpgrade(Upgrade upgrade, ShopSlotHover slot)
+    {
+        float playerMoney = GameManager.instance != null ? GameManager.instance.GetMoney() : 0;
+
+        if (playerMoney >= upgrade.cost)
+        {
+            GameManager.instance.LoseMoney(upgrade.cost);
+
+            if (UpgradeManager.Instance != null)
+            {
+                UpgradeManager.Instance.AddUpgrade(upgrade);
+            }
+
+            if (currentShopUpgrades.Contains(upgrade))
+            {
+                currentShopUpgrades.Remove(upgrade);
+            }
+
+            slot.ClearSlot();
+
+            if (GameManager.instance != null && GameManager.instance.inventoryPanel != null)
+            {
+                GameManager.instance.inventoryPanel.RefreshUpgradeDisplay();
+            }
+
+            StartCoroutine(PurchaseMessage(true, upgrade));
+        }
+        else
+        {
+            //player is broke
+            StartCoroutine(PurchaseMessage(false, upgrade));
+        }
+    }
+
+    private IEnumerator PurchaseMessage(bool success, Upgrade upgrade)
+    {
+        float playerMoney = GameManager.instance != null ? GameManager.instance.GetMoney() : 0;
+        if (success)
+        {
+            tooltipNameText.text = "";
+            tooltipDescriptionText.text = "What a good consumer you are!";
+            tooltipCostText.text = "";
+            yield return new WaitForSeconds(1.5f);
+        } else if (!success && upgrade == null)
+        {
+            tooltipDescriptionText.text = "You are BROKE! Can't even get a reroll!";
+        } else
+        {
+            tooltipNameText.text = "";
+            tooltipDescriptionText.text = $"You are BROKE! Need ${upgrade.cost - playerMoney}";
+            tooltipCostText.text = "";
+            yield return new WaitForSeconds(1.5f);
+        }
+    } 
 
     void DebugShop()
     {

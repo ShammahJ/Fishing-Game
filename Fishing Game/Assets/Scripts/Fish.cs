@@ -31,6 +31,11 @@ public class Fish : MonoBehaviour
         return UpgradeManager.Instance.ModifyFishValue(_value, this);
     }
 
+    public float GetOriginalValue()
+    {
+        return _value;
+    }
+
     //On the fish getting hooked
     public void Hook()
     {

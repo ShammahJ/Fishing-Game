@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fbac92978bacd324faba3157d4978e59
+guid: feae865f68bb2f649800bd3d7a195b59
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 799617379505474164
-    second: midas_hook_0
+      213: -7013452597319408954
+    second: MidasHook_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: midas_hook_0
+      name: MidasHook_0
       rect:
         serializedVersion: 2
-        x: 30
-        y: 0
-        width: 44
-        height: 93
+        x: 9
+        y: 10
+        width: 45
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 47a07a525cfc81b00800000000000000
-      internalID: 799617379505474164
+      spriteID: 6c26cb785063bae90800000000000000
+      internalID: -7013452597319408954
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      midas_hook_0: 799617379505474164
+      MidasHook_0: -7013452597319408954
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
