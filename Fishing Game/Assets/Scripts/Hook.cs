@@ -177,23 +177,11 @@ public class Hook : MonoBehaviour
         else {
             struggle = Random.Range(-_currentStrength * 0.75f, -_currentStrength); 
         }
+        float goalX = mouseXPos;
         
-        // float mouseDelta = Input.mousePositionDelta.x * mouseSensitivity;    
-        if (_active) {
-            mouseXPos = Mathf.Clamp(mouseXPos, -MaxWidth, MaxWidth);
-           
-        }
-        else {
-            mouseXPos = Mathf.Clamp(mouseXPos, -DeadZone, DeadZone);
-        }
-        float goalX = mouseXPos + struggle;
-        
-      
-        // float goalX = _currentX + mouseDelta + struggle;
         if (_active) {
             goalX = Mathf.Clamp(goalX, -MaxWidth, MaxWidth);
-            // Mouse.current.WarpCursorPosition(transform.position * new Vector2(Screen.width/2, Screen.height/2));
-            Mouse.current.WarpCursorPosition(Mouse.current.position.ReadValue() + new Vector2(struggle * 2f,0)); //This gets messed up depending on screen size, please fix!
+            Mouse.current.WarpCursorPosition(Mouse.current.position.ReadValue() + new Vector2(struggle,0)); 
             if (Mathf.Abs(_currentX) > DeadZone) {
                 BreakHook();
             }
