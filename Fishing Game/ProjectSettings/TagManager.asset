@@ -6,6 +6,18 @@ TagManager:
   tags:
   - Boundary
   - Fish
+  - Start
+  - Clear1
+  - Clear2
+  - Clear3
+  - Rain1
+  - Rain2
+  - Rain3
+  - Swamp1
+  - Swamp2
+  - Shop1
+  - Shop2
+  - Ship
   layers:
   - Default
   - TransparentFX
@@ -13,9 +25,9 @@ TagManager:
   - Fish
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Background
+  - Levels
+  - Ship
   - 
   - 
   - 

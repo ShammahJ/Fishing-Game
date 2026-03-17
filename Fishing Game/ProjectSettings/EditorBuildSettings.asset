@@ -14,6 +14,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Shop.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Map.unity
+    guid: 302bf4bfe71ed05498ecd257c4c9b536
+  - enabled: 1
+    path: Assets/Scenes/Start Biome.unity
+    guid: 4c65b5d034b95b14db79f70fefe8f8bf
+  - enabled: 1
+    path: Assets/Scenes/Clear Biome.unity
+    guid: 527a9d1ea67c5154ab4e954f18d235a7
+  - enabled: 1
+    path: Assets/Scenes/Rain Biome.unity
+    guid: 6fbc4ed430ed22541941a4e29553a752
+  - enabled: 1
+    path: Assets/Scenes/Swamp Biome.unity
+    guid: a8b332a421ed55449ad25c864d6aef09
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: d54e4a19aa1590a4fb30e3e96d165961, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
