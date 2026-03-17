@@ -1733,39 +1733,6 @@ MonoBehaviour:
   - {fileID: 1600120228}
   - {fileID: 1731647940}
   possibleCatches:
-  - objectName: Rare Fish
-    weight: 5
-    rarity: 1
-    baseValue: 0
-    minSpeed: 2
-    maxSpeed: 3
-    baseStrength: 0
-    fishPrefab: {fileID: 6221906877025051847, guid: 78606caaa7f929648ae993b8b72a5272, type: 3}
-    minSize: 1
-    maxSize: 1
-    isNothing: 0
-  - objectName: Epic  Fish
-    weight: 10
-    rarity: 2
-    baseValue: 0
-    minSpeed: 3
-    maxSpeed: 4
-    baseStrength: 0
-    fishPrefab: {fileID: 5987177212462942690, guid: b7dd643be4d420447b72a519d627df0a, type: 3}
-    minSize: 1
-    maxSize: 1
-    isNothing: 0
-  - objectName: Legendary  Fish
-    weight: 20
-    rarity: 3
-    baseValue: 0
-    minSpeed: 4
-    maxSpeed: 5
-    baseStrength: 0
-    fishPrefab: {fileID: 2359681045269111058, guid: e206d45f081a50c45a472c0ffdb18d62, type: 3}
-    minSize: 1
-    maxSize: 1
-    isNothing: 0
   - objectName: FishhsiF
     weight: 1
     rarity: 2
