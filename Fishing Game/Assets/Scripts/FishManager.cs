@@ -27,7 +27,6 @@ public class FishManager : MonoBehaviour
     
     void OnCollect()
     {
-        
         _lives--;
         livesChanged.Invoke(_lives);
         print(_lives);
