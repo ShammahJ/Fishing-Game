@@ -473,7 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd71d5e3bb77f6b48980d61adb5c1ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
-  sceneName: Start Biome
+  sceneName: Fishing
 --- !u!4 &215894308
 Transform:
   m_ObjectHideFlags: 0
