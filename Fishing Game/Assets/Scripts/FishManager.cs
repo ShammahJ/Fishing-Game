@@ -1,12 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class FishManager : MonoBehaviour
 {
-    
-    public UnityEvent<float> onScoreChanged;
-    
     [SerializeField] private List<GameObject> fishPrefabs;
     [SerializeField] [Range(0.05f,25f)] private float fishPerSecond = 1f;
     // private GameObject[] fishes;
@@ -15,49 +13,38 @@ public class FishManager : MonoBehaviour
     public UnityEvent<int> livesChanged;
     public UnityEvent outOfLives;
     private const int LivesMax = 5;
-    public float score;
-    public float debt;
+    public static FishManager instance;
     
     private int _lives;
-
-    void OnEnable()
+    void Start()
     {
         _lives = LivesMax;
         livesChanged.Invoke(_lives);
-    }
-    public void OnCollect(float value)
-    {
-        //for now empty
-        OnCollect();
+        
+        _fishTimer = 1f / fishPerSecond;
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(instance);
+            instance = this;
+        }
+
+        GameManager.instance.LevelIncrease();
     }
 
-    
-   
-    
-    void OnCollect()
+    public void OnCollect(float moneyGained)
     {
+        GameManager.instance.CollectMoney(moneyGained);
         _lives--;
         livesChanged.Invoke(_lives);
-        print(_lives);
         if (_lives <= 0) {
+            // GameManager.instance.CollectMoney(score * scoreToMoneyMulti);
+            SceneManager.LoadScene("Map");
             outOfLives.Invoke();
         }
-    }
-
-    public void SetScore(float value)
-    {
-        score = value;
-        onScoreChanged.Invoke(score);
-    }
-    public void AddScore(float value)
-    {
-        SetScore(score + value);
-    }
-    
-    
-    void Start()
-    {
-        _fishTimer = 1f / fishPerSecond;
     }
 
     void SpawnFish()

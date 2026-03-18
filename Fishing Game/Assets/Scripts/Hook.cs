@@ -22,7 +22,6 @@ public class Hook : MonoBehaviour
 
     
     [SerializeField] float chanceToSwitchStruggleDirection;
-    [SerializeField] private FishManager fishManager;
     private HookCollision _hookCollision;
     
     private const float MaxHeight = 4.5f; //applies on both the surface and the bottom of the screen
@@ -141,6 +140,7 @@ public class Hook : MonoBehaviour
         _height = MaxHeight;
         transform.position = new Vector3(_currentX, _height, transform.position.z);
         // totalScoreText.text = "Score: " + totalScore.ToString("F");
+        onCollect.Invoke(0f);
         onBreak.Invoke();
     }
     
