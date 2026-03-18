@@ -2,15 +2,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[System.Serializable]
+public class WeightedFish
+{
+    public GameObject prefab;
+    public float weight = 1f; // Bigger = more common
+}
+
 public class FishManager : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> fishPrefabs;
-    [SerializeField] [Range(0.05f,25f)] private float fishPerSecond = 1f;
+    [Header("Fish Spawning")]
+    [SerializeField] private List<WeightedFish> fishPrefabs;
+    [SerializeField] [Range(0.05f, 25f)] private float fishPerSecond = 1f;
     // private GameObject[] fishes;
     private float _fishTimer;
-    
+
+    [Header("Lives")]
     public UnityEvent<int> livesChanged;
     public UnityEvent outOfLives;
+
     private const int LivesMax = 5;
     private int _lives;
 
@@ -19,18 +29,20 @@ public class FishManager : MonoBehaviour
         _lives = LivesMax;
         livesChanged.Invoke(_lives);
     }
+
     public void OnCollect(float value)
     {
         //for now empty
         OnCollect();
     }
-    
+
     void OnCollect()
     {
         _lives--;
         livesChanged.Invoke(_lives);
         print(_lives);
-        if (_lives <= 0) {
+        if (_lives <= 0)
+        {
             outOfLives.Invoke();
         }
     }
@@ -51,21 +63,48 @@ public class FishManager : MonoBehaviour
         _fishTimer = 1f / fishPerSecond;
     }
 
-    void SpawnFish()
+    //WEIGHTED RANDOM SYSTEM
+    GameObject GetRandomFish()
     {
-        // GameObject fish = Instantiate(fishPrefab);
-        int index = Random.Range(0, fishPrefabs.Count);
-        GameObject fishPrefab = fishPrefabs[index];
-        Instantiate(fishPrefab,transform);
+        float totalWeight = 0f;
+
+        foreach (var fish in fishPrefabs)
+        {
+            totalWeight += 1f / fish.weight;
+        }
+
+        float random = Random.Range(0, totalWeight);
+        float cumulative = 0f;
+
+        foreach (var fish in fishPrefabs)
+        {
+            cumulative += 1f / fish.weight;
+
+            if (random <= cumulative)
+            {
+                return fish.prefab;
+            }
+        }
+
+        return null;
     }
 
-    // Update is called once per frame
+    void SpawnFish()
+    {
+        GameObject prefab = GetRandomFish();
+
+        if (prefab == null) return;
+
+        Instantiate(prefab, transform);
+    }
+
     void Update()
     {
         _fishTimer -= Time.deltaTime;
-        if (_fishTimer > 0) {return;}
-        _fishTimer += 1f / fishPerSecond; 
+
+        if (_fishTimer > 0) return;
+
+        _fishTimer += 1f / fishPerSecond;
         SpawnFish();
     }
-    
 }
