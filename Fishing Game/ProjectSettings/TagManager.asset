@@ -18,6 +18,7 @@ TagManager:
   - Shop1
   - Shop2
   - Ship
+  - Shop3
   layers:
   - Default
   - TransparentFX
