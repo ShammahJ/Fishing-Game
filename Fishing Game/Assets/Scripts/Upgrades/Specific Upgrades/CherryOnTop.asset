@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27a737a069e11f44fb1063349922ada0, type: 3}
+  m_Name: CherryOnTop
+  m_EditorClassIdentifier: Assembly-CSharp::CherryOnTop
+  id: cherry_on_top
+  upgradeName: Cherry On Top
+  cost: 95
+  rarity: 1
+  description: If the last hook has only 1 fish, multiply its value by 1.5x.
+  icon: {fileID: -2435418127600559311, guid: 05c7bee9e00c3174180bd3bb0e6f9daf, type: 3}
+  valueMultiplier: 1.5

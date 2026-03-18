@@ -92,4 +92,12 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
+    public void NotifyLineCasted()
+    {
+        foreach (ActiveUpgrade upgrade in activeUpgrades)
+        {
+            upgrade.definition.OnLineCasted(upgrade);
+        }
+    }
+
 }

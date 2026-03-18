@@ -15,7 +15,8 @@ public class Hook : MonoBehaviour
     public static Hook Instance;
    
     [SerializeField] private float mouseSpeed = 15;//How fast the hook follows the mouse(X axis)
-    [SerializeField] private float speed = 15;//How fast the hook descends(Y axis)
+    [SerializeField] private float descensionSpeed = 15;//How fast the hook descends(Y axis)
+    [SerializeField] private float ascensionSpeed = 15;//How fast the hook ascends(Y axis)
     [SerializeField] private float fishCountMultiplier = 0.05f;//How fast the hook descends(Y axis)
     // [SerializeField] float mouseSensitivity = 0.5f;
     [SerializeField] private InputAction castAction;
@@ -78,6 +79,7 @@ public class Hook : MonoBehaviour
         _active = true;
         _descending = true;
         newScoreText.text = "";
+        UpgradeManager.Instance.NotifyLineCasted();
     }
 
     
@@ -154,9 +156,9 @@ public class Hook : MonoBehaviour
             return;
         }
         if (_descending) {
-            _height -= Time.deltaTime * speed;
+            _height -= Time.deltaTime * descensionSpeed;
         } else {
-            _height += Time.deltaTime * speed;
+            _height += Time.deltaTime * ascensionSpeed;
         }
         if (_height <= MaxDepth) {
             _descending = false;

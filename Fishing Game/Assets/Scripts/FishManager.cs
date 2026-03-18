@@ -35,7 +35,17 @@ public class FishManager : MonoBehaviour
         }
     }
 
-    
+    public int GetLives()
+    {
+        return _lives;
+    }
+
+    public void AddLife()
+    {
+        _lives++;
+        livesChanged.Invoke(_lives);
+    }
+
     void Start()
     {
         _fishTimer = 1f / fishPerSecond;

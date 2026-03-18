@@ -1,10 +1,8 @@
-using System;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
     [SerializeField] private FishManager fishScene;
     public UpgradeInventoryPanel inventoryPanel;
@@ -55,7 +53,7 @@ public class GameManager : MonoBehaviour {
         print("StartFishingGame");
         fishScene.gameObject.SetActive(true);
     }
-    
+
     public void EndFishingGame()
     {
         print("endFishingGame");
@@ -75,5 +73,18 @@ public class GameManager : MonoBehaviour {
     public float GetMoney()
     {
         return money;
+    }
+
+    public void AddExtraLife()
+    {
+        if (fishScene != null)
+        {
+            fishScene.AddLife();
+        }
+    }
+
+    public int GetLives()
+    {
+        return fishScene.GetLives();
     }
 }

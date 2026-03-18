@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dedf178da46066a49a63edad51751fec, type: 3}
+  m_Name: Encore
+  m_EditorClassIdentifier: Assembly-CSharp::Encore
+  id: encore
+  upgradeName: Encore
+  cost: 180
+  rarity: 2
+  description: Refunds a hook chance when you reel in 4 fish or more on a single
+    hook. One time use.
+  icon: {fileID: -5609827280902540976, guid: 374514e30cbefdd43b0382dd4e580b2c, type: 3}
+  requiredFishCount: 4
