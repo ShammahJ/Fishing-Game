@@ -11,8 +11,8 @@ public class GameManager : MonoBehaviour
     public float money;
 
     public float debt;
-    private const float StartingDebt = 25f;
-    private const float ScalingDebt = 15f;
+    private const float StartingDebt = 250f;
+    private const float ScalingDebt = 150f;
     public int level = -1;
     
 
@@ -56,8 +56,6 @@ public class GameManager : MonoBehaviour
     {
         level++;
         debt = StartingDebt + ScalingDebt * level;
-        print("StartFishingGame");
-        fishScene.gameObject.SetActive(true);
     }
 
     public void CheckLossState()
@@ -74,7 +72,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetGame()
     {
-        level = 0;
+        level = -1;
         money = 0;
         debt = StartingDebt;
         //Reset upgrades here!
