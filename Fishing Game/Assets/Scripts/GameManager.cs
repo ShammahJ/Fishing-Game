@@ -60,10 +60,13 @@ public class GameManager : MonoBehaviour
         fishScene.gameObject.SetActive(true);
     }
 
-    public void EndFishingGame()
+    public void CheckLossState()
     {
-        print("endFishingGame");
-        fishScene.gameObject.SetActive(false);
+        if (money < debt) {
+            print("YOU LOSEEEEEE");
+        }
+
+        LoseMoney(debt);
     }
 
     public void CollectMoney(float value)

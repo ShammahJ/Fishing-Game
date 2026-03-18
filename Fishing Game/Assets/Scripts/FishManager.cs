@@ -53,6 +53,7 @@ public class FishManager : MonoBehaviour
         livesChanged.Invoke(_lives);
         if (_lives <= 0) {
             // GameManager.instance.CollectMoney(score * scoreToMoneyMulti);
+            GameManager.instance.CheckLossState();
             SceneManager.LoadScene("Map");
             outOfLives.Invoke();
         }
