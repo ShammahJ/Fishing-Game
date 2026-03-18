@@ -25,6 +25,7 @@ public class Fish : MonoBehaviour
     protected float _speed;
     public float strength;
 
+    protected FishManager _gameSystem;
     public bool isHooked = false;
     protected bool _isFacingRight = true;
 
@@ -68,6 +69,11 @@ public class Fish : MonoBehaviour
     {
         FishMove();
         SpecialBehaviour();
+    }
+
+    public void Initialize(FishManager system)
+    {
+        _gameSystem = system;
     }
 
     protected virtual void FishMove()

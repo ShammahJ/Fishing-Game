@@ -3,7 +3,7 @@ using System.Collections;
 
 // Object must have a component of type AudioSource
 [RequireComponent(typeof(AudioSource))]
-public class SharkBehaviour : FishBase
+public class SharkBehaviour : Fish
 {
     private float growthAmount = 0.2f;
 
@@ -22,7 +22,7 @@ public class SharkBehaviour : FishBase
 
       void OnTriggerEnter2D(Collider2D collision)
     {
-        base.OnTriggerEnter2D(collision);
+        
         FishBase otherFish = collision.GetComponent<FishBase>();
 
         if (otherFish != null && otherFish != this && collision.CompareTag("Fish"))

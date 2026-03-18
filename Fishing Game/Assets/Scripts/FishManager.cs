@@ -102,6 +102,10 @@ public class FishManager : MonoBehaviour
         if (prefab == null) return;
 
         Instantiate(prefab, transform);
+
+        // Allows the fish to access the methods in here
+        //Fish fbase = prefab.GetComponent<Fish>();
+        //fbase.Initialize(this);
     }
 
     void Update()
