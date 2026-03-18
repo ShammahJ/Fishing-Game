@@ -103,7 +103,7 @@ public class FishManager : MonoBehaviour
 
     void SpawnFish()
     {
-        Debug.Log("Trying to spawn fish");
+        //Debug.Log("Trying to spawn fish");
 
         GameObject prefab = GetRandomFish();
 
@@ -115,7 +115,7 @@ public class FishManager : MonoBehaviour
 
         // Make the fish
         GameObject fishObj = Instantiate(prefab, transform);
-        Debug.Log(prefab.name);
+        //Debug.Log(prefab.name);
 
         // Allows the fish to access the methods in here
         //Fish fbase = prefab.GetComponent<Fish>();
