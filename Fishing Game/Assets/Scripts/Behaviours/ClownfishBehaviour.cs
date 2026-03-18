@@ -35,14 +35,14 @@ public class ClownfishBehaviour : Fish
 
             if (paused)
             {
-                speed = 0;
+                _speed = 0;
 
                 if (sound != null)
                     audioSource.PlayOneShot(sound);
             }
             else
             {
-                speed = ogSpeed;
+                _speed = ogSpeed;
             }
 
             timer = Random.Range(minPauseTime, maxPauseTime);
