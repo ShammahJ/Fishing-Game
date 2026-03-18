@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public float debt;
     private const float StartingDebt = 25f;
     private const float ScalingDebt = 15f;
-    public int level;
+    public int level = -1;
     
 
     public static GameManager instance = null;
@@ -54,7 +54,8 @@ public class GameManager : MonoBehaviour
 
     public void LevelIncrease()
     {
-        debt = StartingDebt + ScalingDebt * GameManager.instance.level;
+        level++;
+        debt = StartingDebt + ScalingDebt * level;
         print("StartFishingGame");
         fishScene.gameObject.SetActive(true);
     }
