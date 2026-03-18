@@ -492,8 +492,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   fishPrefabs:
-  - {fileID: 3839990507532285524, guid: 47a2b10a2cf07cc46acd2840efb3accb, type: 3}
-  - {fileID: 3839990507532285524, guid: cebeb1845a44b0b49b1425f526918ea1, type: 3}
+  - prefab: {fileID: 4682836702807778376, guid: 5d4008a680d487b458c01c23fca5533b, type: 3}
+    weight: 1
+  - prefab: {fileID: 8287314129032738611, guid: 831b5300997a93746ace4e334c63f791, type: 3}
+    weight: 1
+  - prefab: {fileID: 8234842185368791532, guid: c4de5d1cc3474e1498a71cb2ec7e8bce, type: 3}
+    weight: 1
+  - prefab: {fileID: 1311152994520545813, guid: a6773b560b2003740aadd2ccafb138ba, type: 3}
+    weight: 1
+  - prefab: {fileID: 3839990507532285524, guid: cebeb1845a44b0b49b1425f526918ea1, type: 3}
+    weight: 1
   fishPerSecond: 2
   livesChanged:
     m_PersistentCalls:

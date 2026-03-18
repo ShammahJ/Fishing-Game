@@ -90,6 +90,8 @@ public class FishManager : MonoBehaviour
             if (random <= cumulative)
             {
                 selectedFish = fish.prefab;
+                break;
+                
             }
         }
 
@@ -98,11 +100,19 @@ public class FishManager : MonoBehaviour
 
     void SpawnFish()
     {
+        Debug.Log("Trying to spawn fish");
+
         GameObject prefab = GetRandomFish();
 
-        if (prefab == null) return;
+        if (prefab == null)
+        {
+            Debug.LogWarning("No fish selected!");
+            return;
+        }
 
-        Instantiate(prefab, transform);
+        // Make the fish
+        GameObject fishObj = Instantiate(prefab, transform);
+        Debug.Log(prefab.name);
 
         // Allows the fish to access the methods in here
         //Fish fbase = prefab.GetComponent<Fish>();

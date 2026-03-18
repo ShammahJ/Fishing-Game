@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FishhsiFBehaviour : FishBase
+public class FishhsiFBehaviour : Fish
 {
     public float minTurnTime = 2f;
     public float maxTurnTime = 5f;
@@ -22,7 +22,7 @@ public class FishhsiFBehaviour : FishBase
         timer -= Time.deltaTime;
         if (timer <= 0 && turns != turnLimit)
         {
-            moveRight = !moveRight;
+            _isFacingRight = !_isFacingRight;
             ResetTimer();
             turns++;
         }

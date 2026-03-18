@@ -2,7 +2,7 @@ using UnityEngine;
 
 // Object must have a component of type AudioSource
 [RequireComponent(typeof(AudioSource))]
-public class ClownfishBehaviour : FishBase
+public class ClownfishBehaviour : Fish
 {
     // I'm not comfortable with coroutines, so I'm using this instead
     public float minPauseTime = 2f;
@@ -22,7 +22,7 @@ public class ClownfishBehaviour : FishBase
     {
         audioSource = GetComponent<AudioSource>();
         timer = Random.Range(minPauseTime, maxPauseTime);
-        ogSpeed = speed;
+        ogSpeed = _speed;
     }
 
     protected override void SpecialBehaviour()
