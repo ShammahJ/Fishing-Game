@@ -4,6 +4,9 @@ using UnityEngine.Events;
 
 public class FishManager : MonoBehaviour
 {
+    
+    public UnityEvent<float> onScoreChanged;
+    
     [SerializeField] private List<GameObject> fishPrefabs;
     [SerializeField] [Range(0.05f,25f)] private float fishPerSecond = 1f;
     // private GameObject[] fishes;
@@ -12,6 +15,9 @@ public class FishManager : MonoBehaviour
     public UnityEvent<int> livesChanged;
     public UnityEvent outOfLives;
     private const int LivesMax = 5;
+    public float score;
+    public float debt;
+    
     private int _lives;
 
     void OnEnable()
@@ -24,6 +30,9 @@ public class FishManager : MonoBehaviour
         //for now empty
         OnCollect();
     }
+
+    
+   
     
     void OnCollect()
     {
@@ -35,6 +44,16 @@ public class FishManager : MonoBehaviour
         }
     }
 
+    public void SetScore(float value)
+    {
+        score = value;
+        onScoreChanged.Invoke(score);
+    }
+    public void AddScore(float value)
+    {
+        SetScore(score + value);
+    }
+    
     
     void Start()
     {

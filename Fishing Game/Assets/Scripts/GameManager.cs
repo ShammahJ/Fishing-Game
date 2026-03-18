@@ -6,12 +6,14 @@ using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour {
 
+    public UnityEvent<float> onMoneyChanged;
     [SerializeField] private FishManager fishScene;
     public UpgradeInventoryPanel inventoryPanel;
     private float money;
 
     public static GameManager instance = null;
 
+    private float scoreToMoneyMulti = 0.25f;
     void Awake()
     {
         if (instance == null)
@@ -65,11 +67,18 @@ public class GameManager : MonoBehaviour {
     public void CollectMoney(float value)
     {
         money += value;
+        onMoneyChanged.Invoke(money);
+    }
+
+    public void ConvertScoreIntoMoney(float value)
+    {
+        CollectMoney(value * scoreToMoneyMulti);
     }
 
     public void LoseMoney(float value)
     {
         money -= value;
+        onMoneyChanged.Invoke(money);
     }
 
     public float GetMoney()
