@@ -22,6 +22,14 @@ public class SharkBehaviour : Fish
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        // Don't eat the hook
+        if (collision.GetComponent<HookCollision>() != null)
+            return;
+
+        // Dont eat other fishes in the hook
+        if (isHooked == true)
+            return;
+
         Fish otherFish = collision.GetComponent<Fish>();
         if (otherFish == null || otherFish == this || otherFish is SharkBehaviour)
             return;
