@@ -3645,6 +3645,7 @@ GameObject:
   - component: {fileID: 1967713866}
   - component: {fileID: 1967713865}
   - component: {fileID: 1967713864}
+  - component: {fileID: 1967713871}
   m_Layer: 5
   m_Name: Ship
   m_TagString: Ship
@@ -3864,6 +3865,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1967713862}
   m_CullTransparentMesh: 1
+--- !u!225 &1967713871
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967713862}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 1
 --- !u!1 &2011176099
 GameObject:
   m_ObjectHideFlags: 0
