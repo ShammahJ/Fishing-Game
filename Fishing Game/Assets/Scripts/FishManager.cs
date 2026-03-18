@@ -73,11 +73,7 @@ public class FishManager : MonoBehaviour
     {
         _currentFishCount--;
     }
-
-    void Start()
-    {
-        _fishTimer = 1f / fishPerSecond;
-    }
+    
 
     //WEIGHTED RANDOM SYSTEM
     GameObject GetRandomFish()
