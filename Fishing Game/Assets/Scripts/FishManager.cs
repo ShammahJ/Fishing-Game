@@ -80,6 +80,7 @@ public class FishManager : MonoBehaviour
         }
 
         float random = Random.Range(0, totalWeight);
+        GameObject selectedFish = null;
         float cumulative = 0f;
 
         foreach (var fish in fishPrefabs)
@@ -88,11 +89,11 @@ public class FishManager : MonoBehaviour
 
             if (random <= cumulative)
             {
-                return fish.prefab;
+                selectedFish = fish.prefab;
             }
         }
 
-        return null;
+        return selectedFish;
     }
 
     void SpawnFish()
