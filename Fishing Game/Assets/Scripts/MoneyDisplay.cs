@@ -6,7 +6,6 @@ public class MoneyDisplay : MonoBehaviour
 {
     
     [SerializeField] private TextMeshProUGUI moneyText;
-    
     void Start()
     {
         UpdateMoney(GameManager.instance.money);
