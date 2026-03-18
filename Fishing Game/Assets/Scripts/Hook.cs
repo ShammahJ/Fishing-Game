@@ -21,10 +21,8 @@ public class Hook : MonoBehaviour
     // [SerializeField] float mouseSensitivity = 0.5f;
     [SerializeField] private InputAction castAction;
 
-    [SerializeField] private TextMeshProUGUI totalScoreText;
-    [SerializeField] private TextMeshProUGUI newScoreText;
-    [SerializeReference] float chanceToSwitchStruggleDirection;
     
+    [SerializeField] float chanceToSwitchStruggleDirection;
     private HookCollision _hookCollision;
     
     private const float MaxHeight = 4.5f; //applies on both the surface and the bottom of the screen
@@ -35,7 +33,7 @@ public class Hook : MonoBehaviour
     private bool _descending = true;
     private bool _active;
     private float _currentX;
-    private float _totalScore;
+    // private float _totalScore;
     public List<Fish> fishes;
 
     private float _currentStrength;
@@ -78,7 +76,6 @@ public class Hook : MonoBehaviour
         }
         _active = true;
         _descending = true;
-        newScoreText.text = "";
         UpgradeManager.Instance.NotifyLineCasted();
     }
 
@@ -126,11 +123,10 @@ public class Hook : MonoBehaviour
         fishes.Clear();
         _currentStrength = 0;
         
-        float totalValue = value * ((fishCountMultiplier * (fishCount + 1f)) + 1);
+        float totalValue = value * ((fishCountMultiplier * math.min(fishCount,1f)) + 1);
 
-        _totalScore += totalValue;
-        totalScoreText.text = "Score: " + _totalScore.ToString("F");
-        newScoreText.text = fishCount + " Fish collected, " + totalValue.ToString("F") + " total value!";
+        // fishManager.AddScore(totalValue);
+        // _totalScore += totalValue?;
         onCollect.Invoke(totalValue);
     }
 
@@ -146,7 +142,7 @@ public class Hook : MonoBehaviour
         _height = MaxHeight;
         transform.position = new Vector3(_currentX, _height, transform.position.z);
         // totalScoreText.text = "Score: " + totalScore.ToString("F");
-        newScoreText.text = "Your line broke!";
+        onCollect.Invoke(0f);
         onBreak.Invoke();
     }
     

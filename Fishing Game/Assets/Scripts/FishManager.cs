@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class WeightedFish
@@ -23,27 +24,36 @@ public class FishManager : MonoBehaviour
     public UnityEvent outOfLives;
 
     private const int LivesMax = 5;
+    public static FishManager instance;
+    
     private int _lives;
-
-    void OnEnable()
+    void Start()
     {
         _lives = LivesMax;
         livesChanged.Invoke(_lives);
-    }
+        
+        _fishTimer = 1f / fishPerSecond;
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(instance);
+            instance = this;
+        }
 
-    public void OnCollect(float value)
-    {
-        //for now empty
-        OnCollect();
+        GameManager.instance.LevelIncrease();
     }
-
-    void OnCollect()
+    
+    public void OnCollect(float moneyGained)
     {
+        GameManager.instance.CollectMoney(moneyGained);
         _lives--;
         livesChanged.Invoke(_lives);
-        print(_lives);
-        if (_lives <= 0)
-        {
+        if (_lives <= 0) {
+            // GameManager.instance.CollectMoney(score * scoreToMoneyMulti);
+            SceneManager.LoadScene("Map");
             outOfLives.Invoke();
         }
     }

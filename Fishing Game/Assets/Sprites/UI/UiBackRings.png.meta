@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bdc666a3efcdf6349b3a6c56ad13dd62
+guid: ebb1348c0a6f1c74ebeac159f4c71f29
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2894948067056343143
-    second: Shark2_0
+      213: -3501146609674109417
+    second: UiBackRings_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Shark2_0
+      name: UiBackRings_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 37
-        width: 115
-        height: 64
+        x: 9
+        y: 9
+        width: 432
+        height: 432
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 99727e3321413d7d0800000000000000
-      internalID: -2894948067056343143
+      spriteID: 71ebfc755bd696fc0800000000000000
+      internalID: -3501146609674109417
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Shark2_0: -2894948067056343143
+      UiBackRings_0: -3501146609674109417
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
