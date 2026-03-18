@@ -64,9 +64,20 @@ public class GameManager : MonoBehaviour
     {
         if (money < debt) {
             print("YOU LOSEEEEEE");
+            
+            SceneManager.LoadScene("LossScreen");
+            return;
         }
-
         LoseMoney(debt);
+        SceneManager.LoadScene("Map");
+    }
+
+    public void ResetGame()
+    {
+        level = 0;
+        money = 0;
+        debt = StartingDebt;
+        //Reset upgrades here!
     }
 
     public void CollectMoney(float value)
