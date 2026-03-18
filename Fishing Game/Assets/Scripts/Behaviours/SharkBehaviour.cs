@@ -20,20 +20,19 @@ public class SharkBehaviour : Fish
         sr = GetComponent<SpriteRenderer>();
     }
 
-      void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
+        Fish otherFish = collision.GetComponent<Fish>();
+        if (otherFish == null || otherFish == this || otherFish is SharkBehaviour)
+            return;
         
-        FishBase otherFish = collision.GetComponent<FishBase>();
+        Destroy(otherFish.gameObject);
 
-        if (otherFish != null && otherFish != this && collision.CompareTag("Fish"))
-        {
-            _gameSystem.KillFish();
-            Destroy(otherFish.gameObject);
+        IncreaseValue(otherFish.GetValue());
+        Grow();
 
-            Grow();
-
-            StartCoroutine(EatFrame());
-        }
+        StartCoroutine(EatFrame());
+        
     }
 
     private void Grow()
@@ -51,9 +50,17 @@ public class SharkBehaviour : Fish
     IEnumerator EatFrame()
     {
         sr.sprite = eat;
-        audioSource.PlayOneShot(eatSFX);
+        if (!audioSource.isPlaying && eatSFX != null)
+        {
+            audioSource.PlayOneShot(eatSFX);
+        }
         yield return new WaitForSeconds(0.5f);
 
         sr.sprite = normal;
+    }
+
+    private void IncreaseValue(float amount)
+    {
+        _value += amount;
     }
 }

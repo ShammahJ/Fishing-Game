@@ -18,8 +18,9 @@ public class ClownfishBehaviour : Fish
     // Save the original speed for when the fish moves again
     private float ogSpeed;
 
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         audioSource = GetComponent<AudioSource>();
         timer = Random.Range(minPauseTime, maxPauseTime);
         ogSpeed = _speed;

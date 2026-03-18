@@ -17,7 +17,7 @@ public class FishManager : MonoBehaviour
     [SerializeField] [Range(0.05f, 25f)] private float fishPerSecond = 1f;
     // private GameObject[] fishes;
     private float _fishTimer;
-    private int _currentFishCount;
+    
 
     [Header("Lives")]
     public UnityEvent<int> livesChanged;
@@ -69,10 +69,7 @@ public class FishManager : MonoBehaviour
         livesChanged.Invoke(_lives);
     }
 
-    public void KillFish()
-    {
-        _currentFishCount--;
-    }
+    
     
 
     //WEIGHTED RANDOM SYSTEM

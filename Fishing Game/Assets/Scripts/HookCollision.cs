@@ -11,7 +11,7 @@ public class HookCollision : MonoBehaviour
     private float _collectedValue;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.gameObject.CompareTag("Fish")) {return;}
+        if (!collision.gameObject.CompareTag("Fish") || !collision.gameObject.CompareTag("Shark")) {return;}
         Fish collectedFish = collision.gameObject.GetComponent<Fish>();
         if (collectedFish.isHooked) return;
         onHook.Invoke(collectedFish);

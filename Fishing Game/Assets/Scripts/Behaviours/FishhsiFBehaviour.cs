@@ -3,14 +3,15 @@ using UnityEngine;
 public class FishhsiFBehaviour : Fish
 {
     public float minTurnTime = 2f;
-    public float maxTurnTime = 5f;
+    public float maxTurnTime = 4f;
 
     private float timer;
     private int turns = 0;
     private float turnLimit;
 
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         ResetTimer();
         turnLimit = Random.Range(3, 6);
     }

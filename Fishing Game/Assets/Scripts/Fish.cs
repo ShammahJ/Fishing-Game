@@ -21,7 +21,7 @@ public class Fish : MonoBehaviour
     [SerializeField] private Collider2D hitbox;
     [SerializeField] private bool isRandomColor;
 
-    protected float _value;
+    public float _value;
     protected float _speed;
     public float strength;
 
@@ -32,7 +32,7 @@ public class Fish : MonoBehaviour
     private const float ScreenBorder = 11f;
     private const float ScaleValueMultiplier = 0.05f;//How big the fish is based on its value
 
-    void Start()
+    protected virtual void Start()
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -91,6 +91,7 @@ public class Fish : MonoBehaviour
         if (math.abs(transform.position.x) > ScreenBorder)
         {
             Destroy(gameObject);
+            Debug.Log("Destroyed " + this.name);
         }
     }
 
