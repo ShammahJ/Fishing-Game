@@ -4,11 +4,11 @@ public class SwampCleared : MonoBehaviour
 {
     void Start()
     {
-        if (MapGameManager.hasFinishedClear1 == true)
+        if (MapGameManager.hasFinishedShop1 == true)
         {
             MapGameManager.hasFinishedSwamp1 = true;
         }
-        if (MapGameManager.hasFinishedShop2 == true)
+        if (MapGameManager.hasFinishedShop3 == true)
         {
             MapGameManager.hasFinishedSwamp2 = true;
         }

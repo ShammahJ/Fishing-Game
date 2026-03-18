@@ -8,11 +8,11 @@ public class ClearCleared : MonoBehaviour
         {
             MapGameManager.hasFinishedClear1 = true;
         }
-        if (MapGameManager.hasFinishedShop1 == true)
+        if (MapGameManager.hasFinishedShop2 == true)
         {
             MapGameManager.hasFinishedClear2 = true;
         }
-        if (MapGameManager.hasFinishedShop2 == true)
+        if (MapGameManager.hasFinishedShop3 == true)
         {
             MapGameManager.hasFinishedClear3 = true;
         }

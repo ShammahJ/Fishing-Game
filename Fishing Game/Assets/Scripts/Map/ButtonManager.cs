@@ -9,11 +9,11 @@ public class ButtonManager : MonoBehaviour
     public Button clear3;
     public Button rain1;
     public Button rain2;
-    public Button rain3;
     public Button swamp1;
     public Button swamp2;
     public Button shop1;
     public Button shop2;
+    public Button shop3;
     public Button start;
 
     void Start()
@@ -23,11 +23,11 @@ public class ButtonManager : MonoBehaviour
         clear3.enabled = false;
         rain1.enabled = false;
         rain2.enabled = false;
-        rain3.enabled = false;
         swamp1.enabled = false;
         swamp2.enabled = false;
         shop1.enabled = false;
         shop2.enabled = false;
+        shop3.enabled = false;
         start.enabled = false;
 
     }
@@ -45,11 +45,11 @@ public class ButtonManager : MonoBehaviour
             clear3.enabled = false;
             rain1.enabled = false;
             rain2.enabled = false;
-            rain3.enabled = false;
             swamp1.enabled = false;
             swamp2.enabled = false;
             shop1.enabled = false;
             shop2.enabled = false;
+            shop3.enabled = false;
             start.enabled = false;
         }
         else if (collision.gameObject.CompareTag("Clear2"))
@@ -63,11 +63,11 @@ public class ButtonManager : MonoBehaviour
             clear3.enabled = false;
             rain1.enabled = false;
             rain2.enabled = false;
-            rain3.enabled = false;
             swamp1.enabled = false;
             swamp2.enabled = false;
             shop1.enabled = false;
             shop2.enabled = false;
+            shop3.enabled = false;
             start.enabled = false;
         }
         else if (collision.gameObject.CompareTag("Clear3"))
@@ -81,11 +81,11 @@ public class ButtonManager : MonoBehaviour
             clear2.enabled = false;
             rain1.enabled = false;
             rain2.enabled = false;
-            rain3.enabled = false;
             swamp1.enabled = false;
             swamp2.enabled = false;
             shop1.enabled = false;
             shop2.enabled = false;
+            shop3.enabled = false;
             start.enabled = false;
         }
         else if (collision.gameObject.CompareTag("Rain1"))
@@ -99,11 +99,11 @@ public class ButtonManager : MonoBehaviour
             clear2.enabled = false;
             clear3.enabled = false;
             rain2.enabled = false;
-            rain3.enabled = false;
             swamp1.enabled = false;
             swamp2.enabled = false;
             shop1.enabled = false;
             shop2.enabled = false;
+            shop3.enabled = false;
             start.enabled = false;
         }
         else if (collision.gameObject.CompareTag("Rain2"))
@@ -117,31 +117,31 @@ public class ButtonManager : MonoBehaviour
             clear2.enabled = false;
             clear3.enabled = false;
             rain1.enabled = false;
-            rain3.enabled = false;
             swamp1.enabled = false;
             swamp2.enabled = false;
             shop1.enabled = false;
             shop2.enabled = false;
+            shop3.enabled = false;
             start.enabled = false;
         }
-        else if (collision.gameObject.CompareTag("Rain3"))
-        {
-            if (!MapGameManager.hasFinishedRain3)
-            {
-                rain3.enabled = true;
-            }
+        //else if (collision.gameObject.CompareTag("Rain3"))
+        //{
+        //    if (!MapGameManager.hasFinishedRain3)
+        //    {
+        //        rain3.enabled = true;
+        //    }
 
-            clear1.enabled = false;
-            clear2.enabled = false;
-            clear3.enabled = false;
-            rain1.enabled = false;
-            rain2.enabled = false;
-            swamp1.enabled = false;
-            swamp2.enabled = false;
-            shop1.enabled = false;
-            shop2.enabled = false;
-            start.enabled = false;
-        }
+        //    clear1.enabled = false;
+        //    clear2.enabled = false;
+        //    clear3.enabled = false;
+        //    rain1.enabled = false;
+        //    rain2.enabled = false;
+        //    swamp1.enabled = false;
+        //    swamp2.enabled = false;
+        //    shop1.enabled = false;
+        //    shop2.enabled = false;
+        //    start.enabled = false;
+        //}
         else if (collision.gameObject.CompareTag("Swamp1"))
         {
             if (!MapGameManager.hasFinishedSwamp1)
@@ -154,10 +154,10 @@ public class ButtonManager : MonoBehaviour
             clear3.enabled = false;
             rain1.enabled = false;
             rain2.enabled = false;
-            rain3.enabled = false;
             swamp2.enabled = false;
             shop1.enabled = false;
             shop2.enabled = false;
+            shop3.enabled = false;
             start.enabled = false;
         }
         else if (collision.gameObject.CompareTag("Swamp2"))
@@ -172,10 +172,10 @@ public class ButtonManager : MonoBehaviour
             clear3.enabled = false;
             rain1.enabled = false;
             rain2.enabled = false;
-            rain3.enabled = false;
             swamp1.enabled = false;
             shop1.enabled = false;
             shop2.enabled = false;
+            shop3.enabled = false;
             start.enabled = false;
         }
         else if (collision.gameObject.CompareTag("Shop1"))
@@ -190,10 +190,10 @@ public class ButtonManager : MonoBehaviour
             clear3.enabled = false;
             rain1.enabled = false;
             rain2.enabled = false;
-            rain3.enabled = false;
             swamp1.enabled = false;
             swamp2.enabled = false;
             shop2.enabled = false;
+            shop3.enabled = false;
             start.enabled = false;
         }
         else if (collision.gameObject.CompareTag("Shop2"))
@@ -208,10 +208,28 @@ public class ButtonManager : MonoBehaviour
             clear3.enabled = false;
             rain1.enabled = false;
             rain2.enabled = false;
-            rain3.enabled = false;
             swamp1.enabled = false;
             swamp2.enabled = false;
             shop1.enabled = false;
+            shop3.enabled = false;
+            start.enabled = false;
+        }
+        else if (collision.gameObject.CompareTag("Shop3"))
+        {
+            if (!MapGameManager.hasFinishedShop3)
+            {
+                shop3.enabled = true;
+            }
+
+            clear1.enabled = false;
+            clear2.enabled = false;
+            clear3.enabled = false;
+            rain1.enabled = false;
+            rain2.enabled = false;
+            swamp1.enabled = false;
+            swamp2.enabled = false;
+            shop1.enabled = false;
+            shop2.enabled = false;
             start.enabled = false;
         }
 
@@ -227,11 +245,11 @@ public class ButtonManager : MonoBehaviour
             clear3.enabled = false;
             rain1.enabled = false;
             rain2.enabled = false;
-            rain3.enabled = false;
             swamp1.enabled = false;
             swamp2.enabled = false;
             shop1.enabled = false;
             shop2.enabled = false;
+            shop3.enabled = false;
         }
     }
 }

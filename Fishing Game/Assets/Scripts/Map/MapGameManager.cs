@@ -12,9 +12,9 @@ public class MapGameManager : MonoBehaviour
     static public bool hasFinishedClear3 = false;
     static public bool hasFinishedRain1 = false;
     static public bool hasFinishedRain2 = false;
-    static public bool hasFinishedRain3 = false;
     static public bool hasFinishedSwamp1 = false;
     static public bool hasFinishedSwamp2 = false;
     static public bool hasFinishedShop1 = false;
     static public bool hasFinishedShop2 = false;
+    static public bool hasFinishedShop3 = false;
 }
