@@ -67,7 +67,15 @@ public class GameManager : MonoBehaviour
             return;
         }
         LoseMoney(debt);
-        SceneManager.LoadScene("Map");
+
+        if (MapGameManager.onRain2 && MapGameManager.hasFinishedRain2)
+        {
+            SceneManager.LoadScene("WinScreen");
+        }
+        else
+        {
+            SceneManager.LoadScene("Map");
+        }
     }
 
     public void ResetGame()
