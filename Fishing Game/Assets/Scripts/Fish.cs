@@ -49,8 +49,6 @@ public class Fish : MonoBehaviour
 
         // Scale Size base on value
         transform.localScale = new Vector3(1 + _value * ScaleValueMultiplier, 1 + _value * ScaleValueMultiplier, 1 + _value * ScaleValueMultiplier);
-        print("min height: " + minHeight);
-        print("max height: " + maxHeight);
         if (Random.Range(0, 2) == 1)
         {
             _isFacingRight = true;

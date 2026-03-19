@@ -235,7 +235,7 @@ MonoBehaviour:
   maxSpeed: 15
   minValue: 2
   maxValue: 5
-  minHeight: -4.5
+  minHeight: -4
   maxHeight: 2
   minStrength: 1
   maxStrength: 25

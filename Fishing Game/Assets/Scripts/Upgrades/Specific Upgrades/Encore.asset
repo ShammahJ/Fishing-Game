@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Encore
   id: encore
   upgradeName: Encore
-  cost: 180
+  cost: 150
   rarity: 2
   description: Refunds a hook chance when you reel in 4 fish or more on a single
     hook. One time use.

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Monogamy
   id: monogamy
   upgradeName: Monogamy
-  cost: 180
+  cost: 100
   rarity: 2
   description: 'If there is only one fish on your hook when you reel it in, triple
     its value. '

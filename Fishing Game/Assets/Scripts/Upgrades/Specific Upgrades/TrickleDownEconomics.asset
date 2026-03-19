@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TrickleDownEconomics
   id: trickle_down_economics
   upgradeName: Trickle Down Economics
-  cost: 180
+  cost: 90
   rarity: 2
   description: Whenever you hook a group of fish up, the least-valued fish gets $40,
     the second-least gets $30, and so on until the bonus is $0.

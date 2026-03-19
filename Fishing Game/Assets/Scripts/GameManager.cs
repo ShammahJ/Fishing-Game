@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public float money;
 
     public float debt;
-    private const float StartingDebt = 150f;
+    private const float StartingDebt = 100f;
     private const float ScalingDebt = 50f;
     public int level = -1;
 

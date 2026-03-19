@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CherryOnTop
   id: cherry_on_top
   upgradeName: Cherry On Top
-  cost: 95
+  cost: 115
   rarity: 1
   description: If the last hook has only 1 fish, multiply its value by 1.5x.
   icon: {fileID: -2435418127600559311, guid: 05c7bee9e00c3174180bd3bb0e6f9daf, type: 3}

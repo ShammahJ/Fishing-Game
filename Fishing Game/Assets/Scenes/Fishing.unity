@@ -346,6 +346,7 @@ MonoBehaviour:
     weight: 1
   fishManager: {fileID: 292696392}
   seaweed: {fileID: 1369435545}
+  background: {fileID: 748923281}
 --- !u!4 &139935634
 Transform:
   m_ObjectHideFlags: 0
@@ -4804,7 +4805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1369435546
 Transform:
   m_ObjectHideFlags: 0

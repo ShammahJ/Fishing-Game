@@ -109,9 +109,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SharkBehaviour
   minSpeed: 5
   maxSpeed: 5
-  minValue: 15
-  maxValue: 20
-  minHeight: -4.5
+  minValue: 25
+  maxValue: 40
+  minHeight: -4
   maxHeight: 2
   minStrength: 7.5
   maxStrength: 15

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FizzBuzz
   id: fizzbuzz
   upgradeName: FizzBuzz
-  cost: 300
+  cost: 135
   rarity: 3
   description: Every 3rd fish gets $50, and every 5th gets tripled value.
   icon: {fileID: 6466028083855618831, guid: fcec9ff0e2d0c434fa792370ba5a4be1, type: 3}
