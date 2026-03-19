@@ -83,6 +83,7 @@ public class GameManager : MonoBehaviour
         level = -1;
         money = 0;
         debt = StartingDebt;
+        MapGameManager.Reset();
         //Reset upgrades here!
     }
 

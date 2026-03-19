@@ -42,4 +42,33 @@ public class MapGameManager : MonoBehaviour
     static public bool onShop1 = false;
     static public bool onShop2 = false;
     static public bool onShop3 = false;
+
+    static public void Reset()
+    {
+        shipPosition = new Vector3(135f, 560f, 0f);
+
+        hasFinishedStart = false;
+        hasFinishedClear1 = false;
+        hasFinishedClear2 = false;
+        hasFinishedClear3 = false;
+        hasFinishedRain1 = false;
+        hasFinishedRain2 = false;
+        hasFinishedSwamp1 = false;
+        hasFinishedSwamp2 = false;
+        hasFinishedShop1 = false;
+        hasFinishedShop2 = false;
+        hasFinishedShop3 = false;
+
+        onStart = true;
+        onClear1 = false;
+        onClear2 = false;
+        onClear3 = false;
+        onRain1 = false;
+        onRain2 = false;
+        onSwamp1 = false;
+        onSwamp2 = false;
+        onShop1 = false;
+        onShop2 = false;
+        onShop3 = false;
+    }
 }
