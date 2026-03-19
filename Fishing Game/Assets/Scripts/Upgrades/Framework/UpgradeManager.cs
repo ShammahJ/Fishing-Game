@@ -18,7 +18,6 @@ public class UpgradeManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-            Instance = this;
     }
 
     public void AddUpgrade(Upgrade upgrade)
