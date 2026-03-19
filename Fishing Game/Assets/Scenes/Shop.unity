@@ -595,6 +595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PopupToggle
   panel: {fileID: 1532597535}
+  id: Shop
 --- !u!4 &438515998
 Transform:
   m_ObjectHideFlags: 0

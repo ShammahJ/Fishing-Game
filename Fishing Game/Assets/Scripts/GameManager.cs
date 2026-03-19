@@ -1,10 +1,12 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
-{
+public class GameManager : MonoBehaviour {
 
+
+    public Dictionary<string, bool> tutorialSeen =  new Dictionary<string, bool>();
     public UnityEvent<float> onMoneyChanged;
     [SerializeField] private FishManager fishScene;
     public UpgradeInventoryPanel inventoryPanel;
@@ -46,10 +48,10 @@ public class GameManager : MonoBehaviour
         {
             inventoryPanel.TogglePanel();
         }
-        // if (!Input.GetKeyDown(KeyCode.P))
-        // {
-        //     money = 0f;
-        // }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+           tutorialSeen.Clear();
+        }
     }
 
     public void LevelIncrease()
