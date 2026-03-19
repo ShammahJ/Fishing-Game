@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,7 +10,7 @@ public class GameManager : MonoBehaviour {
     public Dictionary<string, bool> tutorialSeen =  new Dictionary<string, bool>();
     public UnityEvent<float> onMoneyChanged;
     [SerializeField] private FishManager fishScene;
-    public UpgradeInventoryPanel inventoryPanel;
+    [System.NonSerialized] public UpgradeInventoryPanel inventoryPanel;
     public float money;
 
     public float debt;
@@ -44,7 +45,12 @@ public class GameManager : MonoBehaviour {
         // {
         //     Debug.Log(money);
         // }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (inventoryPanel == null)
+        {
+            inventoryPanel = FindObjectOfType<UpgradeInventoryPanel>(true);
+        }
+
+        if (inventoryPanel != null && Input.GetKeyDown(KeyCode.E))
         {
             inventoryPanel.TogglePanel();
         }
@@ -102,14 +108,6 @@ public class GameManager : MonoBehaviour {
     public float GetMoney()
     {
         return money;
-    }
-
-    public void AddExtraLife()
-    {
-        if (fishScene != null)
-        {
-            fishScene.AddLife();
-        }
     }
 
     public int GetLives()

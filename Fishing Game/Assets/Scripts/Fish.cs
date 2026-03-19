@@ -22,8 +22,11 @@ public class Fish : MonoBehaviour
     [SerializeField] private bool isRandomColor;
 
     public float _value;
-    protected float _speed;
+    public float _speed;
     public float strength;
+
+    private float strengthMultiplier = 1f;
+    private float speedMultiplier = 1f;
 
     protected FishManager _gameSystem;
     public bool isHooked = false;
@@ -43,9 +46,9 @@ public class Fish : MonoBehaviour
         }
 
         // Random Stats
-        _speed = Random.Range(minSpeed, maxSpeed);
+        _speed = Random.Range(minSpeed, maxSpeed) * speedMultiplier;
         _value = Random.Range(minValue, maxValue);
-        strength = Random.Range(minStrength, maxStrength);
+        strength = Random.Range(minStrength, maxStrength) * strengthMultiplier;
 
         // Scale Size base on value
         transform.localScale = new Vector3(1 + _value * ScaleValueMultiplier, 1 + _value * ScaleValueMultiplier, 1 + _value * ScaleValueMultiplier);
@@ -61,6 +64,12 @@ public class Fish : MonoBehaviour
             transform.position = new Vector3(ScreenBorder, Random.Range(minHeight, maxHeight), 0);
         }
 
+    }
+
+    public void ModifyStats(float strengthMult, float speedMult)
+    {
+        strengthMultiplier = strengthMult;
+        speedMultiplier = speedMult;
     }
 
     // Update is called once per frame

@@ -1488,6 +1488,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3861fde19c981824db1075d2e78389e2, type: 2}
   - {fileID: 11400000, guid: 9b644c420a6bebe4e8ad2a341ae0e078, type: 2}
   - {fileID: 11400000, guid: d81d99f1d2c07894f87af7e56f85e7a2, type: 2}
+  - {fileID: 11400000, guid: 29d9b59a99d75804394abca9bbc5c3b1, type: 2}
+  - {fileID: 11400000, guid: e583fa91dbbdf374c90883c0f585885b, type: 2}
+  - {fileID: 11400000, guid: da225fbe9e9db884e9b2e323bad57262, type: 2}
   currentShopUpgrades: []
   shopSlots:
   - {fileID: 1372333277}
@@ -2472,7 +2475,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   fishScene: {fileID: 0}
-  inventoryPanel: {fileID: 0}
   money: 0
   debt: 0
   level: -1

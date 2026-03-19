@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6630510741d274e976fd99bd8ed5c0, type: 3}
+  m_Name: Pagliacci
+  m_EditorClassIdentifier: Assembly-CSharp::Pagliacci
+  id: pagliacci
+  upgradeName: Pagliacci
+  cost: 95
+  rarity: 1
+  description: 'If you catch a clownfish, if there are multiple on your hook, all
+    fish gain $15. However, if there is only one clownfish on your hook, all fish
+    lose a random amount of value from $5-50. '
+  icon: {fileID: 8854091739084298122, guid: ac7f6fad50a1bea4e9f6413cc50e8497, type: 3}
+  moneyBonus: 15
+  minPenaltyAmount: 5
+  maxPenaltyAmount: 50

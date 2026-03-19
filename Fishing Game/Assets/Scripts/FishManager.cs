@@ -122,6 +122,11 @@ public class FishManager : MonoBehaviour
         // Allows the fish to access the methods in here
         //Fish fbase = prefab.GetComponent<Fish>();
         //fbase.Initialize(this);
+
+        if (UpgradeManager.Instance != null)
+        { //notifies all upgrades with NotifyHookRetrieved() to activate
+            UpgradeManager.Instance.OnFishSpawned(fishObj.GetComponent<Fish>());
+        }
     }
 
     void Update()

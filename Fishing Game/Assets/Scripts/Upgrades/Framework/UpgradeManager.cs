@@ -99,4 +99,12 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
+    public virtual void OnFishSpawned(Fish fish)
+    {
+        foreach (ActiveUpgrade upgrade in activeUpgrades)
+        {
+            upgrade.definition.OnFishSpawned(fish, upgrade);
+        }
+    }
+
 }

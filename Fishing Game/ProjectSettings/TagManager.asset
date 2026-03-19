@@ -20,6 +20,7 @@ TagManager:
   - Ship
   - Shop3
   - Shark
+  - UpgradeInventory
   layers:
   - Default
   - TransparentFX
