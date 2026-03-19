@@ -155,17 +155,25 @@ MonoBehaviour:
     weight: 1
   - prefab: {fileID: 1311152994520545813, guid: a6773b560b2003740aadd2ccafb138ba, type: 3}
     weight: 50
+  - prefab: {fileID: 1311152994520545813, guid: 25932e514e5924543bda13932d05bed0, type: 3}
+    weight: 2
+  - prefab: {fileID: 1311152994520545813, guid: d3bebdf462ea89745be07444666c8750, type: 3}
+    weight: 1
+  - prefab: {fileID: 3839990507532285524, guid: a09f3e8f2176a43429fb3b7bd7815323, type: 3}
+    weight: 2.5
   clearFish:
   - prefab: {fileID: 4682836702807778376, guid: 5d4008a680d487b458c01c23fca5533b, type: 3}
-    weight: 1
-  - prefab: {fileID: 8234842185368791532, guid: c4de5d1cc3474e1498a71cb2ec7e8bce, type: 3}
-    weight: 1
+    weight: 2
   - prefab: {fileID: 1311152994520545813, guid: a6773b560b2003740aadd2ccafb138ba, type: 3}
     weight: 1
-  - prefab: {fileID: 8287314129032738611, guid: 831b5300997a93746ace4e334c63f791, type: 3}
-    weight: 50
   - prefab: {fileID: 3839990507532285524, guid: 17eabc4e98a1bef4ca066dfc7e229297, type: 3}
-    weight: 1000000
+    weight: 1
+  - prefab: {fileID: 1311152994520545813, guid: 25932e514e5924543bda13932d05bed0, type: 3}
+    weight: 1
+  - prefab: {fileID: 1311152994520545813, guid: d3bebdf462ea89745be07444666c8750, type: 3}
+    weight: 2
+  - prefab: {fileID: 3839990507532285524, guid: 7012901388b5b6748bab58abb40ecbf2, type: 3}
+    weight: 5
   swampFish:
   - prefab: {fileID: 8287314129032738611, guid: 831b5300997a93746ace4e334c63f791, type: 3}
     weight: 1
@@ -175,6 +183,10 @@ MonoBehaviour:
     weight: 1
   - prefab: {fileID: 4682836702807778376, guid: 5d4008a680d487b458c01c23fca5533b, type: 3}
     weight: 5
+  - prefab: {fileID: 3839990507532285524, guid: a09f3e8f2176a43429fb3b7bd7815323, type: 3}
+    weight: 3
+  - prefab: {fileID: 3839990507532285524, guid: 7012901388b5b6748bab58abb40ecbf2, type: 3}
+    weight: 1
   rainyFish:
   - prefab: {fileID: 8287314129032738611, guid: 831b5300997a93746ace4e334c63f791, type: 3}
     weight: 1
@@ -183,6 +195,10 @@ MonoBehaviour:
   - prefab: {fileID: 1311152994520545813, guid: a6773b560b2003740aadd2ccafb138ba, type: 3}
     weight: 1
   - prefab: {fileID: 3839990507532285524, guid: 17eabc4e98a1bef4ca066dfc7e229297, type: 3}
+    weight: 1
+  - prefab: {fileID: 1311152994520545813, guid: 25932e514e5924543bda13932d05bed0, type: 3}
+    weight: 1
+  - prefab: {fileID: 1311152994520545813, guid: d3bebdf462ea89745be07444666c8750, type: 3}
     weight: 1
   fishManager: {fileID: 292696392}
 --- !u!4 &139935634

@@ -15,10 +15,11 @@ public class BiomeManager : MonoBehaviour
     // }
 
     [SerializeField] private FishManager fishManager;
-
+    [SerializeField] private GameObject seaweed;
     public void SetBiome(string biome)
     {
         print("set biome: " + biome);
+        seaweed.SetActive(false);
         switch (biome) {
             case "Beach":
                 fishManager.fishPrefabs = beachFish;
@@ -31,12 +32,12 @@ public class BiomeManager : MonoBehaviour
             case "Swamp":
                 fishManager.fishPrefabs = swampFish;
                 fishManager.fishPerSecond = 2.5f;
+                seaweed.SetActive(true);
                 break;
             case "Rainy":
                 fishManager.fishPrefabs = rainyFish;
                 fishManager.fishPerSecond = 5f;
                 break;
-           
         }
     }
 }
