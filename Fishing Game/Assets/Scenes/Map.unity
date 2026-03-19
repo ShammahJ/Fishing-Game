@@ -475,7 +475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
   sceneName: Fishing
-  biome: Clear
+  biome: Beach
 --- !u!4 &215894308
 Transform:
   m_ObjectHideFlags: 0

@@ -148,6 +148,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 090fa8c2ac0d70f4d820d808f73d7d25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  beachFish:
+  - prefab: {fileID: 4682836702807778376, guid: 5d4008a680d487b458c01c23fca5533b, type: 3}
+    weight: 1
+  - prefab: {fileID: 3839990507532285524, guid: 17eabc4e98a1bef4ca066dfc7e229297, type: 3}
+    weight: 1
+  - prefab: {fileID: 1311152994520545813, guid: a6773b560b2003740aadd2ccafb138ba, type: 3}
+    weight: 50
+  clearFish:
+  - prefab: {fileID: 4682836702807778376, guid: 5d4008a680d487b458c01c23fca5533b, type: 3}
+    weight: 1
+  - prefab: {fileID: 8234842185368791532, guid: c4de5d1cc3474e1498a71cb2ec7e8bce, type: 3}
+    weight: 1
+  - prefab: {fileID: 1311152994520545813, guid: a6773b560b2003740aadd2ccafb138ba, type: 3}
+    weight: 1
+  - prefab: {fileID: 8287314129032738611, guid: 831b5300997a93746ace4e334c63f791, type: 3}
+    weight: 50
+  - prefab: {fileID: 3839990507532285524, guid: 17eabc4e98a1bef4ca066dfc7e229297, type: 3}
+    weight: 1000000
+  swampFish:
+  - prefab: {fileID: 8287314129032738611, guid: 831b5300997a93746ace4e334c63f791, type: 3}
+    weight: 1
+  - prefab: {fileID: 8234842185368791532, guid: c4de5d1cc3474e1498a71cb2ec7e8bce, type: 3}
+    weight: 1
+  - prefab: {fileID: 3839990507532285524, guid: 17eabc4e98a1bef4ca066dfc7e229297, type: 3}
+    weight: 1
+  - prefab: {fileID: 4682836702807778376, guid: 5d4008a680d487b458c01c23fca5533b, type: 3}
+    weight: 5
+  rainyFish:
+  - prefab: {fileID: 8287314129032738611, guid: 831b5300997a93746ace4e334c63f791, type: 3}
+    weight: 1
+  - prefab: {fileID: 8234842185368791532, guid: c4de5d1cc3474e1498a71cb2ec7e8bce, type: 3}
+    weight: 5
+  - prefab: {fileID: 1311152994520545813, guid: a6773b560b2003740aadd2ccafb138ba, type: 3}
+    weight: 1
+  - prefab: {fileID: 3839990507532285524, guid: 17eabc4e98a1bef4ca066dfc7e229297, type: 3}
+    weight: 1
+  fishManager: {fileID: 292696392}
 --- !u!4 &139935634
 Transform:
   m_ObjectHideFlags: 0
@@ -374,7 +411,7 @@ Transform:
   m_GameObject: {fileID: 292696390}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 999.28107, y: 603.26373, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -392,18 +429,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afca89b33d945b14981f59a2a4b6487e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  fishPrefabs:
-  - prefab: {fileID: 4682836702807778376, guid: 5d4008a680d487b458c01c23fca5533b, type: 3}
-    weight: 1
-  - prefab: {fileID: 8287314129032738611, guid: 831b5300997a93746ace4e334c63f791, type: 3}
-    weight: 1
-  - prefab: {fileID: 8234842185368791532, guid: c4de5d1cc3474e1498a71cb2ec7e8bce, type: 3}
-    weight: 1
-  - prefab: {fileID: 1311152994520545813, guid: a6773b560b2003740aadd2ccafb138ba, type: 3}
-    weight: 1
-  - prefab: {fileID: 3839990507532285524, guid: 17eabc4e98a1bef4ca066dfc7e229297, type: 3}
-    weight: 1
+  fishPrefabs: []
   fishPerSecond: 2
+  biomeManager: {fileID: 139935633}
   livesChanged:
     m_PersistentCalls:
       m_Calls:
@@ -3929,8 +3957,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   mouseSpeed: 8
-  descensionSpeed: 15
-  ascensionSpeed: 15
+  descensionSpeed: 10
+  ascensionSpeed: 10
   fishCountMultiplier: 0.05
   castAction:
     m_Name: Player

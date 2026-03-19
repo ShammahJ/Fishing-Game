@@ -13,11 +13,12 @@ public class WeightedFish
 public class FishManager : MonoBehaviour
 {
     [Header("Fish Spawning")]
-    [SerializeField] private List<WeightedFish> fishPrefabs;
-    [SerializeField] [Range(0.05f, 25f)] private float fishPerSecond = 1f;
+    public List<WeightedFish> fishPrefabs;
+    [Range(0.05f, 25f)] public float fishPerSecond = 1f;
     // private GameObject[] fishes;
     private float _fishTimer;
     
+    [SerializeField] BiomeManager biomeManager;
 
     [Header("Lives")]
     public UnityEvent<int> livesChanged;
@@ -29,6 +30,7 @@ public class FishManager : MonoBehaviour
     private int _lives;
     void Start()
     {
+        biomeManager.SetBiome(GameManager.instance.biome);
         _lives = LivesMax;
         livesChanged.Invoke(_lives);
         

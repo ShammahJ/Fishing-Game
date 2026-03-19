@@ -61,8 +61,6 @@ public class GameManager : MonoBehaviour
     public void CheckLossState()
     {
         if (money < debt) {
-            print("YOU LOSEEEEEE");
-            
             SceneManager.LoadScene("LossScreen");
             return;
         }

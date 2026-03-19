@@ -111,10 +111,10 @@ MonoBehaviour:
   maxSpeed: 5
   minValue: 15
   maxValue: 20
-  minHeight: 0
-  maxHeight: 0
-  minStrength: 0
-  maxStrength: 0
+  minHeight: -4.5
+  maxHeight: 2
+  minStrength: 10
+  maxStrength: 20
   hitbox: {fileID: -6100393435805085204}
   isRandomColor: 0
   _value: 0

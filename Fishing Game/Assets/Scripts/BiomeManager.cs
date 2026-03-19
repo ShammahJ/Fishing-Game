@@ -1,19 +1,42 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BiomeManager : MonoBehaviour
 {
-    private void Start()
-    {
-        SetBiome(GameManager.instance.biome);
-    }
+    
+    [SerializeField] private List<WeightedFish> beachFish;
+    [SerializeField] private List<WeightedFish> clearFish;
+    [SerializeField] private List<WeightedFish> swampFish;
+    [SerializeField] private List<WeightedFish> rainyFish;
+    // private void Start()
+    // {
+    //     SetBiome(GameManager.instance.biome);
+    // }
 
-    void SetBiome(string biome)
+    [SerializeField] private FishManager fishManager;
+
+    public void SetBiome(string biome)
     {
-        if (biome == "Clear")
-        {
-            
+        print("set biome: " + biome);
+        switch (biome) {
+            case "Beach":
+                fishManager.fishPrefabs = beachFish;
+                fishManager.fishPerSecond = 2f;
+                break;
+            case "Clear":
+                fishManager.fishPrefabs = clearFish;
+                fishManager.fishPerSecond = 1f;
+                break;
+            case "Swamp":
+                fishManager.fishPrefabs = swampFish;
+                fishManager.fishPerSecond = 2.5f;
+                break;
+            case "Rainy":
+                fishManager.fishPrefabs = rainyFish;
+                fishManager.fishPerSecond = 5f;
+                break;
+           
         }
-        
     }
 }
