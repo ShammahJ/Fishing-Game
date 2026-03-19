@@ -9,24 +9,24 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 6e07d656a329eeb41bd0c801c61b9774
   - enabled: 1
+    path: Assets/Scenes/Map.unity
+    guid: 302bf4bfe71ed05498ecd257c4c9b536
+  - enabled: 1
     path: Assets/Scenes/Fishing.unity
     guid: ce7dcfbfb98d4fc4d8f581250d15d7a3
   - enabled: 1
     path: Assets/Scenes/Shop.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
-    path: Assets/Scenes/Map.unity
-    guid: 302bf4bfe71ed05498ecd257c4c9b536
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Start Biome.unity
     guid: 4c65b5d034b95b14db79f70fefe8f8bf
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Clear Biome.unity
     guid: 527a9d1ea67c5154ab4e954f18d235a7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Rain Biome.unity
     guid: 6fbc4ed430ed22541941a4e29553a752
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Swamp Biome.unity
     guid: a8b332a421ed55449ad25c864d6aef09
   - enabled: 1
