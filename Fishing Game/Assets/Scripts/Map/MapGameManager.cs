@@ -6,15 +6,27 @@ public class MapGameManager : MonoBehaviour
 {
     static public Vector3 shipPosition = new Vector3(135f, 560f, 0f);
 
-    static public bool hasFinishedStart = false;
-    static public bool hasFinishedClear1 = false;
-    static public bool hasFinishedClear2 = false;
-    static public bool hasFinishedClear3 = false;
-    static public bool hasFinishedRain1 = false;
+    static public bool hasFinishedStart = true;
+    static public bool hasFinishedClear1 = true;
+    static public bool hasFinishedClear2 = true;
+    static public bool hasFinishedClear3 = true;
+    static public bool hasFinishedRain1 = true;
     static public bool hasFinishedRain2 = false;
-    static public bool hasFinishedSwamp1 = false;
-    static public bool hasFinishedSwamp2 = false;
-    static public bool hasFinishedShop1 = false;
-    static public bool hasFinishedShop2 = false;
-    static public bool hasFinishedShop3 = false;
+    static public bool hasFinishedSwamp1 = true;
+    static public bool hasFinishedSwamp2 = true;
+    static public bool hasFinishedShop1 = true;
+    static public bool hasFinishedShop2 = true;
+    static public bool hasFinishedShop3 = true;
+
+    static public bool onStart = true;
+    static public bool onClear1 = false;
+    static public bool onClear2 = false;
+    static public bool onClear3 = false;
+    static public bool onRain1 = false;
+    static public bool onRain2 = false;
+    static public bool onSwamp1 = false;
+    static public bool onSwamp2 = false;
+    static public bool onShop1 = false;
+    static public bool onShop2 = false;
+    static public bool onShop3 = false;
 }
