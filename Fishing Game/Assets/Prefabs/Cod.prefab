@@ -84,12 +84,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -5529685492727171976, guid: f1f54f31436f19c418d5d9996ee2a8c3, type: 3}
+  m_Sprite: {fileID: -5529685492727171976, guid: 3c9c2fbfca4f61f4cae51a4e2eb7d025, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 1.84, y: 0.83}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -112,8 +112,8 @@ MonoBehaviour:
   maxValue: 15
   minHeight: -4.5
   maxHeight: 2
-  minStrength: 3
-  maxStrength: 7
+  minStrength: 2
+  maxStrength: 5
   hitbox: {fileID: 1016700921153464679}
   isRandomColor: 0
   _value: 0
