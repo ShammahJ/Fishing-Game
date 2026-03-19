@@ -2064,10 +2064,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 831699434}
-  - {fileID: 1346944020}
   - {fileID: 347747035}
   - {fileID: 1226631939}
   - {fileID: 1443440756}
+  - {fileID: 1346944020}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3968,7 +3968,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1025445037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3981,7 +3981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ecfacb0a11463a4a8f4cffa257c483f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeTester
-  upgrade: {fileID: 0}
+  upgrade: {fileID: 11400000, guid: da225fbe9e9db884e9b2e323bad57262, type: 2}
   upgrade2: {fileID: 11400000, guid: 164af8a4ed9062d44ad747041b8a9081, type: 2}
 --- !u!4 &1025445038
 Transform:
@@ -4031,7 +4031,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   fishScene: {fileID: 292696392}
-  inventoryPanel: {fileID: 1346944021}
   money: 0
   debt: 0
   level: 0
@@ -4713,7 +4712,7 @@ GameObject:
   - component: {fileID: 1346944021}
   m_Layer: 5
   m_Name: UpgradePanel
-  m_TagString: Untagged
+  m_TagString: UpgradeInventory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4725,7 +4724,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1346944019}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4736,7 +4735,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 495}
-  m_SizeDelta: {x: -912.1605, y: -985.2222}
+  m_SizeDelta: {x: -912.1604, y: -985.2222}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1346944021
 MonoBehaviour:

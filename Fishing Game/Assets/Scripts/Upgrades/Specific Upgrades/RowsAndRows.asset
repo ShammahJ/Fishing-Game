@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffc1e61c42b936b4a8c30837892e34d4, type: 3}
+  m_Name: RowsAndRows
+  m_EditorClassIdentifier: Assembly-CSharp::SharkSpecialist
+  id: rows_and_rows
+  upgradeName: Rows And Rows
+  cost: 95
+  rarity: 1
+  description: Sharks are 10x faster and 1.5x stronger, but are 1.5x more valuable.
+  icon: {fileID: -2352260413151720740, guid: bca480ff716e1ba4587fe3ba9c7892e3, type: 3}
+  multVal: 1.5
+  strengthMultiplier: 1.5
+  speedMultiplier: 10

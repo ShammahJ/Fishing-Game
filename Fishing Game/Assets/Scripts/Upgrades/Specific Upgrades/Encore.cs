@@ -29,9 +29,9 @@ public class Encore : Upgrade
 
         if (caughtFish.Count >= requiredFishCount)
         {
-            if (GameManager.instance != null)
+            if (FishManager.instance != null)
             {
-                GameManager.instance.AddExtraLife();
+                FishManager.instance.AddLife();
                 
                 data.hasTriggered = true;
             }

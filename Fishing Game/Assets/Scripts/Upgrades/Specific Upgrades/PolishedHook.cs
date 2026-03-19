@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PolishedHook", menuName = "Upgrades/Polished Hook")]
 public class PolishedHook : Upgrade
 {
     [Header("Upgrade Values")]

@@ -8,7 +8,7 @@ public class CherryOnTop : Upgrade
 
     public override float ModifyFishValue(float currentValue, ActiveUpgrade runtime, Fish fish)
     {
-        if (GameManager.instance.GetLives() == 1)
+        if (FishManager.instance.GetLives() == 1)
         {
             if (Hook.Instance != null && Hook.Instance.fishes != null && Hook.Instance.fishes.Count == 1)
             {
