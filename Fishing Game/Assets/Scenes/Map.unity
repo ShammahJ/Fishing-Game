@@ -428,7 +428,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd71d5e3bb77f6b48980d61adb5c1ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
-  sceneName: Rain Biome
+  sceneName: Fishing
+  biome: Rain
 --- !u!4 &130235536
 Transform:
   m_ObjectHideFlags: 0
@@ -474,6 +475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
   sceneName: Fishing
+  biome: Clear
 --- !u!4 &215894308
 Transform:
   m_ObjectHideFlags: 0
@@ -2760,7 +2762,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1497771990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2848,7 +2850,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd71d5e3bb77f6b48980d61adb5c1ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
-  sceneName: Swamp Biome
+  sceneName: Fishing
+  biome: Swamp
 --- !u!4 &1517651995
 Transform:
   m_ObjectHideFlags: 0
@@ -3820,6 +3823,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803190994}
   m_CullTransparentMesh: 1
+--- !u!1 &1869325873
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1869325875}
+  - component: {fileID: 1869325874}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1869325874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869325873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c24d574c8063f14fa69430abe91bd3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  onMoneyChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  fishScene: {fileID: 0}
+  inventoryPanel: {fileID: 0}
+  money: 0
+  debt: 0
+  level: -1
+  biome: Clear
+--- !u!4 &1869325875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869325873}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 746.4655, y: 493.48462, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1929576386
 GameObject:
   m_ObjectHideFlags: 0
@@ -3850,6 +3906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
   sceneName: Shop
+  biome: Clear
 --- !u!4 &1929576388
 Transform:
   m_ObjectHideFlags: 0
@@ -4324,7 +4381,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd71d5e3bb77f6b48980d61adb5c1ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
-  sceneName: Clear Biome
+  sceneName: Fishing
+  biome: Clear
 --- !u!4 &2032857615
 Transform:
   m_ObjectHideFlags: 0
@@ -4633,3 +4691,4 @@ SceneRoots:
   - {fileID: 1929576388}
   - {fileID: 215894308}
   - {fileID: 1935042528}
+  - {fileID: 1869325875}
