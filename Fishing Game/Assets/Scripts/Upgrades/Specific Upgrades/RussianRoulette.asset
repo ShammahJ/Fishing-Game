@@ -16,9 +16,9 @@ MonoBehaviour:
   upgradeName: Russian Roulette
   cost: 45
   rarity: 0
-  description: 5/6 chance to give all fishes $18 in value. 1/6 chance to set their
+  description: 5/6 chance to give all fishes $9 in value. 1/6 chance to set their
     values to zero.
   icon: {fileID: -6974741365807772243, guid: cca96851cfcc23c45a4e66a1067ab1c8, type: 3}
-  successBonus: 18
+  successBonus: 9
   failChance: 0.16666667
   failMultiplier: 0

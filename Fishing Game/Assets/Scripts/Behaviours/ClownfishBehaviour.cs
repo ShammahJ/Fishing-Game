@@ -2,7 +2,7 @@ using UnityEngine;
 
 // Object must have a component of type AudioSource
 [RequireComponent(typeof(AudioSource))]
-public class ClownfishBehaviour : FishBase
+public class ClownfishBehaviour : Fish
 {
     // I'm not comfortable with coroutines, so I'm using this instead
     public float minPauseTime = 2f;
@@ -18,11 +18,12 @@ public class ClownfishBehaviour : FishBase
     // Save the original speed for when the fish moves again
     private float ogSpeed;
 
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         audioSource = GetComponent<AudioSource>();
         timer = Random.Range(minPauseTime, maxPauseTime);
-        ogSpeed = speed;
+        ogSpeed = _speed;
     }
 
     protected override void SpecialBehaviour()
@@ -35,14 +36,14 @@ public class ClownfishBehaviour : FishBase
 
             if (paused)
             {
-                speed = 0;
+                _speed = 0;
 
                 if (sound != null)
                     audioSource.PlayOneShot(sound);
             }
             else
             {
-                speed = ogSpeed;
+                _speed = ogSpeed;
             }
 
             timer = Random.Range(minPauseTime, maxPauseTime);

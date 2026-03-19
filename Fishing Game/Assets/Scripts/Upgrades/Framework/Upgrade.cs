@@ -36,6 +36,8 @@ public abstract class Upgrade : ScriptableObject
 
     public virtual void OnHookRetrieved(List<Fish> caughtFish, ActiveUpgrade runtime) { }
 
+    public virtual void OnLineCasted(ActiveUpgrade runtime) { }
+
     //Game events
     public virtual void OnUpgradeAdded(ActiveUpgrade runtime) { }
         public virtual void OnUpgradeRemoved(ActiveUpgrade runtime) { }

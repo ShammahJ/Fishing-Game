@@ -1,10 +1,22 @@
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class FishBase : MonoBehaviour
 {
     public int size;
     public float speed;
     public bool moveRight;
+
+    private float _value;
+    private float _speed;
+    public float strength;
+    public bool isHooked = false;
+    private bool _isFacingRight = true;
+    private const float ScreenBorder = 11f;
+    private const float ScaleValueMultiplier = 0.05f;//How big the fish is based on its value
 
     protected FishingSystem _gameSystem;
 
@@ -37,6 +49,7 @@ public class FishBase : MonoBehaviour
         FishMove();
         SpecialBehaviour();
         // Debug.Log("Base update is running");
+
     }
 
     protected virtual void SpecialBehaviour()
@@ -50,8 +63,20 @@ public class FishBase : MonoBehaviour
         // Spawns moving to the right by default
         // If the fish spawns default, move right
         // If not, move left
-        float direction = moveRight ? 1f : -1f;
-        transform.Translate(Vector2.right * direction * speed * Time.deltaTime);
+        if (isHooked) return;
+        if (_isFacingRight)
+        {
+            transform.Translate(_speed * Time.deltaTime * Vector3.right);
+        }
+        else
+        {
+            transform.Translate(_speed * Time.deltaTime * Vector3.left);
+        }
+
+        if (math.abs(transform.position.x) > ScreenBorder)
+        {
+            Destroy(gameObject);
+        }
 
     }
 

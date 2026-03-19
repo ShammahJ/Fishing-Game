@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LivesCounter : MonoBehaviour
 {
-    [SerializeField] FishManager _fishManager;
     [SerializeField] GameObject livesPrefab;
 
     public void OnLivesChange(int lives)

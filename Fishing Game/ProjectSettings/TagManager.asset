@@ -19,6 +19,7 @@ TagManager:
   - Shop2
   - Ship
   - Shop3
+  - Shark
   layers:
   - Default
   - TransparentFX
@@ -29,7 +30,7 @@ TagManager:
   - Background
   - Levels
   - Ship
-  - 
+  - Shark
   - 
   - 
   - 

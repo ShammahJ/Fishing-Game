@@ -3,7 +3,7 @@ using System.Collections;
 
 // Object must have a component of type AudioSource
 [RequireComponent(typeof(AudioSource))]
-public class SharkBehaviour : FishBase
+public class SharkBehaviour : Fish
 {
     private float growthAmount = 0.2f;
 
@@ -20,20 +20,27 @@ public class SharkBehaviour : FishBase
         sr = GetComponent<SpriteRenderer>();
     }
 
-    protected override void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        base.OnTriggerEnter2D(collision);
-        FishBase otherFish = collision.GetComponent<FishBase>();
+        // Don't eat the hook
+        if (collision.GetComponent<HookCollision>() != null)
+            return;
 
-        if (otherFish != null && otherFish != this && collision.CompareTag("Fish"))
-        {
-            _gameSystem.KillFish();
-            Destroy(otherFish.gameObject);
+        // Dont eat other fishes in the hook
+        if (isHooked == true)
+            return;
 
-            Grow();
+        Fish otherFish = collision.GetComponent<Fish>();
+        if (otherFish == null || otherFish == this || otherFish is SharkBehaviour)
+            return;
+        
+        Destroy(otherFish.gameObject);
 
-            StartCoroutine(EatFrame());
-        }
+        IncreaseValue(otherFish.GetValue());
+        Grow();
+
+        StartCoroutine(EatFrame());
+        
     }
 
     private void Grow()
@@ -51,9 +58,17 @@ public class SharkBehaviour : FishBase
     IEnumerator EatFrame()
     {
         sr.sprite = eat;
-        audioSource.PlayOneShot(eatSFX);
+        if (!audioSource.isPlaying && eatSFX != null)
+        {
+            audioSource.PlayOneShot(eatSFX);
+        }
         yield return new WaitForSeconds(0.5f);
 
         sr.sprite = normal;
+    }
+
+    private void IncreaseValue(float amount)
+    {
+        _value += amount;
     }
 }

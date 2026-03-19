@@ -15,15 +15,14 @@ public class Hook : MonoBehaviour
     public static Hook Instance;
    
     [SerializeField] private float mouseSpeed = 15;//How fast the hook follows the mouse(X axis)
-    [SerializeField] private float speed = 15;//How fast the hook descends(Y axis)
+    [SerializeField] private float descensionSpeed = 15;//How fast the hook descends(Y axis)
+    [SerializeField] private float ascensionSpeed = 15;//How fast the hook ascends(Y axis)
     [SerializeField] private float fishCountMultiplier = 0.05f;//How fast the hook descends(Y axis)
     // [SerializeField] float mouseSensitivity = 0.5f;
     [SerializeField] private InputAction castAction;
 
-    [SerializeField] private TextMeshProUGUI totalScoreText;
-    [SerializeField] private TextMeshProUGUI newScoreText;
-    [SerializeReference] float chanceToSwitchStruggleDirection;
     
+    [SerializeField] float chanceToSwitchStruggleDirection;
     private HookCollision _hookCollision;
     
     private const float MaxHeight = 4.5f; //applies on both the surface and the bottom of the screen
@@ -34,7 +33,7 @@ public class Hook : MonoBehaviour
     private bool _descending = true;
     private bool _active;
     private float _currentX;
-    private float _totalScore;
+    // private float _totalScore;
     public List<Fish> fishes;
 
     private float _currentStrength;
@@ -77,7 +76,7 @@ public class Hook : MonoBehaviour
         }
         _active = true;
         _descending = true;
-        newScoreText.text = "";
+        UpgradeManager.Instance.NotifyLineCasted();
     }
 
     
@@ -124,11 +123,10 @@ public class Hook : MonoBehaviour
         fishes.Clear();
         _currentStrength = 0;
         
-        float totalValue = value * ((fishCountMultiplier * (fishCount + 1f)) + 1);
+        float totalValue = value * ((fishCountMultiplier * math.min(fishCount,1f)) + 1);
 
-        _totalScore += totalValue;
-        totalScoreText.text = "Score: " + _totalScore.ToString("F");
-        newScoreText.text = fishCount + " Fish collected, " + totalValue.ToString("F") + " total value!";
+        // fishManager.AddScore(totalValue);
+        // _totalScore += totalValue?;
         onCollect.Invoke(totalValue);
     }
 
@@ -144,7 +142,7 @@ public class Hook : MonoBehaviour
         _height = MaxHeight;
         transform.position = new Vector3(_currentX, _height, transform.position.z);
         // totalScoreText.text = "Score: " + totalScore.ToString("F");
-        newScoreText.text = "Your line broke!";
+        onCollect.Invoke(0f);
         onBreak.Invoke();
     }
     
@@ -154,9 +152,9 @@ public class Hook : MonoBehaviour
             return;
         }
         if (_descending) {
-            _height -= Time.deltaTime * speed;
+            _height -= Time.deltaTime * descensionSpeed;
         } else {
-            _height += Time.deltaTime * speed;
+            _height += Time.deltaTime * ascensionSpeed;
         }
         if (_height <= MaxDepth) {
             _descending = false;
@@ -182,23 +180,11 @@ public class Hook : MonoBehaviour
         else {
             struggle = Random.Range(-_currentStrength * 0.75f, -_currentStrength); 
         }
+        float goalX = mouseXPos;
         
-        // float mouseDelta = Input.mousePositionDelta.x * mouseSensitivity;    
-        if (_active) {
-            mouseXPos = Mathf.Clamp(mouseXPos, -MaxWidth, MaxWidth);
-           
-        }
-        else {
-            mouseXPos = Mathf.Clamp(mouseXPos, -DeadZone, DeadZone);
-        }
-        float goalX = mouseXPos + struggle;
-        
-      
-        // float goalX = _currentX + mouseDelta + struggle;
         if (_active) {
             goalX = Mathf.Clamp(goalX, -MaxWidth, MaxWidth);
-            // Mouse.current.WarpCursorPosition(transform.position * new Vector2(Screen.width/2, Screen.height/2));
-            Mouse.current.WarpCursorPosition(Mouse.current.position.ReadValue() + new Vector2(struggle * 2f,0)); //This gets messed up depending on screen size, please fix!
+            Mouse.current.WarpCursorPosition(Mouse.current.position.ReadValue() + new Vector2(struggle,0)); 
             if (Mathf.Abs(_currentX) > DeadZone) {
                 BreakHook();
             }
