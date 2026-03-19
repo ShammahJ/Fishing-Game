@@ -21,7 +21,7 @@ public class FishManager : MonoBehaviour
 
     [Header("Lives")]
     public UnityEvent<int> livesChanged;
-    public UnityEvent outOfLives;
+    // public UnityEvent outOfLives;
 
     private const int LivesMax = 5;
     public static FishManager instance;

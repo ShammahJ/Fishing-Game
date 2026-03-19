@@ -9,6 +9,7 @@ public class MoneyDisplay : MonoBehaviour
     void Start()
     {
         UpdateMoney(GameManager.instance.money);
+        GameManager.instance.onMoneyChanged.AddListener(UpdateMoney);
     }
     public void UpdateMoney(float money)
     {
