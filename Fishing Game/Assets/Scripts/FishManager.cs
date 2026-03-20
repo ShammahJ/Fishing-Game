@@ -24,14 +24,14 @@ public class FishManager : MonoBehaviour
     public UnityEvent<int> livesChanged;
     // public UnityEvent outOfLives;
 
-    private const int LivesMax = 5;
+    public int livesMax = 5;
     public static FishManager instance;
     
     private int _lives;
     void Start()
     {
         biomeManager.SetBiome(GameManager.instance.biome);
-        _lives = LivesMax;
+        _lives = livesMax;
         livesChanged.Invoke(_lives);
         
         _fishTimer = 1f / fishPerSecond;

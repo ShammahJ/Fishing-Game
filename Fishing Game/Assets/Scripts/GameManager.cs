@@ -23,9 +23,6 @@ public class GameManager : MonoBehaviour {
     private DifficultyChanges[] difficultyValues = new DifficultyChanges[3];
     public int difficulty = 1;
     
-    private float _startingDebt;
-    private float _scalingDebt;
-    
     public int level = -1;
 
     public string biome = "Clear";
@@ -58,16 +55,11 @@ public class GameManager : MonoBehaviour {
         difficultyValues[0] = easyDifficulty;
         difficultyValues[1] = normalDifficulty;
         difficultyValues[2] = hardDifficulty;
-        
-        _startingDebt = difficultyValues[difficulty].StartingDebt;
-        _scalingDebt = difficultyValues[difficulty].ScalingDebt;
     }
 
     public void SetDifficulty(int diff)
     {
         difficulty = diff;
-        _startingDebt = difficultyValues[difficulty].StartingDebt;
-        _scalingDebt = difficultyValues[difficulty].ScalingDebt;
     }
 
     void Update()

@@ -27,23 +27,27 @@ public class BiomeManager : MonoBehaviour
             case "Beach":
                 fishManager.fishPrefabs = beachFish;
                 fishManager.fishPerSecond = 2f;
+                fishManager.livesMax = 5;
                 background.color = new Color(1f, 1f, 0.8f);
                 break;
             case "Clear":
                 fishManager.fishPrefabs = clearFish;
                 fishManager.fishPerSecond = 1f;
+                fishManager.livesMax = 5;
                 background.color = new Color(1f, 1f, 1f);
                 break;
             case "Swamp":
                 fishManager.fishPrefabs = swampFish;
                 fishManager.fishPerSecond = 2.5f;
+                fishManager.livesMax = 5;
                 background.color = new Color(0.8f, 1, 0.8f);
                 seaweed.SetActive(true);
                 
                 break;
             case "Rain":
                 fishManager.fishPrefabs = rainyFish;
-                fishManager.fishPerSecond = 5f;
+                fishManager.fishPerSecond = 4f;
+                fishManager.livesMax = 3;
                 background.color = new Color(0.2f, 0.5f, 1f);
                 break;
         }
