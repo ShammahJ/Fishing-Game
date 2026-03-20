@@ -1909,6 +1909,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonDefinition
   selected: 0
+--- !u!1001 &1049469120
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3517899769280730181, guid: 80dad78f83cbd5c4d8464b3a2f904a63, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517899769280730181, guid: 80dad78f83cbd5c4d8464b3a2f904a63, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 540
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517899769280730181, guid: 80dad78f83cbd5c4d8464b3a2f904a63, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517899769280730181, guid: 80dad78f83cbd5c4d8464b3a2f904a63, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517899769280730181, guid: 80dad78f83cbd5c4d8464b3a2f904a63, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517899769280730181, guid: 80dad78f83cbd5c4d8464b3a2f904a63, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517899769280730181, guid: 80dad78f83cbd5c4d8464b3a2f904a63, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517899769280730181, guid: 80dad78f83cbd5c4d8464b3a2f904a63, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517899769280730181, guid: 80dad78f83cbd5c4d8464b3a2f904a63, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517899769280730181, guid: 80dad78f83cbd5c4d8464b3a2f904a63, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6620212350613780015, guid: 80dad78f83cbd5c4d8464b3a2f904a63, type: 3}
+      propertyPath: m_Name
+      value: LevelLoader
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 80dad78f83cbd5c4d8464b3a2f904a63, type: 3}
 --- !u!1 &1320301643
 GameObject:
   m_ObjectHideFlags: 0
@@ -3860,9 +3917,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   fishScene: {fileID: 0}
-  inventoryPanel: {fileID: 0}
   money: 0
   debt: 0
+  difficulty: 1
   level: -1
   biome: Clear
 --- !u!4 &1869325875
@@ -4687,6 +4744,7 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1049469120}
   - {fileID: 2011176102}
   - {fileID: 1869325875}
   - {fileID: 1802606830}
