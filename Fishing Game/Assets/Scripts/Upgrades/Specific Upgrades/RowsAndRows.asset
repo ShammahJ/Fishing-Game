@@ -19,5 +19,5 @@ MonoBehaviour:
   description: Sharks are 10x faster and 1.5x stronger, but are 1.5x more valuable.
   icon: {fileID: -2352260413151720740, guid: bca480ff716e1ba4587fe3ba9c7892e3, type: 3}
   multVal: 1.5
-  strengthMultiplier: 1.5
-  speedMultiplier: 10
+  strengthMultiplier: 0.5
+  speedMultiplier: 9

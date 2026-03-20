@@ -51,8 +51,6 @@ public class ShopManager : MonoBehaviour
                 AddTooltipToSlot(upgrade, i);
             }
         }
-
-        DebugShop();
     }
 
     public void RerollShop()
@@ -231,11 +229,4 @@ public class ShopManager : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
         }
     } 
-
-    void DebugShop()
-    {
-        Debug.Log("Shop roll");
-        foreach (Upgrade u in currentShopUpgrades)
-            Debug.Log(u.upgradeName);
-    }
 }

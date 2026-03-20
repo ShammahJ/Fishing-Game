@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "MidasHook", menuName = "Upgrades/Midas Hook")]
 public class MidasHook : Upgrade
 {
     [Header("Upgrade Values")]

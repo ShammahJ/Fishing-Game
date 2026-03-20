@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70f89fadb5a8e15409a6fc30f871a05d, type: 3}
+  m_Name: InsiderInformation
+  m_EditorClassIdentifier: Assembly-CSharp::InsiderInformation
+  id: insider_information
+  upgradeName: Insider Information
+  cost: 100
+  rarity: 2
+  description: If there are less than 8 fish in the ocean, fish gain 0.35x * (8 -
+    # of fish in the ocean) mult.
+  icon: {fileID: 4799523737870704127, guid: 30c32a13d807f3d4cad66fd94c0ecf93, type: 3}
+  multVal: 0.35

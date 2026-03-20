@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
 
-[CreateAssetMenu(fileName = "TrickleDownEconomics", menuName = "Upgrades/Trickle Down Economics")]
 public class TrickleDownEconomics : Upgrade
 {
     [Header("Upgrade Values")]

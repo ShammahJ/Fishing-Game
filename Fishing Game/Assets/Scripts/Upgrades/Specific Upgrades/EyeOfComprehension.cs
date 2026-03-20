@@ -1,15 +1,16 @@
 using UnityEngine;
 
-public class Jumpstart : Upgrade
+[CreateAssetMenu(fileName = "EyeOfComprehension", menuName = "Upgrades/Eye Of Comprehension")]
+public class EyeOfComprehension : Upgrade
 {
-    [Header("Upgrade Values")]
     public float moneyBonus;
     public override float ModifyFishValue(float currentValue, ActiveUpgrade runtime, Fish fish)
     {
-        if (FishManager.instance.GetLives() == 5)
+        if (fish.GetComponent<FishhsiFBehaviour>() != null || fish.GetComponent<FshBehaviour>() != null)
         {
             return currentValue + moneyBonus;
         }
+
         return currentValue;
     }
 }

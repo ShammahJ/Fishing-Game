@@ -69,8 +69,8 @@ public class Fish : MonoBehaviour
 
     public void ModifyStats(float strengthMult, float speedMult)
     {
-        strengthMultiplier = strengthMult;
-        speedMultiplier = speedMult;
+        strengthMultiplier += strengthMult;
+        speedMultiplier += speedMult;
     }
 
     // Update is called once per frame

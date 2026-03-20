@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Monogamy", menuName = "Upgrades/Monogamy")]
 public class Monogamy : Upgrade
 {
     [Header("Upgrade Values")]

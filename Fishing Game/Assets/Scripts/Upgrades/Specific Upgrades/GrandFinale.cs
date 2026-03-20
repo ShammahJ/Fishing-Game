@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "GrandFinale", menuName = "Upgrades/Grand Finale")]
 public class GrandFinale : Upgrade
 {
     [Header("Upgrade Values")]

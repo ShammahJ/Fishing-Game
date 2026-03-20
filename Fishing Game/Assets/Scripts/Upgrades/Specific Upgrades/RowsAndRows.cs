@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "RowsAndRows", menuName = "Upgrades/Rows And Rows")]
 public class RowsAndRows : Upgrade
 {
     [Header("Upgrade Values")]

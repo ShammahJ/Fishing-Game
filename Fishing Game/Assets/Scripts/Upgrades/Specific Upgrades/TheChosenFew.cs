@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "TheChosenFew", menuName = "Upgrades/The Chosen Few")]
 public class TheChosenFew : Upgrade
 {
     [Header("Upgrade Values")]

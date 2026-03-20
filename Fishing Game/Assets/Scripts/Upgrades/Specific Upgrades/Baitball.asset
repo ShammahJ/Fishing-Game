@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616494a14973ccf4289a0e31a150eb40, type: 3}
+  m_Name: Baitball
+  m_EditorClassIdentifier: Assembly-CSharp::Baitball
+  id: baitball
+  upgradeName: Baitball
+  cost: 30
+  rarity: 0
+  description: "Fish that aren\u2019t sharks, clownfish, fsh, or fishhsif gain $5."
+  icon: {fileID: -4955603699578580732, guid: 1e11af0dc5baef3409a4922d47aa67a2, type: 3}
+  moneyBonus: 5

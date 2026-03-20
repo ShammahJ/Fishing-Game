@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CherryOnTop", menuName = "Upgrades/Cherry On Top")]
 public class CherryOnTop : Upgrade
 {
     [Header("Upgrade Values")]

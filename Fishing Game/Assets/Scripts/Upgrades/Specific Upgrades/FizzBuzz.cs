@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "FizzBuzz", menuName = "Upgrades/FizzBuzz")]
 public class FizzBuzz : Upgrade
 {
     [Header("Upgrade Values")]

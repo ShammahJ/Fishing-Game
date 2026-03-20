@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e39284d716ddb4288b8a30fec1e5d9, type: 3}
+  m_Name: WeGottaGoBald
+  m_EditorClassIdentifier: Assembly-CSharp::WeGottaGoBald
+  id: we_gotta_go_bald
+  upgradeName: We Gotta Go Bald
+  cost: 135
+  rarity: 3
+  description: Gain 0.75x mult for every upgrade you have, but lose one hook attempt.
+  icon: {fileID: -7968757556875089879, guid: 4e8e3eb6d68f5cb409255028cc86c3e6, type: 3}

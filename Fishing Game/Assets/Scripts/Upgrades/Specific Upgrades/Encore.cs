@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-[CreateAssetMenu(fileName = "Encore", menuName = "Upgrades/Encore")]
 public class Encore : Upgrade
 {
     [Header("Upgrade Values")]
