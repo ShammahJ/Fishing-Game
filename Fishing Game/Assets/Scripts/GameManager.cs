@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
+
+public class DifficultyChanges {
+    public float StartingDebt;
+    public float ScalingDebt;
+}
 public class GameManager : MonoBehaviour {
 
 
@@ -14,8 +19,13 @@ public class GameManager : MonoBehaviour {
     public float money;
 
     public float debt;
-    private const float StartingDebt = 100f;
-    private const float ScalingDebt = 50f;
+
+    private DifficultyChanges[] difficultyValues = new DifficultyChanges[3];
+    public int difficulty = 1;
+    
+    private float _startingDebt;
+    private float _scalingDebt;
+    
     public int level = -1;
 
     public string biome = "Clear";
@@ -23,6 +33,7 @@ public class GameManager : MonoBehaviour {
     
     void Awake()
     {
+        
         if (instance == null)
         {
             instance = this;
@@ -32,19 +43,35 @@ public class GameManager : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+        DifficultyChanges easyDifficulty = new DifficultyChanges();
+        easyDifficulty.StartingDebt = 75f;
+        easyDifficulty.ScalingDebt = 25f;
+        
+        DifficultyChanges normalDifficulty = new DifficultyChanges();
+        normalDifficulty.StartingDebt = 150;
+        normalDifficulty.ScalingDebt = 50f;
+        
+        DifficultyChanges hardDifficulty = new DifficultyChanges();
+        hardDifficulty.StartingDebt = 250f;
+        hardDifficulty.ScalingDebt = 75f;
+
+        difficultyValues[0] = easyDifficulty;
+        difficultyValues[1] = normalDifficulty;
+        difficultyValues[2] = hardDifficulty;
+        
+        _startingDebt = difficultyValues[difficulty].StartingDebt;
+        _scalingDebt = difficultyValues[difficulty].ScalingDebt;
+    }
+
+    public void SetDifficulty(int diff)
+    {
+        difficulty = diff;
+        _startingDebt = difficultyValues[difficulty].StartingDebt;
+        _scalingDebt = difficultyValues[difficulty].ScalingDebt;
     }
 
     void Update()
     {
-        //Please delete this once you're done.
-        // if (Input.GetKeyDown(KeyCode.F))
-        // {
-        //     SceneManager.LoadScene("Shop");
-        // }
-        // if (Input.GetKeyDown(KeyCode.R))
-        // {
-        //     Debug.Log(money);
-        // }
         if (inventoryPanel == null)
         {
             inventoryPanel = FindObjectOfType<UpgradeInventoryPanel>(true);
@@ -54,16 +81,12 @@ public class GameManager : MonoBehaviour {
         {
             inventoryPanel.TogglePanel();
         }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-           tutorialSeen.Clear();
-        }
     }
 
     public void LevelIncrease()
     {
         level++;
-        debt = StartingDebt + ScalingDebt * level;
+        debt = difficultyValues[difficulty].StartingDebt + difficultyValues[difficulty].ScalingDebt * level;
     }
 
     public void CheckLossState()
@@ -88,8 +111,11 @@ public class GameManager : MonoBehaviour {
     {
         level = -1;
         money = 0;
-        debt = StartingDebt;
+        difficulty = 1;
+        debt = difficultyValues[difficulty].StartingDebt;
+        tutorialSeen.Clear();
         MapGameManager.Reset();
+        
         //Reset upgrades here!
     }
 
