@@ -116,6 +116,8 @@ public class Hook : MonoBehaviour
         }
 
         foreach (var fish in fishes) {
+            if (fish == null) continue;
+            if (fish.gameObject == null) continue;
             value += fish.GetValue();
             // Debug.Log(fish.GetValue());
             Destroy(fish.gameObject);
