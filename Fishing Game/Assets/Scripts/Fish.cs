@@ -33,7 +33,7 @@ public class Fish : MonoBehaviour
     protected bool _isFacingRight = true;
 
     private const float ScreenBorder = 11f;
-    private const float ScaleValueMultiplier = -0.05f;//How big the fish is based on its value
+    private const float ScaleValueMultiplier = -0.01f;//How big the fish is based on its value
 
     protected virtual void Start()
     {
