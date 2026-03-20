@@ -33,7 +33,7 @@ public class Fish : MonoBehaviour
     protected bool _isFacingRight = true;
 
     private const float ScreenBorder = 11f;
-    private const float ScaleValueMultiplier = -0.01f;//How big the fish is based on its value
+    private const float ScaleValueMultiplier = -0.005f;//How big the fish is based on its value
 
     protected virtual void Start()
     {
@@ -51,7 +51,8 @@ public class Fish : MonoBehaviour
         strength = Random.Range(minStrength, maxStrength) * strengthMultiplier;
 
         // Scale Size base on value
-        transform.localScale = new Vector3(1 + _value * ScaleValueMultiplier, 1 + _value * ScaleValueMultiplier, 1 + _value * ScaleValueMultiplier);
+        float size = 1.5f + (_value - minValue) * ScaleValueMultiplier;
+        transform.localScale = new Vector3(size * Random.Range(0.8f, 1.2f),size * Random.Range(0.8f, 1.2f),size);
         if (Random.Range(0, 2) == 1)
         {
             _isFacingRight = true;
