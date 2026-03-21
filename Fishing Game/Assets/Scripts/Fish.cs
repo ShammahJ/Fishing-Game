@@ -76,8 +76,9 @@ public class Fish : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        FishMove();
+        
         SpecialBehaviour();
+        FishMove();
     }
 
     public void Initialize(FishManager system)

@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7542835808311112769}
   - component: {fileID: 6867683907269873739}
   - component: {fileID: 1016700921153464679}
-  - component: {fileID: 5196521375603339112}
   - component: {fileID: 3577616920444681641}
+  - component: {fileID: -1417192971033247894}
   m_Layer: 3
   m_Name: FishWithLegs
   m_TagString: Fish
@@ -131,31 +131,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.000000014363218, y: 0.12048742}
   m_Size: {x: 0.6400002, y: 0.39902946}
   m_Direction: 1
---- !u!114 &5196521375603339112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3839990507532285524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1daf6c1255866324cac053dbeebdf1d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  minSpeed: 10
-  maxSpeed: 35
-  minValue: 25
-  maxValue: 50
-  minHeight: -4
-  maxHeight: -4
-  minStrength: 5
-  maxStrength: 6
-  hitbox: {fileID: 1016700921153464679}
-  isRandomColor: 0
-  _value: 0
-  strength: 0
-  isHooked: 0
 --- !u!50 &3577616920444681641
 Rigidbody2D:
   serializedVersion: 5
@@ -182,4 +157,30 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 2
+--- !u!114 &-1417192971033247894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3839990507532285524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1daf6c1255866324cac053dbeebdf1d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Fish
+  minSpeed: 10
+  maxSpeed: 35
+  minValue: 25
+  maxValue: 50
+  minHeight: -4
+  maxHeight: -4
+  minStrength: 5
+  maxStrength: 6
+  hitbox: {fileID: 0}
+  isRandomColor: 0
+  _value: 0
+  _speed: 0
+  strength: 0
+  isHooked: 0
