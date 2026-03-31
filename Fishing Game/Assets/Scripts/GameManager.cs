@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour {
             SceneManager.LoadScene("LossScreen");
             return;
         }
-        LoseMoney(debt);
+        //LoseMoney(debt);
 
         if (MapGameManager.onRain2 && MapGameManager.hasFinishedRain2)
         {
@@ -95,7 +95,8 @@ public class GameManager : MonoBehaviour {
         }
         else
         {
-            SceneManager.LoadScene("Map");
+            //SceneManager.LoadScene("Map");
+            SceneManager.LoadScene("AdjustDebt");
         }
     }
 
