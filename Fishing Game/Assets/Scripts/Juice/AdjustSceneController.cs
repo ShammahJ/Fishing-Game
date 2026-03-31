@@ -9,10 +9,9 @@ public class AdjustSceneController : MonoBehaviour
     [SerializeField] private float chargeSpeed = 50f; // money per second
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip chargeTickSFX;
-    [SerializeField] private float tickInterval = 0.05f; // max SFX rate
-    private float tickTimer = 0f;
+    
     private int lastWholeMoney;
-
+    
     private GameManager gm;
 
     void Start()
@@ -35,8 +34,6 @@ public class AdjustSceneController : MonoBehaviour
         float remainingDebt = gm.debt;
         lastWholeMoney = Mathf.FloorToInt(gm.money);
 
-        tickTimer = 0f;
-
         while (remainingDebt > 0 && gm.money > 0)
         {
             float charge = chargeSpeed * Time.deltaTime;
@@ -50,15 +47,16 @@ public class AdjustSceneController : MonoBehaviour
             // Play sound ONLY when a whole dollar is lost
             // Playing every decimal will freeze the game. (Learned the hard way)
             int currentWholeMoney = Mathf.FloorToInt(gm.money);
-            tickTimer -= Time.deltaTime;
-
+            
             if (currentWholeMoney < lastWholeMoney)
             {
-                audioSource.PlayOneShot(chargeTickSFX);
+                
                 lastWholeMoney = currentWholeMoney;
-                audioSource.PlayOneShot(chargeTickSFX);
-                lastWholeMoney = currentWholeMoney;
-                tickTimer = tickInterval; // prevent audio spam
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.PlayOneShot(chargeTickSFX);
+                }
+
             }
 
             //audioSource.PlayOneShot(chargeTickSFX);
