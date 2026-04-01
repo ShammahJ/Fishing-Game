@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Pagliacci
   id: pagliacci
   upgradeName: Pagliacci
-  cost: 95
+  cost: 60
   rarity: 1
   description: 'If you catch a clownfish, if there are multiple on your hook, all
     fish gain $15. However, if there is only one clownfish on your hook, all fish

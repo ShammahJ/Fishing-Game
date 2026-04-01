@@ -108,8 +108,7 @@ public class GameManager : MonoBehaviour {
         debt = difficultyValues[difficulty].StartingDebt;
         tutorialSeen.Clear();
         MapGameManager.Reset();
-        
-        //Reset upgrades here!
+        UpgradeManager.Instance.activeUpgrades.Clear();
     }
 
     public void CollectMoney(float value)

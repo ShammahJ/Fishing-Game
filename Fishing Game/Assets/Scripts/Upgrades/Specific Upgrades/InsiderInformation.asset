@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InsiderInformation
   id: insider_information
   upgradeName: Insider Information
-  cost: 100
+  cost: 90
   rarity: 2
   description: If there are less than 8 fish in the ocean, fish gain 0.35x * (8 -
     # of fish in the ocean) mult.

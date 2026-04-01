@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WormOnAString
   id: worm_on_a_string
   upgradeName: Worm On A String
-  cost: 95
+  cost: 60
   rarity: 1
   description: Multiplies fish value by 1.5x, but multiply their strength by 2.5x.
   icon: {fileID: -1875349664053231163, guid: 10daa983dd9a78f418e3e0699119108b, type: 3}

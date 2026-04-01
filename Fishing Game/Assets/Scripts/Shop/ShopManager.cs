@@ -23,10 +23,21 @@ public class ShopManager : MonoBehaviour
     public TextMeshProUGUI tooltipCostText;
     public GameObject tooltipPanel;
 
+    [Header("Audio")]
+    public AudioClip hoverSFX;
+    public AudioClip rerollSFX;
+    public AudioClip purchaseSFX;
+    private AudioSource audioSource;
+
     const float COMMON_CHANCE = 53.3f;
     const float RARE_CHANCE = 26.6f;
     const float EPIC_CHANCE = 13.3f;
     //legendary chance is 6.6%
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void Start()
     {
@@ -59,6 +70,7 @@ public class ShopManager : MonoBehaviour
         {
             if (GameManager.instance.GetMoney() >= rerollCost)
             {
+                audioSource.PlayOneShot(rerollSFX);
                 GameManager.instance.LoseMoney(rerollCost);
                 RollShop();
             }
@@ -109,6 +121,10 @@ public class ShopManager : MonoBehaviour
             {
                 slotImage.sprite = upgrade.icon;
                 slotImage.preserveAspect = true;
+
+                Color c = slotImage.color;
+                c.a = 1f;
+                slotImage.color = c;
             }
         }
     }
@@ -143,6 +159,7 @@ public class ShopManager : MonoBehaviour
 
     public void ShowTooltip(Upgrade upgrade)
     {
+        audioSource.PlayOneShot(hoverSFX);
         if (tooltipNameText != null)
             tooltipNameText.text = upgrade.upgradeName;
 
@@ -182,6 +199,8 @@ public class ShopManager : MonoBehaviour
         if (playerMoney >= upgrade.cost)
         {
             GameManager.instance.LoseMoney(upgrade.cost);
+
+            audioSource.PlayOneShot(purchaseSFX);
 
             if (UpgradeManager.Instance != null)
             {

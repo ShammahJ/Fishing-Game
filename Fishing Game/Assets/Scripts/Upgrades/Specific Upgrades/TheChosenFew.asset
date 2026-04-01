@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TheChosenFew
   id: the_chosen_few
   upgradeName: The Chosen Few
-  cost: 95
+  cost: 60
   rarity: 1
   description: If there are 4 or less fish on your hook when you reel them in, this
     upgrade gains 0.1x mult value that applies every time you collect fish. Resets

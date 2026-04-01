@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Baitball
   id: baitball
   upgradeName: Baitball
-  cost: 30
+  cost: 45
   rarity: 0
   description: "Fish that aren\u2019t sharks, clownfish, fsh, or fishhsif gain $5."
   icon: {fileID: -4955603699578580732, guid: 1e11af0dc5baef3409a4922d47aa67a2, type: 3}

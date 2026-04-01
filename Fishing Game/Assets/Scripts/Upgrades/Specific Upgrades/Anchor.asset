@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Anchor
   id: anchor
   upgradeName: Anchor
-  cost: 100
+  cost: 90
   rarity: 2
   description: 'Decreases fish strength by 0.5x, increases hook descension speed
     and decreases hook ascension speed. '

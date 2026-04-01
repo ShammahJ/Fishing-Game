@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeGottaGoBald
   id: we_gotta_go_bald
   upgradeName: We Gotta Go Bald
-  cost: 135
+  cost: 120
   rarity: 3
   description: Gain 0.75x mult for every upgrade you have, but lose one hook attempt.
   icon: {fileID: -7968757556875089879, guid: 4e8e3eb6d68f5cb409255028cc86c3e6, type: 3}

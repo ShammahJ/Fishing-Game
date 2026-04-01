@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GrandFinale
   id: grand_finale
   upgradeName: Grand Finale
-  cost: 95
+  cost: 60
   rarity: 1
   description: The last fish of the last hook gets $18.
   icon: {fileID: 2689816264194675024, guid: 56c70516956ea5146934d34a1d2dc255, type: 3}

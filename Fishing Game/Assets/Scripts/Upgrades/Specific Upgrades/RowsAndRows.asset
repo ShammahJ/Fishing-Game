@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SharkSpecialist
   id: rows_and_rows
   upgradeName: Rows And Rows
-  cost: 95
+  cost: 60
   rarity: 1
   description: Sharks are 10x faster and 1.5x stronger, but are 1.5x more valuable.
   icon: {fileID: -2352260413151720740, guid: bca480ff716e1ba4587fe3ba9c7892e3, type: 3}

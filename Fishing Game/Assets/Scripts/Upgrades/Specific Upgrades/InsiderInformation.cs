@@ -8,15 +8,22 @@ public class InsiderInformation : Upgrade
 
     public override float ModifyFishValue(float currentValue, ActiveUpgrade runtime)
     {
-        float multVal = GetMultiplier(runtime);
-        return currentValue * multVal;
+        if (FishManager.instance.gameObject.transform.childCount < 8)
+        {
+            float multVal = GetMultiplier(runtime);
+            return currentValue * multVal;
+        }
+        else
+        {
+            return currentValue;
+        }
     }
 
     private float GetMultiplier(ActiveUpgrade runtime)
     {
         if (runtime.data == null)
         {
-            runtime.data = 1 + (FishManager.instance.gameObject.transform.childCount * multVal);
+            runtime.data = 1 + ((8 - FishManager.instance.gameObject.transform.childCount) * multVal);
         }
         return (float)runtime.data;
     }

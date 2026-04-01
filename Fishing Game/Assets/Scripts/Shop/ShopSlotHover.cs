@@ -103,13 +103,19 @@ public class ShopSlotHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         Image iconImage = GetComponent<Image>();
         if (iconImage != null)
         {
-            iconImage.sprite = null;
+            Color c = iconImage.color;
+            c.a = 0f;
+            iconImage.color = c;
         }
 
         if (upgradeGlow != null)
         {
             StopAllCoroutines();
             upgradeGlow.rectTransform.sizeDelta = new Vector2(0, 0);
+
+            Color c = upgradeGlow.color;
+            c.a = 0f;
+            upgradeGlow.color = c;
         }
     }
 }
