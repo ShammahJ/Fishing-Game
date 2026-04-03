@@ -21,7 +21,7 @@ public class Hook : MonoBehaviour
     // [SerializeField] float mouseSensitivity = 0.5f;
     [SerializeField] private InputAction castAction;
 
-    
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] float chanceToSwitchStruggleDirection;
     private HookCollision _hookCollision;
     
@@ -74,6 +74,7 @@ public class Hook : MonoBehaviour
         if (_active) {
             return;
         }
+        
         _active = true;
         _descending = true;
         UpgradeManager.Instance.NotifyLineCasted();
