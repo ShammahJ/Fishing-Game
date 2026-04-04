@@ -21,7 +21,11 @@ public class Hook : MonoBehaviour
     // [SerializeField] float mouseSensitivity = 0.5f;
     [SerializeField] private InputAction castAction;
 
-    
+    [SerializeField] private AudioClip backSound;
+    [SerializeField] private AudioClip castSound;
+    [SerializeField] private AudioClip breakSound;
+    [SerializeField] private AudioClip collectSound;
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] float chanceToSwitchStruggleDirection;
     private HookCollision _hookCollision;
     
@@ -74,6 +78,7 @@ public class Hook : MonoBehaviour
         if (_active) {
             return;
         }
+        audioSource.PlayOneShot(castSound);
         _active = true;
         _descending = true;
         UpgradeManager.Instance.NotifyLineCasted();
@@ -127,6 +132,7 @@ public class Hook : MonoBehaviour
         // fishManager.AddScore(totalValue);
         // _totalScore += totalValue?;
         onCollect.Invoke(totalValue);
+        audioSource.PlayOneShot(collectSound);
     }
 
     void BreakHook()
@@ -143,6 +149,7 @@ public class Hook : MonoBehaviour
         // totalScoreText.text = "Score: " + totalScore.ToString("F");
         onCollect.Invoke(0f);
         onBreak.Invoke();
+        audioSource.PlayOneShot(breakSound);
     }
     
     void DescendHook()
@@ -157,6 +164,7 @@ public class Hook : MonoBehaviour
         }
         if (_height <= MaxDepth) {
             _descending = false;
+            audioSource.PlayOneShot(backSound);
         } else if (!_descending && _height >= MaxHeight) {
             _height = MaxHeight;
             _active = false;
