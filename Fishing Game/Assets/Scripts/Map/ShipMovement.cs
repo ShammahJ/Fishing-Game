@@ -1,8 +1,12 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShipMovement : MonoBehaviour
 {
     public GameObject targetObject;
+
+    public ButtonManager targetButton;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -68,22 +72,28 @@ public class ShipMovement : MonoBehaviour
                 MapGameManager.onStart = false;
                 targetObject.transform.position = new Vector2(510f, 315f);
             }
+
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                targetButton.start.onClick.Invoke();
+            }
         }
         else if (MapGameManager.onClear1 == true)
         {
             if (Input.GetKeyDown(KeyCode.RightArrow) && MapGameManager.hasFinishedClear1)
             {
-                
                 targetObject.transform.position = new Vector2(645f, 605f);
                 MapGameManager.onClear1 = false;
-
             }
             else if (Input.GetKeyDown(KeyCode.LeftArrow) && !MapGameManager.hasFinishedClear1)
             {
-                
                 targetObject.transform.position = new Vector2(135f, 560f);
                 MapGameManager.onClear1 = false;
+            }
 
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                targetButton.clear1.onClick.Invoke();
             }
         }
         else if (MapGameManager.onClear2 == true)
@@ -92,6 +102,11 @@ public class ShipMovement : MonoBehaviour
             {
                 targetObject.transform.position = new Vector2(1130f, 585f);
                 MapGameManager.onClear2 = false;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                targetButton.clear2.onClick.Invoke();
             }
         }
         else if (MapGameManager.onClear3 == true)
@@ -107,6 +122,10 @@ public class ShipMovement : MonoBehaviour
                 MapGameManager.onClear3 = false;
             }
 
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                targetButton.clear3.onClick.Invoke();
+            }
         }
         else if (MapGameManager.onRain1 == true)
         {
@@ -120,10 +139,20 @@ public class ShipMovement : MonoBehaviour
                 targetObject.transform.position = new Vector2(135f, 560f);
                 MapGameManager.onRain1 = false;
             }
+
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                targetButton.rain1.onClick.Invoke();
+            }
         }
         else if (MapGameManager.onRain2 == true)
         {
             // No movement options
+
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                targetButton.rain2.onClick.Invoke();
+            }
         }
         else if (MapGameManager.onSwamp1 == true)
         {
@@ -131,6 +160,11 @@ public class ShipMovement : MonoBehaviour
             {
                 targetObject.transform.position = new Vector2(1130f, 585f);
                 MapGameManager.onSwamp1 = false;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                targetButton.swamp1.onClick.Invoke();
             }
         }
         else if (MapGameManager.onSwamp2 == true)
@@ -145,6 +179,11 @@ public class ShipMovement : MonoBehaviour
                 targetObject.transform.position = new Vector2(1130f, 585f);
                 MapGameManager.onSwamp2 = false;
             }
+
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                targetButton.swamp2.onClick.Invoke();
+            }
         }
         else if (MapGameManager.onShop1 == true)
         {
@@ -153,6 +192,11 @@ public class ShipMovement : MonoBehaviour
                 targetObject.transform.position = new Vector2(875f, 785f);
                 MapGameManager.onShop1 = false;
             }
+
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                targetButton.shop1.onClick.Invoke();
+            }
         }
         else if (MapGameManager.onShop2 == true)
         {
@@ -160,6 +204,11 @@ public class ShipMovement : MonoBehaviour
             {
                 targetObject.transform.position = new Vector2(1060f, 340f);
                 MapGameManager.onShop2 = false;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                targetButton.shop2.onClick.Invoke();
             }
         }
         else if (MapGameManager.onShop3 == true)
@@ -173,6 +222,11 @@ public class ShipMovement : MonoBehaviour
             {
                 targetObject.transform.position = new Vector2(1430f, 440f);
                 MapGameManager.onShop3 = false;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                targetButton.shop3.onClick.Invoke();
             }
         }
 

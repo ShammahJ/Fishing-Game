@@ -29,6 +29,45 @@ public class ButtonManager : MonoBehaviour
         shop3.enabled = false;
         start.enabled = false;
 
+        
+    }
+
+    void Update()
+    {
+        if (MapGameManager.hasFinishedStart == false)
+        {
+            clear1.GetComponent<Image>().color = Color.gray;
+            rain1.GetComponent<Image>().color = Color.gray;
+        }
+        if (MapGameManager.hasFinishedClear1 == false)
+        {
+            shop1.GetComponent<Image>().color = Color.gray;
+        }
+        if (MapGameManager.hasFinishedClear2 == false && MapGameManager.hasFinishedSwamp1 == false)
+        {
+            shop3.GetComponent<Image>().color = Color.gray;
+        }
+        if (MapGameManager.hasFinishedClear3 == false && MapGameManager.hasFinishedSwamp2 == false)
+        {
+            rain2.GetComponent<Image>().color = Color.gray;
+        }
+        if (MapGameManager.hasFinishedRain1 == false)
+        {
+            shop2.GetComponent<Image>().color = Color.gray;
+        }
+        if (MapGameManager.hasFinishedShop1 == false)
+        {
+            swamp1.GetComponent<Image>().color = Color.gray;
+        }
+        if (MapGameManager.hasFinishedShop2 == false)
+        {
+            clear2.GetComponent<Image>().color = Color.gray;
+        }
+        if (MapGameManager.hasFinishedShop3 == false)
+        {
+            clear3.GetComponent<Image>().color = Color.gray;
+            swamp2.GetComponent<Image>().color = Color.gray;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
