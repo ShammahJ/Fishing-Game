@@ -92,6 +92,7 @@ public class GameManager : MonoBehaviour {
         if (MapGameManager.onRain2 && MapGameManager.hasFinishedRain2)
         {
             SceneManager.LoadScene("WinScreen");
+            AddLeaderboardEntry();
         }
         else
         {
@@ -131,5 +132,22 @@ public class GameManager : MonoBehaviour {
     public int GetLives()
     {
         return fishScene.GetLives();
+    }
+
+    public void AddLeaderboardEntry()
+    {
+        if (LeaderboardManager.Instance != null)
+        {
+            bool isHighScore = LeaderboardManager.Instance.IsHighScore(money, difficulty);
+
+            if (isHighScore)
+            {
+                LeaderboardUI leaderboardUI = FindObjectOfType<LeaderboardUI>(true);
+                if (leaderboardUI != null)
+                {
+                    leaderboardUI.ShowNewScoreEntry(money, difficulty);
+                }
+            }
+        }
     }
 }
