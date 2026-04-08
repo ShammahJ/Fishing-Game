@@ -72,7 +72,26 @@ public class ButtonManager : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Clear1"))
+        if (collision.gameObject.CompareTag("Start"))
+        {
+            if (!MapGameManager.hasFinishedStart)
+            {
+                start.enabled = true;
+            }
+
+            clear1.enabled = false;
+            clear2.enabled = false;
+            clear3.enabled = false;
+            rain1.enabled = false;
+            rain2.enabled = false;
+            swamp1.enabled = false;
+            swamp2.enabled = false;
+            shop1.enabled = false;
+            shop2.enabled = false;
+            shop3.enabled = false;
+        }
+
+        else if (collision.gameObject.CompareTag("Clear1"))
         {
             if (!MapGameManager.hasFinishedClear1)
             {
@@ -162,24 +181,6 @@ public class ButtonManager : MonoBehaviour
             shop3.enabled = false;
             start.enabled = false;
         }
-        //else if (collision.gameObject.CompareTag("Rain3"))
-        //{
-        //    if (!MapGameManager.hasFinishedRain3)
-        //    {
-        //        rain3.enabled = true;
-        //    }
-
-        //    clear1.enabled = false;
-        //    clear2.enabled = false;
-        //    clear3.enabled = false;
-        //    rain1.enabled = false;
-        //    rain2.enabled = false;
-        //    swamp1.enabled = false;
-        //    swamp2.enabled = false;
-        //    shop1.enabled = false;
-        //    shop2.enabled = false;
-        //    start.enabled = false;
-        //}
         else if (collision.gameObject.CompareTag("Swamp1"))
         {
             if (!MapGameManager.hasFinishedSwamp1)
@@ -269,25 +270,6 @@ public class ButtonManager : MonoBehaviour
             shop1.enabled = false;
             shop2.enabled = false;
             start.enabled = false;
-        }
-
-        else if (collision.gameObject.CompareTag("Start"))
-        {
-            if (!MapGameManager.hasFinishedStart)
-            {
-                start.enabled = true;
-            }
-
-            clear1.enabled = false;
-            clear2.enabled = false;
-            clear3.enabled = false;
-            rain1.enabled = false;
-            rain2.enabled = false;
-            swamp1.enabled = false;
-            swamp2.enabled = false;
-            shop1.enabled = false;
-            shop2.enabled = false;
-            shop3.enabled = false;
         }
     }
 }

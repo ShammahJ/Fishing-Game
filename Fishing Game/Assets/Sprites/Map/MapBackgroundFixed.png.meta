@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1dcc224a0122032418d09daec65de492
+guid: 4eef11ba6f025734ea59749d15591f55
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6496871418088276236
-    second: RainingBiomeIcon_0
+      213: -1674646523178753529
+    second: MapBackgroundFixed_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RainingBiomeIcon_0
+      name: MapBackgroundFixed_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 160
-        height: 160
+        width: 1920
+        height: 1150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c014a820226892a50800000000000000
-      internalID: 6496871418088276236
+      spriteID: 702669d1cd572c8e0800000000000000
+      internalID: -1674646523178753529
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      RainingBiomeIcon_0: 6496871418088276236
+      MapBackgroundFixed_0: -1674646523178753529
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

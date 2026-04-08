@@ -73,7 +73,7 @@ public class ShipMovement : MonoBehaviour
                 targetObject.transform.position = new Vector2(510f, 315f);
             }
 
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Return) && !MapGameManager.hasFinishedStart)
             {
                 targetButton.start.onClick.Invoke();
             }
@@ -91,7 +91,7 @@ public class ShipMovement : MonoBehaviour
                 MapGameManager.onClear1 = false;
             }
 
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Return) && !MapGameManager.hasFinishedClear1)
             {
                 targetButton.clear1.onClick.Invoke();
             }
@@ -104,7 +104,7 @@ public class ShipMovement : MonoBehaviour
                 MapGameManager.onClear2 = false;
             }
 
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Return) && !MapGameManager.hasFinishedClear2)
             {
                 targetButton.clear2.onClick.Invoke();
             }
@@ -122,7 +122,7 @@ public class ShipMovement : MonoBehaviour
                 MapGameManager.onClear3 = false;
             }
 
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Return) && !MapGameManager.hasFinishedClear3)
             {
                 targetButton.clear3.onClick.Invoke();
             }
@@ -140,7 +140,7 @@ public class ShipMovement : MonoBehaviour
                 MapGameManager.onRain1 = false;
             }
 
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Return) && !MapGameManager.hasFinishedRain1)
             {
                 targetButton.rain1.onClick.Invoke();
             }
@@ -149,7 +149,7 @@ public class ShipMovement : MonoBehaviour
         {
             // No movement options
 
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Return) && !MapGameManager.hasFinishedRain2)
             {
                 targetButton.rain2.onClick.Invoke();
             }
@@ -162,7 +162,7 @@ public class ShipMovement : MonoBehaviour
                 MapGameManager.onSwamp1 = false;
             }
 
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Return) && !MapGameManager.hasFinishedSwamp1)
             {
                 targetButton.swamp1.onClick.Invoke();
             }
@@ -180,7 +180,7 @@ public class ShipMovement : MonoBehaviour
                 MapGameManager.onSwamp2 = false;
             }
 
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Return) && !MapGameManager.hasFinishedSwamp2)
             {
                 targetButton.swamp2.onClick.Invoke();
             }
@@ -193,7 +193,7 @@ public class ShipMovement : MonoBehaviour
                 MapGameManager.onShop1 = false;
             }
 
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Return) && !MapGameManager.hasFinishedShop1)
             {
                 targetButton.shop1.onClick.Invoke();
             }
@@ -206,7 +206,7 @@ public class ShipMovement : MonoBehaviour
                 MapGameManager.onShop2 = false;
             }
 
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Return) && !MapGameManager.hasFinishedShop2)
             {
                 targetButton.shop2.onClick.Invoke();
             }
@@ -224,7 +224,7 @@ public class ShipMovement : MonoBehaviour
                 MapGameManager.onShop3 = false;
             }
 
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Return) && !MapGameManager.hasFinishedShop3)
             {
                 targetButton.shop3.onClick.Invoke();
             }

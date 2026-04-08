@@ -3,19 +3,6 @@ using UnityEngine;
 public class MapGameManager : MonoBehaviour
 {
     static public Vector3 shipPosition = new Vector3(135f, 560f, 0f);
-    
-    // Testing states
-    //static public bool hasFinishedStart = false;
-    //static public bool hasFinishedClear1 = true;
-    //static public bool hasFinishedClear2 = true;
-    //static public bool hasFinishedClear3 = true;
-    //static public bool hasFinishedRain1 = true;
-    //static public bool hasFinishedRain2 = false;
-    //static public bool hasFinishedSwamp1 = true;
-    //static public bool hasFinishedSwamp2 = true;
-    //static public bool hasFinishedShop1 = true;
-    //static public bool hasFinishedShop2 = true;
-    //static public bool hasFinishedShop3 = true;
 
     static public bool hasFinishedStart = false;
     static public bool hasFinishedClear1 = false;
